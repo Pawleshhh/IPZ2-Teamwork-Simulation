@@ -1,0 +1,43 @@
+﻿<UserControl
+    x:Class="TeamworkSimulation.View.ColorsComboBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
+    xmlns:local="clr-namespace:TeamworkSimulation.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Name="colorsUserControl"
+    Width="120"
+    Height="20"
+    mc:Ignorable="d">
+    <Grid>
+        <ComboBox
+            x:Name="colorsComboBox"
+            Width="{Binding ElementName=colorsUserControl, Path=Width}"
+            Height="{Binding ElementName=colorsUserControl, Path=Height}"
+            ItemsSource="{Binding Colors, Mode=OneWay}"
+            SelectedItem="{Binding SelectedColor, Mode=TwoWay}"
+            Style="{StaticResource DefaultComboBoxStyle}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Border
+                            Width="8"
+                            Height="8"
+                            Margin="4"
+                            Background="{Binding Converter={StaticResource defaultToNullExt}, FallbackValue={x:Null}}" />
+                        <TextBlock FontSize="11" Text="{Binding}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <!--<Button
+            Grid.Column="1"
+            Height="{Binding ElementName=colorsUserControl, Path=Height}"
+            Command="{Binding ClearColor}"
+            Style="{StaticResource DefaultButtonStyle}">
+            <fa:ImageAwesome Icon="Remove" />
+        </Button>-->
+    </Grid>
+</UserControl>

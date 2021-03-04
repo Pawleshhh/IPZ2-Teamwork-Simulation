@@ -1,0 +1,64 @@
+﻿<UserControl
+    x:Class="TeamworkSimulation.View.StudentControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TeamworkSimulation.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpftoolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+    Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContentControl}, Path=ActualWidth}"
+    Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContentControl}, Path=ActualHeight}"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Thickness x:Key="DefaultMargin" Left="5" />
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0"
+            VerticalAlignment="Center"
+            Orientation="Vertical">
+            <TextBlock Margin="{StaticResource DefaultMargin}" Text="College degree" />
+            <ComboBox
+                x:Name="comboBoxCollegeDegree"
+                Margin="{StaticResource DefaultMargin}"
+                ItemsSource="{Binding Source={StaticResource collegeDegrees}}"
+                SelectedItem="{Binding ExperienceVM.Degree, Mode=TwoWay}" />
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="1"
+            VerticalAlignment="Center"
+            Orientation="Vertical">
+            <TextBlock Margin="{StaticResource DefaultMargin}" Text="Field of study" />
+            <ComboBox
+                x:Name="comboBoxFieldOfStudy"
+                Margin="{StaticResource DefaultMargin}"
+                ItemsSource="{Binding Source={StaticResource fieldsOfStudy}}"
+                SelectedItem="{Binding ExperienceVM.FieldOfStudy, Mode=TwoWay}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                <TextBlock Margin="{StaticResource DefaultMargin}" Text="College years" />
+                <wpftoolkit:IntegerUpDown
+                    Margin="{StaticResource DefaultMargin}"
+                    HorizontalAlignment="Left"
+                    Maximum="8"
+                    Minimum="1"
+                    Value="{Binding ExperienceVM.CollegeYears, Mode=TwoWay}" />
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                <TextBlock Margin="{StaticResource DefaultMargin}" Text="Is full time study." />
+                <CheckBox HorizontalAlignment="Center" IsChecked="{Binding IsFullTimeStudy, Mode=TwoWay}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

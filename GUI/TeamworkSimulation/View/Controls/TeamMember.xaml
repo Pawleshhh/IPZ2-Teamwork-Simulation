@@ -1,0 +1,115 @@
+﻿<UserControl
+    x:Class="TeamworkSimulation.View.TeamMember"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
+    xmlns:local="clr-namespace:TeamworkSimulation.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpftoolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+    x:Name="teamMemberControl"
+    Width="450"
+    Height="150"
+    Foreground="{StaticResource Alto}"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="WorkerTemplate">
+            <local:WorkerControl DataContext="{Binding ElementName=teamMemberControl, Path=DataContext}" />
+        </DataTemplate>
+        <DataTemplate x:Key="StudentTemplate">
+            <local:StudentControl DataContext="{Binding ElementName=teamMemberControl, Path=DataContext}" />
+        </DataTemplate>
+
+        <Style BasedOn="{StaticResource DefaultComboBoxStyle}" TargetType="{x:Type ComboBox}">
+            <Setter Property="Margin" Value="5,0,5,0" />
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="5,0,5,0" />
+        </Style>
+
+    </UserControl.Resources>
+
+    <Border
+        Background="{StaticResource Rhino}"
+        BorderBrush="{Binding ColorVM.SelectedColor, Converter={StaticResource defaultToNullExt}, FallbackValue={StaticResource Mirage}}"
+        BorderThickness="3">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="2.5*" />
+                <ColumnDefinition Width="6*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                <TextBlock Text="Gender" />
+                <ComboBox
+                    x:Name="comboBoxGender"
+                    Width="40"
+                    HorizontalAlignment="Left"
+                    ItemsSource="{Binding Source={StaticResource genders}}"
+                    SelectedItem="{Binding Gender, Mode=TwoWay}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <fa:FontAwesome Icon="{Binding Converter={StaticResource genderConverter}}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+
+            <wpftoolkit:WatermarkTextBox
+                x:Name="itemNameTextBox"
+                Grid.Column="1"
+                Margin="13"
+                Style="{StaticResource DefaultWatermarkTextBoxStyle}"
+                Text="{Binding ItemName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Watermark="Name" />
+
+            <StackPanel
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                VerticalAlignment="Center"
+                Orientation="Vertical">
+                <TextBlock Text="Personality" />
+                <ComboBox
+                    x:Name="comboBoxPersonality"
+                    ItemsSource="{Binding Source={StaticResource personalities}}"
+                    SelectedItem="{Binding Personality, Mode=TwoWay}" />
+            </StackPanel>
+
+            <StackPanel
+                Grid.Row="2"
+                VerticalAlignment="Center"
+                Orientation="Vertical">
+                <TextBlock Text="Age" />
+                <wpftoolkit:IntegerUpDown
+                    Margin="5,0,0,0"
+                    HorizontalAlignment="Left"
+                    Maximum="80"
+                    Minimum="20"
+                    Value="{Binding ExperienceVM.Age, Mode=TwoWay}" />
+            </StackPanel>
+
+            <local:ColorsComboBox
+                x:Name="colorsComboBox"
+                Grid.Row="2"
+                Grid.Column="1"
+                Width="90"
+                Margin="0,15,0,0"
+                VerticalAlignment="Center"
+                DataContext="{Binding ColorVM}" />
+
+            <ContentControl
+                x:Name="contentControl"
+                Grid.RowSpan="3"
+                Grid.Column="2" />
+
+        </Grid>
+    </Border>
+
+</UserControl>
