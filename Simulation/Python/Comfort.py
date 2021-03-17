@@ -12,19 +12,13 @@ class Comfort:
         self.W = []
 
 
-        self.TiredWeek.append(tiredWeek) #dodaj wartosc do tej talbice
-        self.BreakTime.append(breakTime)  # [tymaczasowe]
-        self.Atmosfere.append(atmosfere)
-        self.Ergonomics.append(ergonomics)
-        self.SelfImprovement.append(selfImpovement)
-        self.Tired1day.append(tired1day)
+        #self.TiredWeek.append(tiredWeek) #dodaj wartosc do tej talbice
+        #self.BreakTime.append(breakTime)  # [tymaczasowe]
+        #self.Atmosfere.append(atmosfere)
+        #self.Ergonomics.append(ergonomics)
+        #self.SelfImprovement.append(selfImpovement)
+        #self.Tired1day.append(tired1day)
 
-        self.TiredWeek.append(tiredWeek)
-        self.BreakTime.append(breakTime)
-        self.Atmosfere.append(atmosfere)
-        self.Ergonomics.append(ergonomics)
-        self.SelfImprovement.append(selfImpovement)
-        self.Tired1day.append(tired1day)
 
 
     def weightsUpdate(self, w1, w2, w3, w4, w5, w6):

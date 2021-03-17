@@ -1,6 +1,7 @@
 from Comfort import Comfort
 from TeamEffectiveness import TeamEffectiveness
 from TeamCommunication import TeamCommunication
+from StudyComfort import StudyComfort
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -27,10 +28,12 @@ class Student:
         self.TeamEffectiveness_Factor = []
         self.Help_Factor = []
         self.TeamComm_Factor = []
+        self.StudyComfort_Factor = []
 
         self.Comfort = Comfort(1, 1, 1, 1, 1, 1) # tu nadac poczatkowa wartosci dla 1 iteracji
         self.TeamEff = TeamEffectiveness(2, 2, 2, 2)
         self.TeamComm = TeamCommunication(3, 3, 3, 3, 0)
+        self.StudyComfort = StudyComfort()#tylko dla studentow
 
 
 
@@ -112,3 +115,17 @@ class Student:
             k = S / 3
 
         self.TeamComm_Factor.append(k)
+
+    def calculateStudyComfort_Factor(self,i):
+        a = self.StudyComfort.KnowledgeGain[i]*self.StudyComfort.W[0][0]
+        b = self.StudyComfort.ProfessorStudentComm[i]*self.StudyComfort.W[0][1]
+        c = self.StudyComfort.Focus[i]*self.StudyComfort.W[0][2]
+        d = self.StudyComfort.HandleYourself[i]*self.StudyComfort.W[0][3]
+        e = self.StudyComfort.FormOfPassing[i]*self.StudyComfort.W[0][4]
+
+        WeightSum = self.StudyComfort.W[0][0]+self.StudyComfort.W[0][1]+self.StudyComfort.W[0][2]+self.StudyComfort.W[0][3]+self.StudyComfort.W[0][4]
+
+        lst = (a + b + c + d + e)  # dzielic przez sume wag czy nie?
+        S = sum(lst)
+        k = S / WeightSum
+        self.StudyComfort_Factor.append(k)

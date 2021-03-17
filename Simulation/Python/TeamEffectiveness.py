@@ -11,10 +11,10 @@ class TeamEffectiveness:
 
         self.W = []
 
-        self.ProjectComp.append(projetcomp) # [tymaczasowe]
-        self.Delays.append(delays)
-        self.Engagement.append(engagment)
-        self.Coordination.append(coordination)
+        #self.ProjectComp.append(projetcomp) # [tymaczasowe]
+        #self.Delays.append(delays)
+        #self.Engagement.append(engagment)
+        #self.Coordination.append(coordination)
 
     def weightsUpdate(self, w1, w2, w3, w4):
         k = [w1, w2, w3, w4]
