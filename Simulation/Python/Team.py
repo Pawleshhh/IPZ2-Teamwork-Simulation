@@ -1,5 +1,6 @@
 from Worker import Worker
 from Student import Student
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -44,7 +45,7 @@ class Team:
         sumH = 0
         sumTC = 0
 
-        for i in range(self.TeamMemAmount):
+        for i in range(self.TeamMemAmount):#aktualizowanie wag do przeliczalnia tutaj
             self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5, 6)
             self.PersonList[i].Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)
             self.PersonList[i].TeamEff.weightsUpdate(1, 2, 3, 4)
@@ -156,9 +157,9 @@ class Team:
                     self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[6], Answers[5], Answers[8], Answers[11])
                     self.PersonList[i].TeamComm.ArgumentsUpdate(Answers[13], Answers[12], Answers[14])
 
-                    self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe] tymczasowy update wag
-                    self.PersonList[i].TeamEff.weightsUpdate(1, 2, 3, 4)  # [tymaczasowe]
-                    self.PersonList[i].Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe]
+                    #self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe] tymczasowy update wag
+                    #self.PersonList[i].TeamEff.weightsUpdate(1, 2, 3, 4)  # [tymaczasowe]
+                    #self.PersonList[i].Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe]
 
                 if self.TeamWorkType == 1:
                     self.PersonList[i].Comfort.ArgumentsUpdate(Answers[16],
@@ -166,9 +167,9 @@ class Team:
                     self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[22], Answers[21], Answers[24], Answers[27])
                     self.PersonList[i].TeamComm.R_ArgumentsUpdate(Answers[29], Answers[28], Answers[30], Answers[32], Answers[32], )
 
-                    self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5)  # # [tymaczasowe] tymczasowy update wag
-                    self.PersonList[i].TeamEff.weightsUpdate(1, 2, 3, 4)  # [tymaczasowe]
-                    self.PersonList[i].Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe]
+                    #self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5)  # # [tymaczasowe] tymczasowy update wag
+                    #self.PersonList[i].TeamEff.weightsUpdate(1, 2, 3, 4)  # [tymaczasowe]
+                    #self.PersonList[i].Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe]
 
             self.calculateIteration(j, self.TeamWorkType)
 

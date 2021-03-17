@@ -13,12 +13,12 @@ class TeamCommunication:  # jakosc komuikacj zdalnej jak zrobic ??
         self.W = []
         self.RemoteSwitch = remoteswitch
 
-        self.ReactiveComm.append(reactiveComm)# [tymaczasowe]
-        self.ProactiveComm.append(proactiveComm)
-        self.ConflictsFreq.append(conflictsfreq)
-        self.R_ComQuality.append(conflictsfreq)
-        self.R_AudioVideoQuality.append(conflictsfreq)
-        self.R_Understanding.append(conflictsfreq)
+        #self.ReactiveComm.append(reactiveComm)# [tymaczasowe]
+        #self.ProactiveComm.append(proactiveComm)
+        #self.ConflictsFreq.append(conflictsfreq)
+        #self.R_ComQuality.append(conflictsfreq)
+        #self.R_AudioVideoQuality.append(conflictsfreq)
+        #self.R_Understanding.append(conflictsfreq)
 
     def weightsUpdate(self, w1, w2, w3, w4, w5, w6):
         k = [w1, w2, w3, w4, w5, w6]
