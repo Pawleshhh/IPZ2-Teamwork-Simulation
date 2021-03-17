@@ -100,7 +100,7 @@ def StartSimluation(Arg):
     P1.Comfort.ArgumentsUpdate(2, 2, 2, 2, 2, 2)
     P1.calculateTirednessFactor(2)
     print('test 8.1  dane do wykresu: ', P1.Tired_Factor)
-
+    print('test pusha nr 1')
 
 
     #P1.plotData()
