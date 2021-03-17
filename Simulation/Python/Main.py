@@ -43,64 +43,64 @@ def ReadParemeters(Arg):
 def StartSimluation(Arg):
     #  print_hi('PyCharm')
     #  a = pd.DataFrame()
-    P1 = Worker('M', '30-40', 'IT', 'Specjalist', '2', '3-5 years', 'introvert')
+    #P1 = Worker('M', '30-40', 'IT', 'Specjalist', '2', '3-5 years', 'introvert')
 
 
-    print('test 1 parametr age: ', P1.Age)
-    print('test 2 atmosfere:', P1.Comfort.Atmosfere)
-    print('test 3 team cord:', P1.TeamEff.Coordination)
-    print('test 4 teamcom:', P1.TeamComm.ProactiveComm)
-    P1.Comfort.Atmosfere.append(2)
-    print('test5 kolejen iteracje wartosci:', P1.Comfort.Atmosfere)
+    #print('test 1 parametr age: ', P1.Age)
+    #print('test 2 atmosfere:', P1.Comfort.Atmosfere)
+    #print('test 3 team cord:', P1.TeamEff.Coordination)
+    #print('test 4 teamcom:', P1.TeamComm.ProactiveComm)
+    #P1.Comfort.Atmosfere.append(2)
+    #print('test5 kolejen iteracje wartosci:', P1.Comfort.Atmosfere)
 
-    P1.TeamEff.weightsUpdate(1, 2, 3, 4)
-    print('test 6.1 update wag: ', P1.TeamEff.W)
-    print('test 6.2 update wag: ', P1.TeamEff.W[0])
+    #P1.TeamEff.weightsUpdate(1, 2, 3, 4)
+    #print('test 6.1 update wag: ', P1.TeamEff.W)
+    #print('test 6.2 update wag: ', P1.TeamEff.W[0])
 
-    P1.Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)
-    print('test 6.3 update wag: ', P1.Comfort.W[0])
+    #P1.Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)
+    #print('test 6.3 update wag: ', P1.Comfort.W[0])
 
-    P1.TeamComm.weightsUpdate(1, 2, 3, 4, 5, 6)
-    print('test 6.4 update wag: ', P1.TeamComm.W[0][2])
-
-
-    print('test 6.5 update wag: ', P1.Comfort.W[:][:])
+    #P1.TeamComm.weightsUpdate(1, 2, 3, 4, 5, 6)
+    #print('test 6.4 update wag: ', P1.TeamComm.W[0][2])
 
 
+    #print('test 6.5 update wag: ', P1.Comfort.W[:][:])
 
-    P1.calculateWorkConditionsFactor(0)
-    print('test 7.1  obliczania warunkow pracy: ', P1.WorkConditions_Factor[0])
 
-    P1.Comfort.weightsUpdate(7, 8, 9, 10, 11, 12)
-    print('test 7.2 update wag: ', P1.Comfort.W[:][:])
 
-    P1.calculateTirednessFactor(0)
-    print('test 7.3  obliczania zmeczenia 2 iteracja: ', P1.Tired_Factor)
+    #P1.calculateWorkConditionsFactor(0)
+    #print('test 7.1  obliczania warunkow pracy: ', P1.WorkConditions_Factor[0])
 
-    P1.calculateComfortFactor(0)
-    print('test 7.4  obliczania commfortfactor: ', P1.Comfort_Factor[0])
+    #P1.Comfort.weightsUpdate(7, 8, 9, 10, 11, 12)
+    #print('test 7.2 update wag: ', P1.Comfort.W[:][:])
 
-    P1.calculateSelfImprovementFactor(0)
-    print('test 7.5  selfimprovement ', P1.SelfImprovement_Factor[0])
+    #P1.calculateTirednessFactor(0)
+    #print('test 7.3  obliczania zmeczenia 2 iteracja: ', P1.Tired_Factor)
 
-    P1.calculateTeamEffectivnessFactor(0)
-    print('test 7.6  obliczania teameff: ', P1.TeamEffectiveness_Factor[0])
+    #P1.calculateComfortFactor(0)
+    #print('test 7.4  obliczania commfortfactor: ', P1.Comfort_Factor[0])
 
-    P1.calculateHelpFactor(0)
-    print('test 7.7  obliczania helpfactor: ', P1.Help_Factor[0])
+    #P1.calculateSelfImprovementFactor(0)
+    #print('test 7.5  selfimprovement ', P1.SelfImprovement_Factor[0])
 
-    P1.calculateTeamCommunicationFactor(0,1)
-    print('test 7.8  obliczania tteamcomm: ', P1.TeamComm_Factor[0])
+    #P1.calculateTeamEffectivnessFactor(0)
+    #print('test 7.6  obliczania teameff: ', P1.TeamEffectiveness_Factor[0])
+
+    #P1.calculateHelpFactor(0)
+    #print('test 7.7  obliczania helpfactor: ', P1.Help_Factor[0])
+
+    #P1.calculateTeamCommunicationFactor(0,1)
+    #print('test 7.8  obliczania tteamcomm: ', P1.TeamComm_Factor[0])
 
 
     #P1.calculateTirednessFactor(0)
-    P1.calculateTirednessFactor(1)
-    print('test 7.1  obliczania zmeczenia: ', P1.Tired_Factor[0])
-    P1.Comfort.weightsUpdate(10, 10, 10, 10, 10, 10)
-    P1.Comfort.ArgumentsUpdate(2, 2, 2, 2, 2, 2)
-    P1.calculateTirednessFactor(2)
-    print('test 8.1  dane do wykresu: ', P1.Tired_Factor)
-    print('test pusha nr 1')
+    #P1.calculateTirednessFactor(1)
+    #print('test 7.1  obliczania zmeczenia: ', P1.Tired_Factor[0])
+    #P1.Comfort.weightsUpdate(10, 10, 10, 10, 10, 10)
+    #P1.Comfort.ArgumentsUpdate(2, 2, 2, 2, 2, 2)
+    #P1.calculateTirednessFactor(2)
+    #print('test 8.1  dane do wykresu: ', P1.Tired_Factor)
+    #print('test pusha nr 1')
 
 
     #P1.plotData()
