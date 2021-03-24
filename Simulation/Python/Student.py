@@ -44,8 +44,8 @@ class Student:
 
         WeightSum = self.Comfort.W[i][0] + self.Comfort.W[i][1] + self.Comfort.W[i][5]
         sum = (a + b + f)
-        print('suma to:', sum)
-        print('suma wag to: ', WeightSum)
+        #print('suma to:', sum)
+        #print('suma wag to: ', WeightSum)
         tired = sum/WeightSum
         k = tired
         self.Tired_Factor.append(k)
@@ -56,8 +56,8 @@ class Student:
 
         WeightSum = self.Comfort.W[i][2] + self.Comfort.W[0][3]
         sum = (a + b)
-        print('suma to:', sum)
-        print('suma wag to: ', WeightSum)
+        #print('suma to:', sum)
+        #print('suma wag to: ', WeightSum)
         tired = sum/WeightSum
         k = tired
         self.WorkConditions_Factor.append(k)
@@ -117,15 +117,15 @@ class Student:
         self.TeamComm_Factor.append(k)
 
     def calculateStudyComfort_Factor(self,i):
-        a = self.StudyComfort.KnowledgeGain[i]*self.StudyComfort.W[0][0]
-        b = self.StudyComfort.ProfessorStudentComm[i]*self.StudyComfort.W[0][1]
-        c = self.StudyComfort.Focus[i]*self.StudyComfort.W[0][2]
-        d = self.StudyComfort.HandleYourself[i]*self.StudyComfort.W[0][3]
-        e = self.StudyComfort.FormOfPassing[i]*self.StudyComfort.W[0][4]
+        a = self.StudyComfort.KnowledgeGain[i] * self.StudyComfort.W[0]
+        b = self.StudyComfort.ProfessorStudentComm[i]*  self.StudyComfort.W[1]
+        c = self.StudyComfort.Focus[i]*self.StudyComfort.W[2]
+        d = self.StudyComfort.HandleYourself[i]*self.StudyComfort.W[3]
+        e = self.StudyComfort.FormOfPassing[i]*self.StudyComfort.W[4]
 
-        WeightSum = self.StudyComfort.W[0][0]+self.StudyComfort.W[0][1]+self.StudyComfort.W[0][2]+self.StudyComfort.W[0][3]+self.StudyComfort.W[0][4]
+        WeightSum = self.StudyComfort.W[0]+self.StudyComfort.W[1]+self.StudyComfort.W[2]+self.StudyComfort.W[3]+self.StudyComfort.W[4]
 
-        lst = (a + b + c + d + e)  # dzielic przez sume wag czy nie?
-        S = sum(lst)
-        k = S / WeightSum
+        lst = a + b + c + d + e  # dzielic przez sume wag czy nie?
+        #S = sum(lst)
+        k = lst / WeightSum
         self.StudyComfort_Factor.append(k)

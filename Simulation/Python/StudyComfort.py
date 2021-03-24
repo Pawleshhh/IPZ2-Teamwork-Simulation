@@ -8,16 +8,16 @@ class StudyComfort:
         self.HandleYourself = []
         self.FormOfPassing = []
 
-        self.W = []
+        self.W = [1,2,3,4,5]
 
-        def weightsUpdate(self, w1, w2, w3, w4, w5):
-            k = [w1, w2, w3, w4, w5]
-            self.W.append(k)
+    def weightsUpdate(self, w1, w2, w3, w4, w5):
+        k = [w1, w2, w3, w4, w5]
+        self.W.append(k)
 
-        def ArgumentsUpdate(self, knowledgegain, professorStudentComm, focus, handleYourself, formOfPassing ):  # wariant na zdalne
-            self.KnowledgeGainappend(knowledgegain)
-            self.ProfessorStudentComm.append(professorStudentComm)
-            self.Focus.append(focus)
-            self.HandleYourself.append(handleYourself)
-            self.FormOfPassing.append(formOfPassing)
+    def ArgumentsUpdate(self, knowledgegain, professorStudentComm, focus, handleYourself, formOfPassing ):  # wariant na zdalne
+        self.KnowledgeGain.append(knowledgegain)
+        self.ProfessorStudentComm.append(professorStudentComm)
+        self.Focus.append(focus)
+        self.HandleYourself.append(handleYourself)
+        self.FormOfPassing.append(formOfPassing)
 
