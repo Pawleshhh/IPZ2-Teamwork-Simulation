@@ -13,6 +13,7 @@
     <SolidColorBrush x:Key="Tuna" Color="#373738" />
     <SolidColorBrush x:Key="Mirage" Color="#131b2b" />
     <SolidColorBrush x:Key="ShuttleGray" Color="#5c6570" />
+    <SolidColorBrush x:Key="Bismakr" Color="#527882" />
 
     <SolidColorBrush x:Key="Alto" Color="#dedede" />
     <SolidColorBrush

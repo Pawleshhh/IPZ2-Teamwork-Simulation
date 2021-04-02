@@ -37,6 +37,8 @@ namespace TeamworkSimulation.ViewModel
 
         private ObservableCollection<WorkplaceViewModel> workplaceVMs;
 
+        private int previousWorkplace = -1;
+
         #endregion
 
         #region Properties
@@ -96,24 +98,43 @@ namespace TeamworkSimulation.ViewModel
             WorkplaceViewModel workplaceViewModel = new WorkplaceViewModel(e.Value.Item2) { ParentViewModel = this };
             workplaceVMs.Add(workplaceViewModel);
             AddProjectItem(workplaceViewModel);
+
+            UpdateCurrentWorkplace();
         }
 
         private void Project_Removed(object sender, DataEventArgs<(int, IWorkplace)> e)
         {
             workplaceVMs.RemoveAt(e.Value.Item1);
             RemoveProjectItem(e.Value.Item1);
+
+            UpdateCurrentWorkplace();
         }
 
         private void Project_Cleared(object sender, EventArgs e)
         {
             workplaceVMs.Clear();
             ClearProjectItems();
+
+            UpdateCurrentWorkplace();
         }
 
         private void UpdateProperties()
         {
             CurrentWorkplace = project.CurrentWorkplace;
             OnPropertyChanged(nameof(SelectedWorkplaceVM));
+        }
+
+        private void UpdateCurrentWorkplace()
+        {
+            if (workplaceVMs.Count == 0)
+                return;
+
+            if (previousWorkplace > -1 && previousWorkplace < workplaceVMs.Count)
+                workplaceVMs[previousWorkplace].IsCurrent = false;
+
+            workplaceVMs[CurrentWorkplace].IsCurrent = true;
+
+            previousWorkplace = CurrentWorkplace;
         }
 
         #endregion
@@ -147,6 +168,8 @@ namespace TeamworkSimulation.ViewModel
             {
                 int index = workplaceVMs.IndexOf(w);
                 CurrentWorkplace = index;
+
+                UpdateCurrentWorkplace();
             }
         });
 

@@ -15,6 +15,16 @@
     </UserControl.Resources>
 
     <Grid>
+        <Grid.Style>
+            <Style TargetType="{x:Type Grid}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=workplaceTreeItemControl, Path=DataContext.IsCurrent}" Value="True">
+                        <Setter Property="Background" Value="{StaticResource Bismakr}" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+
         <Grid.ContextMenu>
             <ContextMenu>
                 <MenuItem

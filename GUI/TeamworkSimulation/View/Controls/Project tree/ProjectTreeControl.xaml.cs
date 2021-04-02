@@ -73,16 +73,16 @@ namespace TeamworkSimulation.View
             }
         }
 
-        private void TextBox_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
+        //private void TextBox_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        //{
+        //    TextBox textBox = sender as TextBox;
 
-            if (textBox.Visibility == Visibility.Visible)
-            {
-                textBox.Focus();
-                textBox.SelectAll();
-            }
-        }
+        //    if (textBox.Visibility == Visibility.Visible)
+        //    {
+        //        textBox.Focus();
+        //        textBox.SelectAll();
+        //    }
+        //}
 
         private void itemsControl_MouseDown(object sender, MouseButtonEventArgs e)
         {
