@@ -1,12 +1,16 @@
-﻿N:\Programowanie\Ogólne\Teamwork Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
-FN:\Programowanie\Ogólne\Teamwork Simulation\GUI\TeamworkSimulation\App.xaml;;
-FN:\Programowanie\Ogólne\Teamwork Simulation\GUI\TeamworkSimulation\View\Controls\ColorsComboBox.xaml;;
-FN:\Programowanie\Ogólne\Teamwork Simulation\GUI\TeamworkSimulation\View\Controls\ProjectTreeControl.xaml;;
-FN:\Programowanie\Ogólne\Teamwork Simulation\GUI\TeamworkSimulation\View\Controls\StudentControl.xaml;;
-FN:\Programowanie\Ogólne\Teamwork Simulation\GUI\TeamworkSimulation\View\Controls\TeamControl.xaml;;
-FN:\Programowanie\Ogólne\Teamwork Simulation\GUI\TeamworkSimulation\View\Controls\TeamMember.xaml;;
-FN:\Programowanie\Ogólne\Teamwork Simulation\GUI\TeamworkSimulation\View\Controls\WorkerControl.xaml;;
-FN:\Programowanie\Ogólne\Teamwork Simulation\GUI\TeamworkSimulation\View\Controls\WorkplaceControl.xaml;;
-FN:\Programowanie\Ogólne\Teamwork Simulation\GUI\TeamworkSimulation\View\Resources\DataProviders.xaml;;
-FN:\Programowanie\Ogólne\Teamwork Simulation\GUI\TeamworkSimulation\View\Windows\MainWindow.xaml;;
+﻿
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\App.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Job controls\StudentControl.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Job controls\TeamControl.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Job controls\TeamMember.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Job controls\WorkerControl.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Job controls\WorkplaceControl.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Other\ColorsComboBox.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Project tree\Project items\ProjectTreeItemControl.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Project tree\Project items\TeamMemberProjectTreeItemControl.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Project tree\Project items\TeamProjectTreeItemControl.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Project tree\Project items\WorkplaceProjectTreeItemControl.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Project tree\ProjectTreeControl.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Resources\DataProviders.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Windows\MainWindow.xaml;;
 

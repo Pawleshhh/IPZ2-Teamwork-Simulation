@@ -38,6 +38,8 @@ namespace TeamworkSimulation.ViewModel
         private readonly IWorkplace workplace;
         private readonly ObservableCollection<TeamViewModel> teamVMs;
 
+        private bool isCurrent;
+
         #endregion
 
         #region Properties
@@ -48,6 +50,12 @@ namespace TeamworkSimulation.ViewModel
         {
             get => workplace.IsRemote;
             set => SetProperty(() => workplace.IsRemote == value, () => workplace.IsRemote = value);
+        }
+
+        public bool IsCurrent
+        {
+            get => isCurrent;
+            set => SetProperty(() => isCurrent == value, () => isCurrent = value);
         }
 
         #endregion

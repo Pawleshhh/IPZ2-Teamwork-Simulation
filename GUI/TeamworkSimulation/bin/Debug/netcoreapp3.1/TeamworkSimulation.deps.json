@@ -11,6 +11,8 @@
           "Extended.Wpf.Toolkit": "4.0.1",
           "FontAwesome.WPF": "4.7.0.9",
           "Microsoft.Xaml.Behaviors.Wpf": "1.1.19",
+          "OxyPlot.Core": "2.1.0-Preview1",
+          "OxyPlot.Wpf": "2.1.0-Preview1",
           "Python.Runtime.NETStandard": "3.7.1",
           "System.Reactive": "5.0.0",
           "System.Reactive.Reference": "5.0.0.0"
@@ -93,6 +95,37 @@
           "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll": {
             "assemblyVersion": "1.1.0.0",
             "fileVersion": "1.1.19.35512"
+          }
+        }
+      },
+      "OxyPlot.Core/2.1.0-Preview1": {
+        "runtime": {
+          "lib/netstandard2.0/OxyPlot.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "OxyPlot.Wpf/2.1.0-Preview1": {
+        "dependencies": {
+          "OxyPlot.Core": "2.1.0-Preview1",
+          "OxyPlot.Wpf.Shared": "2.1.0-Preview1"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OxyPlot.Wpf.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "OxyPlot.Wpf.Shared/2.1.0-Preview1": {
+        "dependencies": {
+          "OxyPlot.Core": "2.1.0-Preview1"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OxyPlot.Wpf.Shared.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
           }
         }
       },
@@ -219,6 +252,27 @@
       "sha512": "sha512-5sPWkbqImc2t1aQwIfJcKsUo7tOg1Tr8+6xVzZJB56Nzt4u9NlpcLofgdX/aRYpPKdWDA3U23Akw1KQzU5e82g==",
       "path": "microsoft.xaml.behaviors.wpf/1.1.19",
       "hashPath": "microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512"
+    },
+    "OxyPlot.Core/2.1.0-Preview1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RHP7AXyiVXArMIkdIbhf5SbcO5iXg3UPZmzI8y5HpxQq0nHDMFMvWDcd1v/zlhUCX5/uSCDLCl1xxd1V1OWBmQ==",
+      "path": "oxyplot.core/2.1.0-preview1",
+      "hashPath": "oxyplot.core.2.1.0-preview1.nupkg.sha512"
+    },
+    "OxyPlot.Wpf/2.1.0-Preview1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gZcC6Q4U3b5UVmY6/WF7rfeV5WeMc6MEb+t6EchN9ZjTiJSejmOO9k/2G9O1tHtfFYqMMDFG2QF1magkWmksxg==",
+      "path": "oxyplot.wpf/2.1.0-preview1",
+      "hashPath": "oxyplot.wpf.2.1.0-preview1.nupkg.sha512"
+    },
+    "OxyPlot.Wpf.Shared/2.1.0-Preview1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yTmvOFnpfnjdSwhHbtXU9PksCZ1RQbZ2FX38EpNPIQ8eWaH21p472+fdq62YIjih7DViax8FmmW+QEmzDNEGKw==",
+      "path": "oxyplot.wpf.shared/2.1.0-preview1",
+      "hashPath": "oxyplot.wpf.shared.2.1.0-preview1.nupkg.sha512"
     },
     "Python.Runtime.NETStandard/3.7.1": {
       "type": "package",

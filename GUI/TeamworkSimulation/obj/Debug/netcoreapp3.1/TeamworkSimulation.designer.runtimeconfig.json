@@ -9,7 +9,7 @@
       "C:\\Users\\1\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\1\\.nuget\\packages",
       "F:\\Visual Studio 2019\\NuGetPackages",
-      "F:\\Microsoft\\Xamarin\\NuGet",
+      "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ],
     "configProperties": {

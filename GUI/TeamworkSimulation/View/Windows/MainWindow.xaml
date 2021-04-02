@@ -20,7 +20,6 @@
         <Style BasedOn="{StaticResource DefaultSubmenuItemStyle}" TargetType="{x:Type MenuItem}" />
         <Style BasedOn="{StaticResource DefaultScrollViewerStyle}" TargetType="{x:Type ScrollViewer}" />
 
-        <BooleanToVisibilityConverter x:Key="boolToVisibConv" />
     </Window.Resources>
 
     <Grid>
@@ -93,7 +92,6 @@
             Grid.Row="2"
             BorderBrush="Black"
             BorderThickness="1"
-            ChangeWorkplace="{Binding ProjectVM.ChangeCurrentWorkplace}"
             DataContext="{Binding ProjectVM}" />
         <local:WorkplaceControl
             Grid.Row="1"
