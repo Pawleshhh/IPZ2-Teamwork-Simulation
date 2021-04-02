@@ -8,7 +8,7 @@ class StudyComfort:
         self.HandleYourself = []
         self.FormOfPassing = []
 
-        self.W = [1,2,3,4,5]
+        self.W = []
 
     def weightsUpdate(self, w1, w2, w3, w4, w5):
         k = [w1, w2, w3, w4, w5]

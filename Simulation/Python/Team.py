@@ -6,7 +6,6 @@ import pandas as pd
 import numpy as np
 import ProbFunctions
 
-
 class Team:
     def __init__(self, teamMemAmount, iterationAmount, mode, Persons, mode2):  # mode zdalne lub stacjonarne
 
@@ -23,8 +22,6 @@ class Team:
         self.Team_TeamComm_Factor = []
 
         self.Team_Study_Comfort_Factor = []
-
-
 
         self.TeamWorkType = mode # zdalne1 lub stacjonarne 0
         self.TeamType = mode2 #pracownik 1 student 0
@@ -50,9 +47,12 @@ class Team:
         sumSC = 0
 
         for i in range(self.TeamMemAmount):#aktualizowanie wag do przeliczalnia tutaj
-            self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5, 6)
-            self.PersonList[i].Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)
-            self.PersonList[i].TeamEff.weightsUpdate(1, 2, 3, 4)
+            self.PersonList[i].TeamComm.weightsUpdate(1, 1, 1, 1, 1, 1)
+            self.PersonList[i].Comfort.weightsUpdate(1, 6, 1, 1, 1, 1)
+            self.PersonList[i].TeamEff.weightsUpdate(1, 1, 1, 1)
+            if(self.TeamType==0):
+                self.PersonList[i].StudyComfort.weightsUpdate(2, 2, 10, 2, 0.5)
+
 
         for i in range(self.TeamMemAmount):
             self.PersonList[i].calculateTirednessFactor(iteration)
@@ -170,8 +170,8 @@ class Team:
         for j in range(self.IterationAmount):
 
             for i in range(self.TeamMemAmount):
-                #Answers = ProbFunctions.answersSelection(self.PersonList[i].Chartable, self.TeamType)
-                Answers = ProbFunctions.A_inject(index)
+                Answers = ProbFunctions.answersSelection(self.PersonList[i].Chartable, self.TeamType)
+                #Answers = ProbFunctions.A_inject(index)
                 index = index +1
                 print("poszlo ",index)
                 if self.TeamWorkType == 0:
@@ -186,10 +186,10 @@ class Team:
                     #self.PersonList[i].Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe]
 
                 if self.TeamWorkType == 1:
-                    self.PersonList[i].Comfort.ArgumentsUpdate(Answers[16],
-                    Answers[17], Answers[18], Answers[19], Answers[20], Answers[25])
-                    self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[22], Answers[21], Answers[24], Answers[27])
-                    self.PersonList[i].TeamComm.R_ArgumentsUpdate(Answers[29], Answers[28], Answers[30], Answers[32], Answers[32], )
+                    self.PersonList[i].Comfort.ArgumentsUpdate(Answers[22],
+                    Answers[23], Answers[24], Answers[25], Answers[26], Answers[31])
+                    self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[28], Answers[27], Answers[30], Answers[33])
+                    self.PersonList[i].TeamComm.R_ArgumentsUpdate(Answers[35], Answers[34], Answers[36], Answers[46], Answers[45],Answers[47] )
                     self.PersonList[i].StudyComfort.ArgumentsUpdate(Answers[37], Answers[38], Answers[39], Answers[40],
                                                                     Answers[42])
                     #self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5)  # # [tymaczasowe] tymczasowy update wag
@@ -202,12 +202,11 @@ class Team:
         self.plotDataV2()
 
     def display(self):
-        print("tired",self.Team_Tired_Factor)
-        print("work conditions",self.Team_WorkConditions_Factor)
-        print("comfort",self.Team_Comfort_Factor)
-        print("selfimprov",self.Team_SelfImprovement_Factor)
-        print("team eff",self.Team_TeamEffectiveness_Factor)
-        print("help",self.Team_Help_Factor)
-        print("team communication",self.Team_TeamComm_Factor)
-
-        print("study comfort",self.Team_Study_Comfort_Factor)
+        print("tired: ",self.Team_Tired_Factor)
+        print("work conditions: ",self.Team_WorkConditions_Factor)
+        print("comfort: ",self.Team_Comfort_Factor)
+        print("selfimprov: ",self.Team_SelfImprovement_Factor)
+        print("team eff: ",self.Team_TeamEffectiveness_Factor)
+        print("help: ",self.Team_Help_Factor)
+        print("team communication: ",self.Team_TeamComm_Factor)
+        print("study comfort: ",self.Team_Study_Comfort_Factor)

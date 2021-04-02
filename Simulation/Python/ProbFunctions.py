@@ -13,7 +13,7 @@ def funkcja(osoby, nazwa1, nazwa2, c):
     print('os wynosi: ', all)
     wynik = pd.DataFrame(index=[1, 2, 3, 4, 5])
 
-    for a in os.columns[27:c]:
+    for a in os.columns[26:c]:
         p1 = len(os[os['' + str(a)] == 1]) / all
         p2 = len(os[os['' + str(a)] == 2]) / all
         p3 = len(os[os['' + str(a)] == 3]) / all
@@ -59,7 +59,7 @@ def answersSelection(dane,TeamType):
 
 
     #method = osoby.columns[19:26]
-    fun1 = pd.DataFrame(index=[1, 2, 3, 4, 5], columns=osoby.columns[27:c])
+    fun1 = pd.DataFrame(index=[1, 2, 3, 4, 5], columns=osoby.columns[26:c])
     fun1 = fun1.replace(np.nan, 0)  #inaczej sa same nun trzeba zamienic
     k = 0
 
@@ -80,7 +80,7 @@ def A_inject(liczba):
         engine='openpyxl',)
     tab=[]
     i=0;
-    for a in range(26,73):
+    for a in range(25,74):
         tab.append(osoby.iloc[liczba,a])
     return tab
 

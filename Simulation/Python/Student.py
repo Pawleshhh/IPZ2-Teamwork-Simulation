@@ -75,7 +75,7 @@ class Student:
         b = self.TeamEff.Engagement[i] * self.TeamEff.W[0][2]  #konflikt wagi z śrdenia zwykla?
         lst = (a + b)  # dzielic przez sume wag czy nie?
         S = lst
-        k = S / 2
+        k = S / 1 + self.TeamEff.W[0][2]
         self.SelfImprovement_Factor.append(k)
 
     def calculateTeamEffectivnessFactor(self, i):
@@ -84,7 +84,7 @@ class Student:
         c = [self.SelfImprovement_Factor[i]]
         lst = (a + b + c)  # dzielic przez sume wag czy nie?
         S = sum(lst)
-        k = S / 3
+        k = S / 1 + self.Comfort.W[0][0] + self.Comfort.W[0][3]
         self.TeamEffectiveness_Factor.append(k)
 
 
@@ -103,13 +103,17 @@ class Student:
         b = self.TeamComm.ConflictsFreq[i] * self.TeamComm.W[0][4]
 
 
+
         if switch == 0:
             lst = (a + b)
             S = lst
-            k = S / 2
+            k = S / 1 + self.TeamComm.W[0][4]
 
         if switch == 1:
-            c = self.TeamComm.RemoteComm[i] * self.TeamComm.W[0][3]
+            WeightSum = self.TeamComm.W[0][3] + self.TeamComm.W[0][4] + self.TeamComm.W[0][5]
+            c = self.TeamComm.R_ComQuality[i] * self.TeamComm.W[0][3]
+            d = self.TeamComm.R_ComQuality[i] * self.TeamComm.W[0][4]
+            e = self.TeamComm.R_ComQuality[i] * self.TeamComm.W[0][5]
             lst = a + b + c
             S = lst
             k = S / 3
@@ -117,13 +121,13 @@ class Student:
         self.TeamComm_Factor.append(k)
 
     def calculateStudyComfort_Factor(self,i):
-        a = self.StudyComfort.KnowledgeGain[i] * self.StudyComfort.W[0]
-        b = self.StudyComfort.ProfessorStudentComm[i]*  self.StudyComfort.W[1]
-        c = self.StudyComfort.Focus[i]*self.StudyComfort.W[2]
-        d = self.StudyComfort.HandleYourself[i]*self.StudyComfort.W[3]
-        e = self.StudyComfort.FormOfPassing[i]*self.StudyComfort.W[4]
+        a = self.StudyComfort.KnowledgeGain[i] * self.StudyComfort.W[0][0]
+        b = self.StudyComfort.ProfessorStudentComm[i] *  self.StudyComfort.W[0][1]
+        c = self.StudyComfort.Focus[i]*self.StudyComfort.W[0][2]
+        d = self.StudyComfort.HandleYourself[i]*self.StudyComfort.W[0][3]
+        e = self.StudyComfort.FormOfPassing[i]*self.StudyComfort.W[0][4]
 
-        WeightSum = self.StudyComfort.W[0]+self.StudyComfort.W[1]+self.StudyComfort.W[2]+self.StudyComfort.W[3]+self.StudyComfort.W[4]
+        WeightSum = self.StudyComfort.W[0][0]+self.StudyComfort.W[0][1]+self.StudyComfort.W[0][2]+self.StudyComfort.W[0][3]+self.StudyComfort.W[0][4]
 
         lst = a + b + c + d + e  # dzielic przez sume wag czy nie?
         #S = sum(lst)
