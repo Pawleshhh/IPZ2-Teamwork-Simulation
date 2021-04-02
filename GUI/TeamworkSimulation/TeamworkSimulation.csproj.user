@@ -7,42 +7,36 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="View\Controls\ColorsComboBox.xaml.cs">
+    <Compile Update="View\Controls\Other\ColorsComboBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Controls\ProjectTreeControl.xaml.cs">
+    <Compile Update="View\Controls\Project tree\Project items\ProjectTreeItemControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Controls\StudentControl.xaml.cs">
+    <Compile Update="View\Controls\Project tree\Project items\TeamMemberProjectTreeItemControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Controls\TeamControl.xaml.cs">
+    <Compile Update="View\Controls\Project tree\Project items\TeamProjectTreeItemControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Controls\WorkerControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\Controls\WorkplaceControl.xaml.cs">
+    <Compile Update="View\Controls\Project tree\Project items\WorkplaceProjectTreeItemControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="View\Controls\ColorsComboBox.xaml">
+    <Page Update="View\Controls\Other\ColorsComboBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Controls\ProjectTreeControl.xaml">
+    <Page Update="View\Controls\Project tree\Project items\ProjectTreeItemControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Controls\StudentControl.xaml">
+    <Page Update="View\Controls\Project tree\Project items\TeamMemberProjectTreeItemControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Controls\TeamControl.xaml">
+    <Page Update="View\Controls\Project tree\Project items\TeamProjectTreeItemControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Controls\WorkerControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\Controls\WorkplaceControl.xaml">
+    <Page Update="View\Controls\Project tree\Project items\WorkplaceProjectTreeItemControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Resources\AppColors.xaml">

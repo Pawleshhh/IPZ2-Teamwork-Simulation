@@ -36,14 +36,24 @@ namespace TeamworkSimulation.View
             InitializeComponent();
         }
 
-        private static ProjectTreeContextMenuSelector contextMenuSelector = new ProjectTreeContextMenuSelector();
+        //private static ProjectTreeContextMenuSelector contextMenuSelector = new ProjectTreeContextMenuSelector();
+        //private static ProjectTreeItemSelector projectTreeItemSelector = new ProjectTreeItemSelector();
 
-        private void itemsControl_Initialized(object sender, EventArgs e)
-        {
-            ItemsControl itemsControl = sender as ItemsControl;
+        //private void itemsControl_Initialized(object sender, EventArgs e)
+        //{
+        //    //ItemsControl itemsControl = sender as ItemsControl;
 
-            itemsControl.ContextMenu = contextMenuSelector.SelectContextMenu(itemsControl.DataContext, this);
-        }
+        //    //itemsControl.ContextMenu = contextMenuSelector.SelectContextMenu(itemsControl.DataContext, this);
+        //    //var t = projectTreeItemSelector.SelectTemplate(itemsControl.DataContext, this);
+        //    //itemsControl.ItemTemplate = t;
+        //}
+
+        //private void treeItemContentControl_Initialized(object sender, EventArgs e)
+        //{
+        //    //ContentControl contentControl = sender as ContentControl;
+
+        //    //contentControl.ContentTemplate = projectTreeItemSelector.SelectTemplate(contentControl.DataContext, this);
+        //}
 
         private void ImageAwesome_Initialized(object sender, EventArgs e)
         {
