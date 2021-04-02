@@ -75,6 +75,15 @@ def answersSelection(dane,TeamType):
     print(randarray)
     return randarray
 
+def A_inject(liczba):
+    osoby = pd.read_excel(os.path.join('D:\ZUT\semestr5\Projekt_inżynier\IPZ_ABM', "ABM", "studenci.xlsx"),
+        engine='openpyxl',)
+    tab=[]
+    i=0;
+    for a in range(26,73):
+        tab.append(osoby.iloc[liczba,a])
+    return tab
+
 
 # co się kryje pod kazdym elementem randarray
 # STACJONARNE

@@ -22,6 +22,9 @@ class Team:
         self.Team_Help_Factor = []
         self.Team_TeamComm_Factor = []
 
+        self.Team_Study_Comfort_Factor = []
+
+
 
         self.TeamWorkType = mode # zdalne1 lub stacjonarne 0
         self.TeamType = mode2 #pracownik 1 student 0
@@ -44,6 +47,7 @@ class Team:
         sumTE = 0
         sumH = 0
         sumTC = 0
+        sumSC = 0
 
         for i in range(self.TeamMemAmount):#aktualizowanie wag do przeliczalnia tutaj
             self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5, 6)
@@ -59,6 +63,9 @@ class Team:
             self.PersonList[i].calculateHelpFactor(iteration)
             self.PersonList[i].calculateTeamCommunicationFactor(iteration, remoteSwitch)
 
+            self.PersonList[i].calculateStudyComfort_Factor(iteration)
+
+
             sumT = sumT + self.PersonList[i].Tired_Factor[iteration]
             sumWC = sumWC + self.PersonList[i].WorkConditions_Factor[iteration]
             sumC = sumC + self.PersonList[i].Comfort_Factor[iteration]
@@ -66,6 +73,7 @@ class Team:
             sumTE = sumTE + self.PersonList[i].TeamEffectiveness_Factor[iteration]
             sumH = sumH + self.PersonList[i].Help_Factor[iteration]
             sumTC = sumTC + self.PersonList[i].TeamComm_Factor[iteration]
+            sumSC = sumSC + self.PersonList[i].StudyComfort_Factor[iteration]
 
         self.Team_Tired_Factor.append(sumT / self.TeamMemAmount)
         self.Team_WorkConditions_Factor.append(sumWC / self.TeamMemAmount)
@@ -74,6 +82,8 @@ class Team:
         self.Team_TeamEffectiveness_Factor.append(sumTE / self.TeamMemAmount)
         self.Team_Help_Factor.append(sumH / self.TeamMemAmount)
         self.Team_TeamComm_Factor.append(sumTC / self.TeamMemAmount)
+
+        self.Team_Study_Comfort_Factor.append(sumSC/self.TeamMemAmount)
 
     def plotData(self):  # to idzie  do team
         names = ['Tired_Factor', 'WorkConditions_Factor', 'Comfort_Factor', 'SelfImprovement_Factor', ]
@@ -106,6 +116,10 @@ class Team:
         plt.plot(np.arange(len(self.Team_TeamComm_Factor)), self.Team_TeamComm_Factor)
         plt.title('TeamComm_Factor')
 
+        plt.figure(8)
+        plt.plot(np.arange(len(self.Team_Study_Comfort_Factor)), self.Team_Study_Comfort_Factor)
+        plt.title('Team_Study_Comfort_Factor')
+
         plt.show()
 
     def plotDataV2(self):  # to idzie  do team
@@ -133,6 +147,12 @@ class Team:
         axs[2, 2].set_title('TeamComm_Factor')
         axs[2, 2].plot(np.arange(len(self.Team_TeamComm_Factor)), self.Team_TeamComm_Factor)
 
+        axs[2, 2].set_title('TeamComm_Factor')
+        axs[2, 2].plot(np.arange(len(self.Team_TeamComm_Factor)), self.Team_TeamComm_Factor)
+
+        axs[1, 1].set_title('Team_Study_Comfort_Factor')
+        axs[1, 1].plot(np.arange(len(self.Team_Study_Comfort_Factor)), self.Team_Study_Comfort_Factor)
+
         #subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=None)
 
         left = 0.125  # the left side of the subplots of the figure
@@ -146,16 +166,20 @@ class Team:
         plt.show()
 
     def Iteration(self):
-
+        index=0
         for j in range(self.IterationAmount):
 
             for i in range(self.TeamMemAmount):
-                Answers = ProbFunctions.answersSelection(self.PersonList[i].Chartable, self.TeamType)
+                #Answers = ProbFunctions.answersSelection(self.PersonList[i].Chartable, self.TeamType)
+                Answers = ProbFunctions.A_inject(index)
+                index = index +1
+                print("poszlo ",index)
                 if self.TeamWorkType == 0:
                     self.PersonList[i].Comfort.ArgumentsUpdate(Answers[0],
                     Answers[1], Answers[2], Answers[3], Answers[4], Answers[9])
                     self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[6], Answers[5], Answers[8], Answers[11])
                     self.PersonList[i].TeamComm.ArgumentsUpdate(Answers[13], Answers[12], Answers[14])
+                    self.PersonList[i].StudyComfort.ArgumentsUpdate(Answers[15],Answers[16],Answers[17],Answers[18],Answers[20])
 
                     #self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe] tymczasowy update wag
                     #self.PersonList[i].TeamEff.weightsUpdate(1, 2, 3, 4)  # [tymaczasowe]
@@ -166,7 +190,8 @@ class Team:
                     Answers[17], Answers[18], Answers[19], Answers[20], Answers[25])
                     self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[22], Answers[21], Answers[24], Answers[27])
                     self.PersonList[i].TeamComm.R_ArgumentsUpdate(Answers[29], Answers[28], Answers[30], Answers[32], Answers[32], )
-
+                    self.PersonList[i].StudyComfort.ArgumentsUpdate(Answers[37], Answers[38], Answers[39], Answers[40],
+                                                                    Answers[42])
                     #self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5)  # # [tymaczasowe] tymczasowy update wag
                     #self.PersonList[i].TeamEff.weightsUpdate(1, 2, 3, 4)  # [tymaczasowe]
                     #self.PersonList[i].Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe]
@@ -175,3 +200,14 @@ class Team:
 
         #self.plotData()
         self.plotDataV2()
+
+    def display(self):
+        print("tired",self.Team_Tired_Factor)
+        print("work conditions",self.Team_WorkConditions_Factor)
+        print("comfort",self.Team_Comfort_Factor)
+        print("selfimprov",self.Team_SelfImprovement_Factor)
+        print("team eff",self.Team_TeamEffectiveness_Factor)
+        print("help",self.Team_Help_Factor)
+        print("team communication",self.Team_TeamComm_Factor)
+
+        print("study comfort",self.Team_Study_Comfort_Factor)

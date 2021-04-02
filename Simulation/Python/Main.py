@@ -7,14 +7,14 @@ import xlrd
 
 def ReadPerson(TeamArgs):
     Persons = []
-    for i in range(1, len(TeamArgs)):
+    for i in range(1, len(TeamArgs)):#zapisz wszytkie sosoby od 1 do max osob
         Persons.append(TeamArgs[i])
 
     return Persons
 
 def ReadTeam(TeamArgs):
     TeamMemeberAmount = len(TeamArgs) - 1
-    TeamType = TeamArgs[0][0]
+    TeamType = TeamArgs[0][0]#pierwsza kolumna
     TeamWorkType = TeamArgs[0][1]
     IterationNumber = TeamArgs[0][2]
 
@@ -117,9 +117,6 @@ def StartSimluation(Arg):
     #Person2 = [2, 3, 4, 3, 2, 2, 2]# pracownicy  1)plec 1-2 2)wiek 1-4 3)dziedizna 1-5 4) stanowisko 1-7 5)ile w firmie 1-4 6) ile w brazny 1-5 7) 1-4 osobowsc
     #Person3 = [1, 3, 3, 4, 1, 1, 1]
 
-
-
-
     #Person1 = [1, 1, 1, 1, 1, 1]
     #Person2 = [1, 6, 3, 3, 1, 1]
     #Person3 = [1, 7, 4, 2, 1, 4]
@@ -129,8 +126,8 @@ def StartSimluation(Arg):
 
     #Persons = [Person1, Person2, Person3]
 
-    IterationNumber = 3
-    TeamMemeberAmount = 3
+    IterationNumber = 1
+    TeamMemeberAmount = 744
     TeamType = 0# zdalne1 lub stacjonarne 0
     TeamWorkType = 0#pracownik 1 student 0
 
@@ -147,16 +144,18 @@ def StartSimluation(Arg):
 
     Arg1 = []
     Arg1.append([TeamType, TeamWorkType, IterationNumber])
-    Arg1.append(Person1)
-    Arg1.append(Person2)
-    Arg1.append(Person3)
+
+    for i in range(0,3):
+        Arg1.append(Person1)
+    #Arg1.append(Person2)
+    #Arg1.append(Person3)
 
     T2 = ReadTeam(Arg1)
     T2.Iteration()
+    T2.display()
 
 
-
-
-
+#745
 StartSimluation(1)
+
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
