@@ -61,7 +61,7 @@ namespace TeamworkSimulation.Model
         public IReadOnlyList<IWorkplace> Workplaces => workplaces;
 
         [DataMember]
-        public int CurrentWorkplace { get; set; }
+        public int CurrentWorkplace { get; set; } = -1;
 
         [DataMember]
         public WorkplaceTemplateBuilder WorkplaceTemplateBuilder { get; private set; }
@@ -79,6 +79,8 @@ namespace TeamworkSimulation.Model
             workplaces.Add(workplace);
             SubscribeProjectItem(workplace);
 
+            CurrentWorkplace = workplaces.Count - 1;
+
             OnAdded(workplaces.Count - 1, workplace);
         }
         public void RemoveWorkplace(IWorkplace workplace)
@@ -95,6 +97,12 @@ namespace TeamworkSimulation.Model
             workplaces.RemoveAt(index);
             UnsubscribeProjectItem(workplace);
 
+            int workplaceCount = workplaces.Count;
+            if (workplaceCount == 0)
+                CurrentWorkplace = -1;
+            else if (CurrentWorkplace >= workplaceCount)
+                CurrentWorkplace = workplaceCount - 1;
+
             OnRemoved(index, workplace);
         }
         public void ClearWorkplaces()
@@ -103,6 +111,8 @@ namespace TeamworkSimulation.Model
                 UnsubscribeProjectItem(item);
 
             workplaces.Clear();
+            CurrentWorkplace = -1;
+
             OnClear();
         }
 

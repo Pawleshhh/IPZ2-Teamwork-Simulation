@@ -76,23 +76,19 @@ namespace TeamworkSimulation.ViewModel
         public void Add()
         {
             project.AddWorkplace();
-
-            CurrentWorkplace = workplaceVMs.Count - 1;
-            OnPropertyChanged(nameof(SelectedWorkplaceVM));
+            UpdateProperties();
         }
 
         public void Remove(int index)
         {
             project.RemoveWorkplaceAt(index);
-
-            if(workplaceVMs.Count == 0)
-                OnPropertyChanged(nameof(SelectedWorkplaceVM));
+            UpdateProperties();
         }
 
         public void Clear()
         {
             project.ClearWorkplaces();
-            OnPropertyChanged(nameof(SelectedWorkplaceVM));
+            UpdateProperties();
         }
 
         private void Project_Added(object sender, DataEventArgs<(int, IWorkplace)> e)
@@ -112,6 +108,12 @@ namespace TeamworkSimulation.ViewModel
         {
             workplaceVMs.Clear();
             ClearProjectItems();
+        }
+
+        private void UpdateProperties()
+        {
+            CurrentWorkplace = project.CurrentWorkplace;
+            OnPropertyChanged(nameof(SelectedWorkplaceVM));
         }
 
         #endregion
