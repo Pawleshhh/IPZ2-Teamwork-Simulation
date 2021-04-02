@@ -27,6 +27,8 @@
             <view:GenderConverter x:Key="genderConverter" />
             <wpft:ColorToSolidColorBrushConverter x:Key="colorToSolidBrush" />
             <view:DefaultToNullExtension x:Key="defaultToNullExt" />
+            <view:InvertedBooleanToVisibilityConverter x:Key="invBoolToVisibConv" />
+            <BooleanToVisibilityConverter x:Key="boolToVisibConv" />
         </ResourceDictionary>
 
 

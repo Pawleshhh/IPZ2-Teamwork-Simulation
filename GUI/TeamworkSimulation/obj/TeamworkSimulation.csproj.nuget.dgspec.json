@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "N:\\Programowanie\\Ogólne\\Teamwork Simulation\\GUI\\TeamworkSimulation\\TeamworkSimulation.csproj": {}
+    "N:\\Programowanie\\Ogólne\\IPZ2-Teamwork-Simulation\\GUI\\TeamworkSimulation\\TeamworkSimulation.csproj": {}
   },
   "projects": {
-    "N:\\Programowanie\\Ogólne\\Teamwork Simulation\\GUI\\TeamworkSimulation\\TeamworkSimulation.csproj": {
+    "N:\\Programowanie\\Ogólne\\IPZ2-Teamwork-Simulation\\GUI\\TeamworkSimulation\\TeamworkSimulation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "N:\\Programowanie\\Ogólne\\Teamwork Simulation\\GUI\\TeamworkSimulation\\TeamworkSimulation.csproj",
+        "projectUniqueName": "N:\\Programowanie\\Ogólne\\IPZ2-Teamwork-Simulation\\GUI\\TeamworkSimulation\\TeamworkSimulation.csproj",
         "projectName": "TeamworkSimulation",
-        "projectPath": "N:\\Programowanie\\Ogólne\\Teamwork Simulation\\GUI\\TeamworkSimulation\\TeamworkSimulation.csproj",
+        "projectPath": "N:\\Programowanie\\Ogólne\\IPZ2-Teamwork-Simulation\\GUI\\TeamworkSimulation\\TeamworkSimulation.csproj",
         "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
-        "outputPath": "N:\\Programowanie\\Ogólne\\Teamwork Simulation\\GUI\\TeamworkSimulation\\obj\\",
+        "outputPath": "N:\\Programowanie\\Ogólne\\IPZ2-Teamwork-Simulation\\GUI\\TeamworkSimulation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "F:\\Visual Studio 2019\\NuGetPackages",
@@ -57,6 +57,14 @@
             "Microsoft.Xaml.Behaviors.Wpf": {
               "target": "Package",
               "version": "[1.1.19, )"
+            },
+            "OxyPlot.Core": {
+              "target": "Package",
+              "version": "[2.1.0-Preview1, )"
+            },
+            "OxyPlot.Wpf": {
+              "target": "Package",
+              "version": "[2.1.0-Preview1, )"
             },
             "Python.Runtime.NETStandard": {
               "target": "Package",

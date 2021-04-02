@@ -93,6 +93,46 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "OxyPlot.Core/2.1.0-Preview1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/OxyPlot.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OxyPlot.dll": {}
+        }
+      },
+      "OxyPlot.Wpf/2.1.0-Preview1": {
+        "type": "package",
+        "dependencies": {
+          "OxyPlot.Core": "2.1.0-Preview1",
+          "OxyPlot.Wpf.Shared": "2.1.0-Preview1"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/OxyPlot.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OxyPlot.Wpf.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "OxyPlot.Wpf.Shared/2.1.0-Preview1": {
+        "type": "package",
+        "dependencies": {
+          "OxyPlot.Core": "2.1.0-Preview1"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/OxyPlot.Wpf.Shared.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OxyPlot.Wpf.Shared.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Python.Runtime.NETStandard/3.7.1": {
         "type": "package",
         "dependencies": {
@@ -319,6 +359,62 @@
         "microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
         "microsoft.xaml.behaviors.wpf.nuspec",
         "tools/Install.ps1"
+      ]
+    },
+    "OxyPlot.Core/2.1.0-Preview1": {
+      "sha512": "RHP7AXyiVXArMIkdIbhf5SbcO5iXg3UPZmzI8y5HpxQq0nHDMFMvWDcd1v/zlhUCX5/uSCDLCl1xxd1V1OWBmQ==",
+      "type": "package",
+      "path": "oxyplot.core/2.1.0-preview1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "OxyPlot_128.png",
+        "lib/net40/OxyPlot.dll",
+        "lib/net40/OxyPlot.xml",
+        "lib/net45/OxyPlot.dll",
+        "lib/net45/OxyPlot.xml",
+        "lib/netstandard1.0/OxyPlot.dll",
+        "lib/netstandard1.0/OxyPlot.xml",
+        "lib/netstandard2.0/OxyPlot.dll",
+        "lib/netstandard2.0/OxyPlot.xml",
+        "oxyplot.core.2.1.0-preview1.nupkg.sha512",
+        "oxyplot.core.nuspec"
+      ]
+    },
+    "OxyPlot.Wpf/2.1.0-Preview1": {
+      "sha512": "gZcC6Q4U3b5UVmY6/WF7rfeV5WeMc6MEb+t6EchN9ZjTiJSejmOO9k/2G9O1tHtfFYqMMDFG2QF1magkWmksxg==",
+      "type": "package",
+      "path": "oxyplot.wpf/2.1.0-preview1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "OxyPlot_128.png",
+        "lib/net40/OxyPlot.Wpf.dll",
+        "lib/net40/OxyPlot.Wpf.xml",
+        "lib/net45/OxyPlot.Wpf.dll",
+        "lib/net45/OxyPlot.Wpf.xml",
+        "lib/netcoreapp3.1/OxyPlot.Wpf.dll",
+        "lib/netcoreapp3.1/OxyPlot.Wpf.xml",
+        "oxyplot.wpf.2.1.0-preview1.nupkg.sha512",
+        "oxyplot.wpf.nuspec"
+      ]
+    },
+    "OxyPlot.Wpf.Shared/2.1.0-Preview1": {
+      "sha512": "yTmvOFnpfnjdSwhHbtXU9PksCZ1RQbZ2FX38EpNPIQ8eWaH21p472+fdq62YIjih7DViax8FmmW+QEmzDNEGKw==",
+      "type": "package",
+      "path": "oxyplot.wpf.shared/2.1.0-preview1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "OxyPlot_128.png",
+        "lib/net40/OxyPlot.Wpf.Shared.dll",
+        "lib/net40/OxyPlot.Wpf.Shared.xml",
+        "lib/net45/OxyPlot.Wpf.Shared.dll",
+        "lib/net45/OxyPlot.Wpf.Shared.xml",
+        "lib/netcoreapp3.1/OxyPlot.Wpf.Shared.dll",
+        "lib/netcoreapp3.1/OxyPlot.Wpf.Shared.xml",
+        "oxyplot.wpf.shared.2.1.0-preview1.nupkg.sha512",
+        "oxyplot.wpf.shared.nuspec"
       ]
     },
     "Python.Runtime.NETStandard/3.7.1": {
@@ -890,6 +986,8 @@
       "Extended.Wpf.Toolkit >= 4.0.1",
       "FontAwesome.WPF >= 4.7.0.9",
       "Microsoft.Xaml.Behaviors.Wpf >= 1.1.19",
+      "OxyPlot.Core >= 2.1.0-Preview1",
+      "OxyPlot.Wpf >= 2.1.0-Preview1",
       "Python.Runtime.NETStandard >= 3.7.1",
       "System.Reactive >= 5.0.0"
     ]
@@ -903,11 +1001,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "N:\\Programowanie\\Ogólne\\Teamwork Simulation\\GUI\\TeamworkSimulation\\TeamworkSimulation.csproj",
+      "projectUniqueName": "N:\\Programowanie\\Ogólne\\IPZ2-Teamwork-Simulation\\GUI\\TeamworkSimulation\\TeamworkSimulation.csproj",
       "projectName": "TeamworkSimulation",
-      "projectPath": "N:\\Programowanie\\Ogólne\\Teamwork Simulation\\GUI\\TeamworkSimulation\\TeamworkSimulation.csproj",
+      "projectPath": "N:\\Programowanie\\Ogólne\\IPZ2-Teamwork-Simulation\\GUI\\TeamworkSimulation\\TeamworkSimulation.csproj",
       "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
-      "outputPath": "N:\\Programowanie\\Ogólne\\Teamwork Simulation\\GUI\\TeamworkSimulation\\obj\\",
+      "outputPath": "N:\\Programowanie\\Ogólne\\IPZ2-Teamwork-Simulation\\GUI\\TeamworkSimulation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "F:\\Visual Studio 2019\\NuGetPackages",
@@ -953,6 +1051,14 @@
           "Microsoft.Xaml.Behaviors.Wpf": {
             "target": "Package",
             "version": "[1.1.19, )"
+          },
+          "OxyPlot.Core": {
+            "target": "Package",
+            "version": "[2.1.0-Preview1, )"
+          },
+          "OxyPlot.Wpf": {
+            "target": "Package",
+            "version": "[2.1.0-Preview1, )"
           },
           "Python.Runtime.NETStandard": {
             "target": "Package",
