@@ -21,15 +21,15 @@ namespace TeamworkSimulation.View
     public partial class ProjectTreeControl : UserControl
     {
 
-        public ICommand ChangeWorkplace
-        {
-            get { return (ICommand)GetValue(ChangeWorkplaceProperty); }
-            set { SetValue(ChangeWorkplaceProperty, value); }
-        }
+        //public ICommand ChangeWorkplace
+        //{
+        //    get { return (ICommand)GetValue(ChangeWorkplaceProperty); }
+        //    set { SetValue(ChangeWorkplaceProperty, value); }
+        //}
 
-        // Using a DependencyProperty as the backing store for ChangeWorkplace.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty ChangeWorkplaceProperty =
-            DependencyProperty.Register("ChangeWorkplace", typeof(ICommand), typeof(ProjectTreeControl), null);
+        //// Using a DependencyProperty as the backing store for ChangeWorkplace.  This enables animation, styling, binding, etc...
+        //public static readonly DependencyProperty ChangeWorkplaceProperty =
+        //    DependencyProperty.Register("ChangeWorkplace", typeof(ICommand), typeof(ProjectTreeControl), null);
 
         public ProjectTreeControl()
         {

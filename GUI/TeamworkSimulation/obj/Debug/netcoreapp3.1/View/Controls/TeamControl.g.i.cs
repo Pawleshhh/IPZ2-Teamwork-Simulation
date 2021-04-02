@@ -102,7 +102,7 @@ namespace TeamworkSimulation.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TeamworkSimulation;V1.0.0.0;component/view/controls/teamcontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TeamworkSimulation;component/view/controls/teamcontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\Controls\TeamControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

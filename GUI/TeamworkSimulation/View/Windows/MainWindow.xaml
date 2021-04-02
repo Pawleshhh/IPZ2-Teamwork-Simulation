@@ -92,14 +92,12 @@
             Grid.Row="2"
             BorderBrush="Black"
             BorderThickness="1"
-            ChangeWorkplace="{Binding ProjectVM.ChangeCurrentWorkplace}"
             DataContext="{Binding ProjectVM}" />
         <local:WorkplaceControl
             Grid.Row="1"
             Grid.RowSpan="2"
             Grid.Column="1"
             BorderBrush="Black"
-            DataContext="{Binding ProjectVM.SelectedWorkplaceVM}"
-            Visibility="{Binding IsPlotViewVisible, Converter={StaticResource invBoolToVisibConv}}" />
+            DataContext="{Binding ProjectVM.SelectedWorkplaceVM}" />
     </Grid>
 </Window>

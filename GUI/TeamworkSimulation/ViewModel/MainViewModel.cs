@@ -27,7 +27,7 @@ namespace TeamworkSimulation.ViewModel
 
         private readonly TeamworkSimulationManager manager;
 
-        private bool isPlotViewVisible;
+        //private bool isPlotViewVisible;
 
         #endregion
 
@@ -37,11 +37,11 @@ namespace TeamworkSimulation.ViewModel
 
         public bool IsWorking => manager.SimulationDirector.IsWorking;
 
-        public bool IsPlotViewVisible
-        {
-            get => isPlotViewVisible;
-            set => SetProperty(() => isPlotViewVisible == value, () => isPlotViewVisible = value);
-        }
+        //public bool IsPlotViewVisible
+        //{
+        //    get => isPlotViewVisible;
+        //    set => SetProperty(() => isPlotViewVisible == value, () => isPlotViewVisible = value);
+        //}
 
         #endregion
 
