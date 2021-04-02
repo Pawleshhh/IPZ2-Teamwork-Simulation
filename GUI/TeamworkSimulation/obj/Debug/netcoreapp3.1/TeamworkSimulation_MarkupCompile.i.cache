@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\App.xaml
-17-1688684994
+17-1350167225
 
-102-703288388
+102843349984
 211-781555538
-View\Controls\ColorsComboBox.xaml;View\Controls\ProjectTreeControl.xaml;View\Controls\StudentControl.xaml;View\Controls\TeamControl.xaml;View\Controls\TeamMember.xaml;View\Controls\WorkerControl.xaml;View\Controls\WorkplaceControl.xaml;View\Resources\AppColors.xaml;View\Resources\ButtonStyles.xaml;View\Resources\ComboBoxStyles.xaml;View\Resources\DataProviders.xaml;View\Resources\MenuStyles.xaml;View\Resources\ScrollStyles.xaml;View\Resources\TextBoxStyles.xaml;View\Resources\TreeViewStyles.xaml;View\Resources\UpDownControlsStyles.xaml;View\Windows\MainWindow.xaml;
+View\Controls\Job controls\StudentControl.xaml;View\Controls\Job controls\TeamControl.xaml;View\Controls\Job controls\TeamMember.xaml;View\Controls\Job controls\WorkerControl.xaml;View\Controls\Job controls\WorkplaceControl.xaml;View\Controls\Other\ColorsComboBox.xaml;View\Controls\Project tree\ProjectTreeControl.xaml;View\Resources\AppColors.xaml;View\Resources\ButtonStyles.xaml;View\Resources\ComboBoxStyles.xaml;View\Resources\DataProviders.xaml;View\Resources\MenuStyles.xaml;View\Resources\ScrollStyles.xaml;View\Resources\TextBoxStyles.xaml;View\Resources\TreeViewStyles.xaml;View\Resources\UpDownControlsStyles.xaml;View\Windows\MainWindow.xaml;
 
 False
 
