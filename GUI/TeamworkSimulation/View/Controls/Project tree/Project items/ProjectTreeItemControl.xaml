@@ -38,6 +38,9 @@
                     <i:KeyTrigger Key="Return">
                         <i:InvokeCommandAction Command="{Binding RenameOff}" />
                     </i:KeyTrigger>
+                    <i:EventTrigger EventName="LostFocus">
+                        <i:InvokeCommandAction Command="{Binding RenameOff}" />
+                    </i:EventTrigger>
                 </i:Interaction.Triggers>
             </TextBox>
         </StackPanel>
