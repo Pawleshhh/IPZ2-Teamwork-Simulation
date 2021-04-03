@@ -67,6 +67,11 @@ namespace TeamworkSimulation.ViewModel
             workplace.AddTeam();
         }
 
+        protected void Copy(int index)
+        {
+            workplace.CopyTeam(index);
+        }
+
         protected void Remove(int index)
         {
             workplace.RemoveTeamAt(index);
@@ -80,7 +85,7 @@ namespace TeamworkSimulation.ViewModel
         private void Workplace_Added(object sender, DataEventArgs<(int, ITeam)> e)
         {
             TeamViewModel teamVM = new TeamViewModel(e.Value.Item2) { ParentViewModel = this };
-            teamVMs.Add(teamVM);
+            teamVMs.Insert(e.Value.Item1, teamVM);
             AddProjectItem(teamVM);
         }
 
@@ -103,6 +108,19 @@ namespace TeamworkSimulation.ViewModel
         private ICommand addTeam;
 
         public ICommand AddTeam => RelayCommand.Create(ref addTeam, o => Add());
+
+        private ICommand copyTeam;
+
+        public ICommand CopyTeam => RelayCommand.Create(ref copyTeam, o =>
+        {
+            if (o is TeamViewModel t)
+            {
+                int index = teamVMs.IndexOf(t);
+                if (index == -1)
+                    return;
+                Copy(index);
+            }
+        });
 
         private ICommand removeTeam;
 

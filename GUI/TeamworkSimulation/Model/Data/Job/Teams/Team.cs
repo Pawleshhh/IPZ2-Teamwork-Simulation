@@ -71,13 +71,21 @@ namespace TeamworkSimulation.Model
         public void AddTeamMember()
             => AddTeamMember(new T());
         public void CopyTeamMember(int index)
-            => AddTeamMember((T)teamMembers[index].Copy());
-        public void AddTeamMember(T teamMember)
         {
-            teamMembers.Add(teamMember);
+            var teamMember = (T)teamMembers[index].Copy();
+            teamMember.Color.SelectedColor = teamMembers[index].Color.SelectedColor;
+
+            AddTeamMember(teamMember, index + 1);
+        }
+        public void AddTeamMember(T teamMember, int index = -1)
+        {
+            if (index == -1)
+                teamMembers.Add(teamMember);
+            else
+                teamMembers.Insert(index, teamMember);
             SubscribeProjectItem(teamMember);
 
-            OnAdded(teamMembers.Count - 1, teamMember);
+            OnAdded(index > -1 ? index : teamMembers.Count - 1, teamMember);
         }
         public void RemoveTeamMember(T teamMember)
         {
