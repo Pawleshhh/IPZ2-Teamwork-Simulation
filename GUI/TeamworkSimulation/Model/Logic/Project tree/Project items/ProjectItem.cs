@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Xml;
@@ -67,6 +68,20 @@ namespace TeamworkSimulation.Model
             foreach (var item in GetProjectItems())
                 item.Color.SelectedColor = Color.SelectedColor;
         }
+
+        //protected void SetName(IProjectItem projectItem)
+        //{
+        //    int num = 0;
+        //    string name = projectItem.ItemName;
+        //    foreach (var item in GetProjectItems())
+        //    {
+        //        if (!ReferenceEquals(item, projectItem) && item.ItemName.Equals(projectItem.ItemName))
+        //            name = string.Concat(projectItem.ItemName, ++num);
+        //    }
+
+        //    if (num > 0)
+        //        projectItem.ItemName = name;
+        //}
 
         protected virtual void OnProjectItemChanged(ProjectItemChanged e) { }
 

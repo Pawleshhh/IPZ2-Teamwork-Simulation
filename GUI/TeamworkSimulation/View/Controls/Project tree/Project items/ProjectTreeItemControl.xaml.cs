@@ -65,5 +65,15 @@ namespace TeamworkSimulation.View
                 textBox.SelectAll();
             }
         }
+
+        private void Grid_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DependencyObject source = Parent;
+            while (source != null && !(source is TreeViewItem))
+                source = VisualTreeHelper.GetParent(source);
+
+            if (source != null)
+                ((TreeViewItem)source).Focus();
+        }
     }
 }
