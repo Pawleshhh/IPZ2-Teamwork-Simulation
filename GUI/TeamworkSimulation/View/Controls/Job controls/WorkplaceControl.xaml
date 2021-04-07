@@ -45,7 +45,7 @@
                 Width="40"
                 Height="40"
                 Command="{Binding RemoveTeam}"
-                CommandParameter="{Binding ElementName=teamsList, Path=SelectedItem}">
+                CommandParameter="{Binding ElementName=teamsList, Path=SelectedItems}">
                 <Button.ToolTip>
                     <TextBlock Text="Remove selected team" />
                 </Button.ToolTip>
@@ -113,7 +113,8 @@
             BorderBrush="Black"
             BorderThickness="0,1,0,0"
             ItemsSource="{Binding TeamVMs}"
-            ScrollViewer.CanContentScroll="False">
+            ScrollViewer.CanContentScroll="False"
+            SelectionMode="Multiple">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel
