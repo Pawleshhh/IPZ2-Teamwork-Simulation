@@ -6,6 +6,7 @@
     xmlns:fa="http://schemas.fontawesome.io/icons/"
     xmlns:local="clr-namespace:TeamworkSimulation.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="mainWindow"
     Title="MainWindow"
     Width="800"
     Height="400"
@@ -98,6 +99,7 @@
             Grid.RowSpan="2"
             Grid.Column="1"
             BorderBrush="Black"
-            DataContext="{Binding ProjectVM.SelectedWorkplaceVM}" />
+            DataContext="{Binding ProjectVM.SelectedWorkplaceVM}"
+            Visibility="{Binding ElementName=mainWindow, Path=DataContext.ProjectVM.AnyWorkplaceExists, Converter={StaticResource boolToVisibConv}}" />
     </Grid>
 </Window>
