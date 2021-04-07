@@ -28,6 +28,8 @@
             <Setter Property="Margin" Value="5,0,5,0" />
         </Style>
 
+        <Style BasedOn="{StaticResource DefaultButtonStyle}" TargetType="{x:Type Button}" />
+
     </UserControl.Resources>
 
     <Border
@@ -43,8 +45,21 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1.5*" />
                 <ColumnDefinition Width="2.5*" />
-                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="5.5*" />
+                <ColumnDefinition Width="0.5*" />
             </Grid.ColumnDefinitions>
+
+            <Button
+                Grid.Row="0"
+                Grid.Column="3"
+                Width="20"
+                Height="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Command="{Binding ParentViewModel.CopyTeamMember}"
+                CommandParameter="{Binding}">
+                <fa:ImageAwesome Icon="Copy" />
+            </Button>
 
             <StackPanel VerticalAlignment="Center" Orientation="Vertical">
                 <TextBlock Text="Gender" />

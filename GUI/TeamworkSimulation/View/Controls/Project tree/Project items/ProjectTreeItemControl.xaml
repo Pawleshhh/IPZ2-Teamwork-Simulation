@@ -11,7 +11,7 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid>
+    <Grid MouseRightButtonDown="Grid_MouseRightButtonDown">
         <StackPanel Orientation="Horizontal">
             <StackPanel.Resources>
                 <Style TargetType="{x:Type fa:ImageAwesome}">
@@ -38,6 +38,9 @@
                     <i:KeyTrigger Key="Return">
                         <i:InvokeCommandAction Command="{Binding RenameOff}" />
                     </i:KeyTrigger>
+                    <i:EventTrigger EventName="LostFocus">
+                        <i:InvokeCommandAction Command="{Binding RenameOff}" />
+                    </i:EventTrigger>
                 </i:Interaction.Triggers>
             </TextBox>
         </StackPanel>
