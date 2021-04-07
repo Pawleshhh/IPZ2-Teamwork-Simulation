@@ -122,7 +122,7 @@ def StartSimluation(Arg):
     IterationNumber = 1
     TeamMemeberAmount = 50
     TeamType = 0#pracownik 1 student 0
-    TeamWorkType = 1# zdalne1 lub stacjonarne 0
+    TeamWorkType = 0# zdalne1 lub stacjonarne 0
 
     #print('test 10.1  tablica tablic : ', Persons[0][2])
 

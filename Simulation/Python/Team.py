@@ -47,11 +47,19 @@ class Team:
         sumSC = 0
 
         for i in range(self.TeamMemAmount):#aktualizowanie wag do przeliczalnia tutaj
-            self.PersonList[i].TeamComm.weightsUpdate(1, 1, 1, 1, 1, 1)
-            self.PersonList[i].Comfort.weightsUpdate(1, 6, 1, 1, 1, 1)
-            self.PersonList[i].TeamEff.weightsUpdate(1, 1, 1, 1)
-            if(self.TeamType==0):
-                self.PersonList[i].StudyComfort.weightsUpdate(2, 2, 10, 2, 0.5)
+            if(self.TeamWorkType==1):#kalibracja dla zdalnych
+                self.PersonList[i].TeamComm.weightsUpdate(1, 1, 1, 1, 0.75, 1)
+                self.PersonList[i].Comfort.weightsUpdate(1, 7, 1, 0.5, 1, 1)
+                self.PersonList[i].TeamEff.weightsUpdate(1, 1, 1.2, 1)
+                if(self.TeamType==0):
+                    self.PersonList[i].StudyComfort.weightsUpdate(2, 2, 10, 2, 0.5)
+
+            if(self.TeamWorkType==0):#kalibracja dla stacjonarnych
+                self.PersonList[i].TeamComm.weightsUpdate(0.2, 0.2, 0.2, 0.2,0.2, 0.2)
+                self.PersonList[i].Comfort.weightsUpdate(1, 0.9, 1, 1, 1, 1)
+                self.PersonList[i].TeamEff.weightsUpdate(0.05, 1.2, 0.1, 0.05)
+                if(self.TeamType==0):
+                    self.PersonList[i].StudyComfort.weightsUpdate(2, 2, 10, 2, 0.5)
 
 
         for i in range(self.TeamMemAmount):

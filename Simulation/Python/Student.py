@@ -79,12 +79,12 @@ class Student:
         self.SelfImprovement_Factor.append(k)
 
     def calculateTeamEffectivnessFactor(self, i):
-        a = [self.TeamEff.ProjectComp[i] * self.Comfort.W[0][0]]
-        b = [self.TeamEff.Coordination[i] * self.Comfort.W[0][3]]
+        a = [self.TeamEff.ProjectComp[i] * self.TeamEff.W[0][0]]
+        b = [self.TeamEff.Coordination[i] * self.TeamEff.W[0][3]]
         c = [self.SelfImprovement_Factor[i]]
         lst = (a + b + c)  # dzielic przez sume wag czy nie?
         S = sum(lst)
-        k = S / 1 + self.Comfort.W[0][0] + self.Comfort.W[0][3]
+        k = S / 1 + self.TeamEff.W[0][0] + self.TeamEff.W[0][3]
         self.TeamEffectiveness_Factor.append(k)
 
 
