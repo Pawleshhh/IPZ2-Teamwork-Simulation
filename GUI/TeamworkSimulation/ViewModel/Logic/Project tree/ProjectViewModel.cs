@@ -62,9 +62,11 @@ namespace TeamworkSimulation.ViewModel
             set
             {
                 if(SetProperty(() => project.CurrentWorkplace == value, () => project.CurrentWorkplace = value))
-                    OnPropertyChanged(nameof(SelectedWorkplaceVM));
+                    OnPropertyChanged(nameof(SelectedWorkplaceVM), nameof(AnyWorkplaceExists));
             }
         }
+
+        public bool AnyWorkplaceExists => SelectedWorkplaceVM != null;
 
         public WorkplaceViewModel SelectedWorkplaceVM
             => workplaceVMs.Count > 0 ? WorkplaceVMs[CurrentWorkplace] : null;
@@ -121,7 +123,7 @@ namespace TeamworkSimulation.ViewModel
         private void UpdateProperties()
         {
             CurrentWorkplace = project.CurrentWorkplace;
-            OnPropertyChanged(nameof(SelectedWorkplaceVM));
+            OnPropertyChanged(nameof(SelectedWorkplaceVM), nameof(AnyWorkplaceExists));
         }
 
         private void UpdateCurrentWorkplace()

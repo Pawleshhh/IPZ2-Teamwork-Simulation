@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -132,6 +133,20 @@ namespace TeamworkSimulation.ViewModel
                 if (index == -1)
                     return;
                 Remove(index);
+            }
+            else if (o is IList list)
+            {
+                var teams = list.Cast<TeamViewModel>().ToArray();
+
+                for (int i = 0; i < teams.Length; i++)
+                {
+                    int index = teamVMs.IndexOf(teams[i]);
+                    if (index == -1)
+                        continue;
+
+                    Remove(index);
+                    i--;
+                }
             }
         });
 

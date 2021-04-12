@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -115,13 +116,27 @@ namespace TeamworkSimulation.ViewModel
 
         public ICommand RemoveTeamMember => RelayCommand.Create(ref removeTeamMember, o =>
         {
-            if(o is TeamMemberViewModel tm)
+            if (o is TeamMemberViewModel tm)
             {
                 int index = teamMemberVMs.IndexOf(tm);
                 if (index == -1)
                     return;
 
                 Remove(index);
+            }
+            else if (o is IList list)
+            {
+                var teamMembers = list.Cast<TeamMemberViewModel>().ToArray();
+
+                for(int i = 0; i < teamMembers.Length; i++)
+                {
+                    int index = teamMemberVMs.IndexOf(teamMembers[i]);
+                    if (index == -1)
+                        continue;
+
+                    Remove(index);
+                    i--;
+                }
             }
         });
 
