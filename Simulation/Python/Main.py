@@ -45,14 +45,14 @@ def StartSimluation(Arg):
     #  a = pd.DataFrame()
     #P1 = Worker('M', '30-40', 'IT', 'Specjalist', '2', '3-5 years', 'introvert')
 
-    #Person1 = [1, 1, 2, 3, 4, 4, 1]#studenci 1)plec 1-2 2)kierunek 1-7 3)rok 1-5 4)stopien 1-4 5)stacjonarnie nie stacjonarnie 1-2 6)osobowosc
+    Person1 = [1, 1, 1, 1, 1, 1]#studenci 1)plec 1-2 2)kierunek 1-7 3)rok 1-5 4)stopien 1-4 5)stacjonarnie nie stacjonarnie 1-2 6)osobowosc
     #Person2 = [2, 3, 4, 3, 2, 2, 2]# pracownicy  1)plec 1-2 2)wiek 1-4 3)dziedizna 1-5 4) stanowisko 1-7 5)ile w firmie 1-4 6) ile w brazny 1-5 7) 1-4 osobowsc
     #Person3 = [1, 3, 3, 4, 1, 1, 1]
 
     #Persons = [Person1, Person2, Person3]
 
     IterationNumber = 1
-    TeamMemeberAmount = 50
+    TeamMemeberAmount = 10
     TeamType = 0#pracownik 1 student 0
     TeamWorkType = 0# zdalne1 lub stacjonarne 0
 
@@ -70,12 +70,12 @@ def StartSimluation(Arg):
     Arg1 = []
     Arg1.append([TeamType, TeamWorkType, IterationNumber])
 
-   #for i in range(0,743):
-        #Arg1.append(P1)
+    for i in range(0,10):
+        Arg1.append(Person1)
     #Arg1.append(Person2)
     #Arg1.append(Person3)
 
-    T2 = ReadTeam(Arg)
+    T2 = ReadTeam(Arg1)
     T2.Iteration()
     T2.display()
 
