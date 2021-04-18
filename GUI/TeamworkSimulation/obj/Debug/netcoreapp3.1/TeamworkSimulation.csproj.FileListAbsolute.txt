@@ -207,3 +207,82 @@ N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Deb
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\TeamProjectTreeItemControl.baml
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\TeamMemberProjectTreeItemControl.g.cs
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\TeamMemberProjectTreeItemControl.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\TeamworkSimulation.exe
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\TeamworkSimulation.deps.json
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\TeamworkSimulation.runtimeconfig.json
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\TeamworkSimulation.runtimeconfig.dev.json
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\TeamworkSimulation.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\TeamworkSimulation.pdb
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\Xceed.Wpf.Toolkit.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\FontAwesome.WPF.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\Microsoft.Xaml.Behaviors.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\OxyPlot.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\OxyPlot.Wpf.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\OxyPlot.Wpf.Shared.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\Python.Runtime.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\System.Reactive.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\System.Reactive.xml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.csprojAssemblyReference.cache
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Resources\AppColors.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Resources\ButtonStyles.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Resources\ComboBoxStyles.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Resources\MenuStyles.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Resources\ScrollStyles.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Resources\TextBoxStyles.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Resources\TreeViewStyles.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Resources\UpDownControlsStyles.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\Model\Logic\Plots\Plots.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Job controls\StudentControl.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Job controls\TeamControl.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Job controls\TeamMember.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Job controls\WorkerControl.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Job controls\WorkplaceControl.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Other\ColorsComboBox.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\ProjectTreeItemControl.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\TeamMemberProjectTreeItemControl.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\TeamProjectTreeItemControl.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\WorkplaceProjectTreeItemControl.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\ProjectTreeControl.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Windows\MainWindow.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation_MarkupCompile.cache
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation_MarkupCompile.lref
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\Model\Logic\Plots\Plots.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Job controls\StudentControl.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Job controls\TeamControl.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Job controls\TeamMember.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Job controls\WorkerControl.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Job controls\WorkplaceControl.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Other\ColorsComboBox.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\ProjectTreeItemControl.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\TeamMemberProjectTreeItemControl.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\TeamProjectTreeItemControl.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\WorkplaceProjectTreeItemControl.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\ProjectTreeControl.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Resources\DataProviders.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Windows\MainWindow.baml
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.g.resources
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.AssemblyInfoInputs.cache
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.AssemblyInfo.cs
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.csproj.CoreCompileInputs.cache
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.csproj.CopyComplete
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.dll
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.pdb
+C:\Users\Karik\Source\Repos\Pawleshhh\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.genruntimeconfig.cache
