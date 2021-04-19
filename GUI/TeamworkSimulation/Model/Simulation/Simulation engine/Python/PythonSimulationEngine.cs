@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Python.Runtime;
@@ -13,17 +14,26 @@ namespace TeamworkSimulation.Model.Simulation
         #region Constructors
         public PythonSimulationEngine()
         {
-            //string pythonPath = @"C:\Program Files\Python39";
+            string pythonPath = @"C:\Program Files\Python37";
 
-            //Environment.SetEnvironmentVariable("PATH", $@"{pythonPath};" + Environment.GetEnvironmentVariable("PATH"));
-            //Environment.SetEnvironmentVariable("PYTHONHOME", pythonPath);
+            Environment.SetEnvironmentVariable("PATH", $@"{pythonPath};" + Environment.GetEnvironmentVariable("PATH"));
+            Environment.SetEnvironmentVariable("PYTHONHOME", pythonPath);
 
-            //Environment.SetEnvironmentVariable("PYTHONPATH ", $@"{pythonPath}\..\Lib;{pythonPath}\..\Lib\site-packages;");
+            Environment.SetEnvironmentVariable("PYTHONPATH ", $@"{pythonPath}\..\Lib;{pythonPath}\..\Lib\site-packages;");
 
-            //PythonEngine.PythonHome = Environment.GetEnvironmentVariable("PYTHONHOME", EnvironmentVariableTarget.Process);
+            PythonEngine.PythonHome = Environment.GetEnvironmentVariable("PYTHONHOME", EnvironmentVariableTarget.Process);
+            PythonEngine.PythonPath = Environment.GetEnvironmentVariable("PYTHONPATH", EnvironmentVariableTarget.Process);
+
+            //var pathToVirtualEnv = @"C:\ProgramData\Miniconda3";
+            ////var pathToVirtualEnv = @"C:\Users\1\AppData\Local\Programs\Python\Python37";
+            ////var pathToVirtualEnv = @"C:\Program Files\Python39";
+
+            //Environment.SetEnvironmentVariable("PATH", pathToVirtualEnv, EnvironmentVariableTarget.Process);
+            //Environment.SetEnvironmentVariable("PYTHONHOME", pathToVirtualEnv, EnvironmentVariableTarget.Process);
+            //Environment.SetEnvironmentVariable("PYTHONPATH", $"{pathToVirtualEnv}\\Lib\\site-packages;{pathToVirtualEnv}\\Lib", EnvironmentVariableTarget.Process);
+
+            //PythonEngine.PythonHome = pathToVirtualEnv;
             //PythonEngine.PythonPath = Environment.GetEnvironmentVariable("PYTHONPATH", EnvironmentVariableTarget.Process);
-
-
         }
         #endregion
 
@@ -42,19 +52,15 @@ namespace TeamworkSimulation.Model.Simulation
         {
             using (Py.GIL())
             {
-                if (!PythonEngine.IsInitialized)
-                {
-                    PythonEngine.Initialize();
-                    st = PythonEngine.BeginAllowThreads();
-                }
-
                 dynamic module = PythonEngine.ImportModule("csTest");
-                action(module);
+
+                module.StartSimluation(1);
             }
 
-            //PythonEngine.ReleaseLock(gs);
-            //PythonEngine.EndAllowThreads(st);
-            //PythonEngine.Shutdown();
+            //using (Py.GIL())
+            //{
+            //    dynamic module = PythonEngine.ImportModule("numpy");
+            //}
         }
 
         public override T WorkOnSimulation<T>(Func<dynamic, T> func)

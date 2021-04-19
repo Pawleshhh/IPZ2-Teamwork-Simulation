@@ -207,3 +207,10 @@ N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Deb
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\TeamProjectTreeItemControl.baml
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\TeamMemberProjectTreeItemControl.g.cs
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Project tree\Project items\TeamMemberProjectTreeItemControl.baml
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\Microsoft.Dynamic.dll
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\Microsoft.Scripting.Metadata.dll
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\Microsoft.Scripting.dll
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\IronPython.Modules.dll
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\IronPython.SQLite.dll
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\IronPython.Wpf.dll
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\IronPython.dll
