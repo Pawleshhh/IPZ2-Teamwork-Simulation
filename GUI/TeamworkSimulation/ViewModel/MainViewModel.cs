@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using TeamworkSimulation.Model;
+using TeamworkSimulation.ViewModel;
 
 namespace TeamworkSimulation.ViewModel
 {
@@ -11,7 +12,7 @@ namespace TeamworkSimulation.ViewModel
 
         #region Constructors
 
-        public MainViewModel(TeamworkSimulationManager manager)
+        public MainViewModel(TeamworkSimulationManager manager, IOpenView simulationResultsView)
         {
             this.manager = manager;
             manager.CreateNewProject();
@@ -19,6 +20,8 @@ namespace TeamworkSimulation.ViewModel
 
             manager.SimulationDirector.Started += SimulationDirector_IsWorkingChanged;
             manager.SimulationDirector.Stopped += SimulationDirector_IsWorkingChanged;
+
+            this.simulationResultsView = simulationResultsView;
         }
 
         #endregion
@@ -27,7 +30,9 @@ namespace TeamworkSimulation.ViewModel
 
         private readonly TeamworkSimulationManager manager;
 
-        //private bool isPlotViewVisible;
+        private readonly IOpenView simulationResultsView;
+
+        private SimulationResultsViewModel simulationResultsVM;
 
         #endregion
 
@@ -37,18 +42,19 @@ namespace TeamworkSimulation.ViewModel
 
         public bool IsWorking => manager.SimulationDirector.IsWorking;
 
-        //public bool IsPlotViewVisible
-        //{
-        //    get => isPlotViewVisible;
-        //    set => SetProperty(() => isPlotViewVisible == value, () => isPlotViewVisible = value);
-        //}
-
         #endregion
 
         #region Methods
 
         private void SimulationDirector_IsWorkingChanged(object sender, EventArgs e)
         {
+            if (!IsWorking)
+            {
+                simulationResultsVM = new SimulationResultsViewModel(manager.SimulationDirector.SimulationResults, null);
+
+                simulationResultsView.OpenView(simulationResultsVM);
+            }
+
             OnPropertyChanged(nameof(IsWorking));
         }
 

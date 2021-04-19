@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TeamworkSimulation.View.Windows;
+using TeamworkSimulation.View;
 
 namespace TeamworkSimulation.View
 {
@@ -21,28 +21,9 @@ namespace TeamworkSimulation.View
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        private SimulationResultsWindow simulationWidnow;
-
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            simulationWidnow = new SimulationResultsWindow(
-                new List<double[]>() { new double[] { 1, 2, 3 } },
-                new List<double[]>() { new double[] { 1, 2, 3 } },
-                new List<double[]>() { new double[] { 1, 2, 3 } },
-                new List<double[]>() { new double[] { 1, 2, 3 } },
-                new List<double[]>() { new double[] { 1, 2, 3 } },
-                new List<double[]>() { new double[] { 1, 2, 3 } },
-                new List<double[]>() { new double[] { 1, 2, 3 } },
-                new List<double[]>() { new double[] { 1, 2, 3 } },
-                new List<double[]>() { new double[] { 1, 2, 3 } });
-
-            simulationWidnow.Show();
         }
     }
 }

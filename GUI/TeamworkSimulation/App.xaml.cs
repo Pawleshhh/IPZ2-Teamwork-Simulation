@@ -39,7 +39,7 @@ namespace TeamworkSimulation
             //project.AddWorkplace();
             //window.DataContext = projectVM;
             manager = new TeamworkSimulationManager(new WindowsServicesFactory());
-            window.DataContext = new MainViewModel(manager);
+            window.DataContext = new MainViewModel(manager, new OpenSimulationResultsWindow());
 
             MainWindow = window;
             window.Closing += Window_Closing;

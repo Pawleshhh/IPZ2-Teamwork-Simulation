@@ -38,8 +38,6 @@ namespace TeamworkSimulation.Model
         public Project Project { get; private set; } = new Project();
         public SimulationDirector SimulationDirector { get; }
 
-
-
         #endregion
 
         #region Methods

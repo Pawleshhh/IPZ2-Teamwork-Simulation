@@ -21,6 +21,8 @@ namespace TeamworkSimulation.Model.Simulation
 
         #region Properties
 
+        public SimulationResults SimulationResults { get; private set; }
+
         public SimulationEngine Engine { get; }
 
         public bool IsWorking { get; private set; }
@@ -51,7 +53,20 @@ namespace TeamworkSimulation.Model.Simulation
             var attributes = GetAllAttributes(root);
 
             OnStarted();
+
             await BeginSimulation(attributes);
+
+            SimulationResults = new SimulationResults(
+                new List<double[]>() { new double[] { 1, 1 }, new double[] { 2, 2 }, new double[] { 3, 3 } },
+                new List<double[]>() { new double[] { 1, 1 }, new double[] { 2, 2 }, new double[] { 3, 3 } },
+                new List<double[]>() { new double[] { 1, 1 }, new double[] { 2, 2 }, new double[] { 3, 3 } },
+                new List<double[]>() { new double[] { 1, 1 }, new double[] { 2, 2 }, new double[] { 3, 3 } },
+                new List<double[]>() { new double[] { 1, 1 }, new double[] { 2, 2 }, new double[] { 3, 3 } },
+                new List<double[]>() { new double[] { 1, 1 }, new double[] { 2, 2 }, new double[] { 3, 3 } },
+                new List<double[]>() { new double[] { 1, 1 }, new double[] { 2, 2 }, new double[] { 3, 3 } },
+                new List<double[]>() { new double[] { 1, 1 }, new double[] { 2, 2 }, new double[] { 3, 3 } },
+                new List<double[]>() { new double[] { 1, 1 }, new double[] { 2, 2 }, new double[] { 3, 3 } });
+
             OnStopped();
         }
 
