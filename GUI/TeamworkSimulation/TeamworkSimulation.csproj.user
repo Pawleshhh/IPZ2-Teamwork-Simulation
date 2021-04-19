@@ -22,6 +22,9 @@
     <Compile Update="View\Controls\Project tree\Project items\WorkplaceProjectTreeItemControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Windows\SimulationResultsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="View\Controls\Other\ColorsComboBox.xaml">
@@ -67,6 +70,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Windows\SimulationResultsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

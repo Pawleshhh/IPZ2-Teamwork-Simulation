@@ -214,3 +214,5 @@ N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Deb
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\IronPython.SQLite.dll
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\IronPython.Wpf.dll
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\IronPython.dll
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Windows\SimulationResultsWindow.g.cs
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Windows\SimulationResultsWindow.baml
