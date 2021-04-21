@@ -40,7 +40,7 @@ def ReadParemeters(Arg):
 
 
 # Press the green button in the gutter to run the script.
-def StartSimluation(Arg):
+def StartSimulation(Arg):
     #  print_hi('PyCharm')
     #  a = pd.DataFrame()
     #P1 = Worker('M', '30-40', 'IT', 'Specjalist', '2', '3-5 years', 'introvert')
@@ -51,7 +51,7 @@ def StartSimluation(Arg):
 
     #Persons = [Person1, Person2, Person3]
 
-    IterationNumber = 1
+    IterationNumber = 5
     TeamMemeberAmount = 10
     TeamType = 0#pracownik 1 student 0
     TeamWorkType = 0# zdalne1 lub stacjonarne 0
@@ -79,11 +79,115 @@ def StartSimluation(Arg):
     T2.Iteration()
     T2.display()
 
+    ListMain = []
+
+    Team_Tired_F = []
+    Team_WorkConditions_F = []
+    Team_Comfort_F = []
+    Team_SelfImprovement_F = []
+    Team_TeamEffectiveness_F = []
+    Team_Help_F = []
+    Team_Help_F = []
+    Team_TeamComm_F = []
+
+    TT1 = []
+    TT2 = []
+    Team_Tired_F.append(TT1)
+    Team_Tired_F.append(TT2)
+
+    TW1 = []
+    TW2 = []
+    Team_WorkConditions_F.append(TW1)
+    Team_WorkConditions_F.append(TW2)
+
+    TC1 = []
+    TC2 = []
+    Team_Comfort_F.append(TC1)
+    Team_Comfort_F.append(TC2)
+
+    TS1 = []
+    TS2 = []
+    Team_SelfImprovement_F.append(TS1)
+    Team_SelfImprovement_F.append(TS2)
+
+    TT1 = []
+    TT2 = []
+    Team_TeamEffectiveness_F.append(TT1)
+    Team_TeamEffectiveness_F.append(TT2)
+
+    TH1 = []
+    TH2 = []
+    Team_Help_F.append(TH1)
+    Team_Help_F.append(TH2)
+
+
+    TTC1 = []
+    TTC2 = []
+    Team_TeamComm_F.append(TTC1)
+    Team_TeamComm_F.append(TTC2)
+
+    TSC1 = []
+    TSC2 = []
+    Team_Study_Comfort_F.append(TSC1)
+    Team_Study_Comfort_F.append(TSC2)
+
+
+    ox = list(range(0, T2.IterationAmount))
+    print('test arange:', ox)
+
+    for i in range (0,len(T2.Team_Tired_Factor)):
+        Team_Tired_F[0].append(ox[i])#1
+        Team_Tired_F[1].append(T2.Team_Tired_Factor[i])#2
+
+        Team_WorkConditions_F[0].append(ox[i])
+        Team_WorkConditions_F[1].append(T2.Team_WorkConditions_Factor[i])
+
+        Team_Comfort_F[0].append(ox[i])
+        Team_Comfort_F[1].append(T2.Team_Tired_Factor[i])
+
+        Team_SelfImprovement_F[0].append(ox[i])
+        Team_SelfImprovement_F[1].append(T2.Team_SelfImprovement_Factor[i])
+
+        Team_TeamEffectiveness_F[0].append(ox[i])
+        Team_TeamEffectiveness_F.append(T2.Team_TeamEffectiveness_Factor[i])
+
+        Team_Help_F.append[0].append(ox[i])
+        Team_Help_F.append(TH2).append(T2.Team_Help_Factor[i])
+
+        Team_TeamComm_F.append(ox[i])
+        Team_TeamComm_F.append(T2.Team_TeamComm_Factor[i])
+
+        Team_Study_Comfort_F.append(ox[i])
+        Team_Study_Comfort_F.append(T2.Team_Comfort_Factor[i])
+
+    ListMain.append(Team_Tired_F)
+    ListMain.append(Team_WorkConditions_F)
+    ListMain.append(Team_Comfort_F)
+    ListMain.append(Team_SelfImprovement_F)
+    ListMain.append(Team_TeamEffectiveness_F)
+    ListMain.append(Team_Help_F)
+    ListMain.append(Team_TeamComm_F)
+    ListMain.append(Team_Study_Comfort_F)
+
+    return ListMain
+
+
+     
+        
+        
+    
+    
+    
+    
+    #8 argumentow
+    
+    
+    
 
 
 
 
 #745
-StartSimluation(1)
+StartSimulation(1)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

@@ -178,8 +178,10 @@ class Team:
         for j in range(self.IterationAmount):
 
             for i in range(self.TeamMemAmount):
-                Answers = ProbFunctions.answersSelection(self.PersonList[i].Chartable, self.TeamType)
+                #Answers = ProbFunctions.answersSelection(self.PersonList[i].Chartable, self.TeamType)
                 #Answers = ProbFunctions.A_inject(index)
+                Answers = np.linspace(0,43,42)
+
                 index = index +1
                 print("poszlo ",index)
                 if self.TeamWorkType == 0:
