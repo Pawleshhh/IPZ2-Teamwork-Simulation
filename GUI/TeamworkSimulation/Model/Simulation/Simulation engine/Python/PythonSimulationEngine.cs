@@ -53,8 +53,9 @@ namespace TeamworkSimulation.Model.Simulation
             using (Py.GIL())
             {
                 dynamic module = PythonEngine.ImportModule("csTest");
+                dynamic result = module.StartSimulation(1);
 
-                module.StartSimluation(1);
+                var list = (double[][][])result;
             }
 
             //using (Py.GIL())
@@ -67,7 +68,7 @@ namespace TeamworkSimulation.Model.Simulation
         {
             using(Py.GIL())
             {
-                dynamic module = Py.Import("csTest");
+                dynamic module = PythonEngine.ImportModule("csTest");
                 return func(module);
             }
         }
@@ -77,7 +78,7 @@ namespace TeamworkSimulation.Model.Simulation
             return Task.Run(() => WorkOnSimulation(action));
         }
         public override Task<T> WorkOnSimulationAsync<T>(Func<dynamic, T> func)
-            => Task.Run(() => WorkOnSimulationAsync(func));
+            => Task.Run(() => WorkOnSimulation(func));
 
         public override void Dispose()
         {

@@ -98,16 +98,29 @@ namespace TeamworkSimulation.ViewModel
             List<DataPoint> output = new List<DataPoint>();
             try
             {
-                foreach (double[] i in inputData)
+
+                var xs = inputData[0]; //tablica z x
+                var ys = inputData[1]; //tablica z y
+
+                if (xs.Length != ys.Length)
+                    throw new InvalidOperationException();
+
+                for(int i = 0; i < xs.Length; i++)
                 {
-
-                    output.Add(new DataPoint(i[0], i[1]));
-
+                    output.Add(new DataPoint(xs[i], ys[i]));
                 }
+
+
+                //foreach (double[] i in inputData)
+                //{
+
+                //    output.Add(new DataPoint(i[0], i[1]));
+
+                //}
             }
             catch (Exception e)
             {
-                throw new Exception("Data wasn't converted correctly, werify type of inputData: " + e.Message);
+                throw new Exception("Data wasn't converted correctly, verify type of inputData: " + e.Message);
             }
             return output;
         }

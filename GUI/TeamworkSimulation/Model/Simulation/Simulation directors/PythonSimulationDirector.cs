@@ -19,6 +19,16 @@ namespace TeamworkSimulation.Model.Simulation
             });
         }
 
+        protected override Task<T> BeginSimulation<T>(List<int[]> attributes)
+        {
+            return Engine.WorkOnSimulationAsync(m =>
+            {
+                dynamic result = m.StartSimulation(1);
+
+                return (T)result;
+            });
+        }
+
         protected override SimulationEngine CreateEngine()
             => new PythonSimulationEngine();
 
