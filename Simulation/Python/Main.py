@@ -51,7 +51,7 @@ def StartSimulation(Arg):
 
     #Persons = [Person1, Person2, Person3]
 
-    IterationNumber = 1
+    IterationNumber = 3
     TeamMemeberAmount = 10
     TeamType = 0#pracownik 1 student 0
     TeamWorkType = 0# zdalne1 lub stacjonarne 0
