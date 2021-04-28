@@ -2,7 +2,9 @@
 using OxyPlot.Series;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 using TeamworkSimulation.Model;
 
 namespace TeamworkSimulation.ViewModel
@@ -16,15 +18,14 @@ namespace TeamworkSimulation.ViewModel
             this.simulationResults = simulationResults;
             ParentViewModel = parent;
 
-            model1 = new PlotModel { Title = "Tierd_Factor" };
-            model2 = new PlotModel { Title = "WorkConditions_Factor" };
-            model3 = new PlotModel { Title = "TeamEffictiveness_Factor" };
-            model4 = new PlotModel { Title = "Comfort_Factor" };
-            model5 = new PlotModel { Title = "Team_Study_Comfort_Factor" };
-            model6 = new PlotModel { Title = "Help_Factor" };
-            model7 = new PlotModel { Title = "SelfImprovement_Factor" };
-            model8 = new PlotModel { Title = " " };
-            model9 = new PlotModel { Title = "TeamCom_Factor" };
+            var model1 = new PlotModel { Title = "Tierd_Factor" };
+            var model2 = new PlotModel { Title = "WorkConditions_Factor" };
+            var model3 = new PlotModel { Title = "TeamEffictiveness_Factor" };
+            var model4 = new PlotModel { Title = "Comfort_Factor" };
+            var model5 = new PlotModel { Title = "Team_Study_Comfort_Factor" };
+            var model6 = new PlotModel { Title = "Help_Factor" };
+            var model7 = new PlotModel { Title = "SelfImprovement_Factor" };
+            var model8 = new PlotModel { Title = "TeamCom_Factor" };
 
             generatePlot(model1, simulationResults.Data1, "test", "test", "test", PlotType.linear);
             generatePlot(model2, simulationResults.Data2, "test", "test", "test", PlotType.linear);
@@ -34,7 +35,15 @@ namespace TeamworkSimulation.ViewModel
             generatePlot(model6, simulationResults.Data6, "test", "test", "test", PlotType.linear);
             generatePlot(model7, simulationResults.Data7, "test", "test", "test", PlotType.linear);
             generatePlot(model8, simulationResults.Data8, "test", "test", "test", PlotType.linear);
-            generatePlot(model9, simulationResults.Data9, "test", "test", "test", PlotType.linear);
+            //generatePlot(model9, simulationResults.Data9, "test", "test", "test", PlotType.linear);
+
+
+            plotModels = new ObservableCollection<PlotModel>() { model1, model2, model3,
+                                                                 model4, model5, model6,
+                                                                 model7, model8 };
+            PlotModels = new ReadOnlyObservableCollection<PlotModel>(plotModels);
+
+            CurrentPlot = PlotModels[0];
         }
         #endregion
 
@@ -42,21 +51,27 @@ namespace TeamworkSimulation.ViewModel
 
         private readonly SimulationResults simulationResults;
 
+        private readonly ObservableCollection<PlotModel> plotModels;
+
         #endregion
 
         #region Properties
 
         public IViewModel ParentViewModel { get; set; }
 
-        public PlotModel model1 { get; set; }
-        public PlotModel model2 { get; set; }
-        public PlotModel model3 { get; set; }
-        public PlotModel model4 { get; set; }
-        public PlotModel model5 { get; set; }
-        public PlotModel model6 { get; set; }
-        public PlotModel model7 { get; set; }
-        public PlotModel model8 { get; set; }
-        public PlotModel model9 { get; set; }
+        public ReadOnlyObservableCollection<PlotModel> PlotModels { get; }
+
+        public PlotModel CurrentPlot { get; private set; }
+
+        //public PlotModel model1 { get; set; }
+        //public PlotModel model2 { get; set; }
+        //public PlotModel model3 { get; set; }
+        //public PlotModel model4 { get; set; }
+        //public PlotModel model5 { get; set; }
+        //public PlotModel model6 { get; set; }
+        //public PlotModel model7 { get; set; }
+        //public PlotModel model8 { get; set; }
+        //public PlotModel model9 { get; set; }
 
         #endregion
 
@@ -154,6 +169,25 @@ namespace TeamworkSimulation.ViewModel
             }
             return null;
         }
+
+        private void SelectPlotModel(PlotModel plt)
+        {
+            CurrentPlot = plt;
+            OnPropertyChanged(nameof(CurrentPlot));
+        }
+        #endregion
+
+        #region Commands
+
+        private ICommand selectPlot;
+
+        public ICommand SelectPlot => RelayCommand.Create(ref selectPlot, o =>
+        {
+            if(o is PlotModel plt)
+            {
+                SelectPlotModel(plt);
+            }
+        });
 
         #endregion
 

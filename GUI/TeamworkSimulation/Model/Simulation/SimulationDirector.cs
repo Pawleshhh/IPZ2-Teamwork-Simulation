@@ -76,8 +76,7 @@ namespace TeamworkSimulation.Model.Simulation
                 result[4],
                 result[5],
                 result[6],
-                result[7],
-                result[8]);
+                result[7]);
             //SimulationResults = new SimulationResults(
             //    new List<double[]> { new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, new double[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 } },
             //    new List<double[]> { new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, new double[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 } },

@@ -10,6 +10,9 @@
     <Compile Update="View\Controls\Other\ColorsComboBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Controls\Plots\SimulationResultsControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Controls\Project tree\Project items\ProjectTreeItemControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="View\Controls\Other\ColorsComboBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Controls\Plots\SimulationResultsControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Controls\Project tree\Project items\ProjectTreeItemControl.xaml">
