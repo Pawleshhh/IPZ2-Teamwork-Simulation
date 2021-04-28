@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import ProbFunctions
+import ProbFunctions2
 
 class Team:
     def __init__(self, teamMemAmount, iterationAmount, mode, Persons, mode2):  # mode zdalne lub stacjonarne
@@ -48,18 +49,18 @@ class Team:
 
         for i in range(self.TeamMemAmount):#aktualizowanie wag do przeliczalnia tutaj
             if(self.TeamWorkType==1):#kalibracja dla zdalnych
-                self.PersonList[i].TeamComm.weightsUpdate(1, 1, 1, 1, 0.75, 1)
-                self.PersonList[i].Comfort.weightsUpdate(1, 7, 1, 0.5, 1, 1)
-                self.PersonList[i].TeamEff.weightsUpdate(1, 1, 1.2, 1)
+                self.PersonList[i].TeamComm.weightsUpdate(1, 1, 1, 1, 1, 1)
+                self.PersonList[i].Comfort.weightsUpdate(1, 1, 1, 1, 1, 1)
+                self.PersonList[i].TeamEff.weightsUpdate(1, 1, 1, 1)
                 if(self.TeamType==0):
-                    self.PersonList[i].StudyComfort.weightsUpdate(2, 2, 10, 2, 0.5)
+                    self.PersonList[i].StudyComfort.weightsUpdate(1, 1, 1, 1, 1)
 
             if(self.TeamWorkType==0):#kalibracja dla stacjonarnych
-                self.PersonList[i].TeamComm.weightsUpdate(0.2, 0.2, 0.2, 0.2,0.2, 0.2)
-                self.PersonList[i].Comfort.weightsUpdate(1, 0.9, 1, 1, 1, 1)
-                self.PersonList[i].TeamEff.weightsUpdate(0.05, 1.2, 0.1, 0.05)
+                self.PersonList[i].TeamComm.weightsUpdate(1, 1, 1, 1, 1, 1)
+                self.PersonList[i].Comfort.weightsUpdate(1, 1, 1, 1, 1, 1)
+                self.PersonList[i].TeamEff.weightsUpdate(1, 1, 1, 1)
                 if(self.TeamType==0):
-                    self.PersonList[i].StudyComfort.weightsUpdate(2, 2, 10, 2, 0.5)
+                    self.PersonList[i].StudyComfort.weightsUpdate(1, 1, 1, 1, 1)
 
 
         for i in range(self.TeamMemAmount):
@@ -179,29 +180,30 @@ class Team:
 
             for i in range(self.TeamMemAmount):
                 #Answers = ProbFunctions.answersSelection(self.PersonList[i].Chartable, self.TeamType)
+                Answers = ProbFunctions2.answersSelection(self.PersonList[i].Chartable, self.TeamWorkType)
                 #Answers = ProbFunctions.A_inject(index)
-                Answers = np.linspace(0,43,42)
+                #Answers = np.linspace(0,43,42)
 
                 index = index +1
                 print("poszlo ",index)
                 if self.TeamWorkType == 0:
-                    self.PersonList[i].Comfort.ArgumentsUpdate(Answers[0],
-                    Answers[1], Answers[2], Answers[3], Answers[4], Answers[9])
-                    self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[6], Answers[5], Answers[8], Answers[11])
-                    self.PersonList[i].TeamComm.ArgumentsUpdate(Answers[13], Answers[12], Answers[14])
-                    self.PersonList[i].StudyComfort.ArgumentsUpdate(Answers[15],Answers[16],Answers[17],Answers[18],Answers[20])
+                    self.PersonList[i].Comfort.ArgumentsUpdate(Answers[1],
+                    Answers[2], Answers[3], Answers[4], Answers[5], Answers[9])
+                    self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[7], Answers[6], Answers[9], Answers[12])
+                    self.PersonList[i].TeamComm.ArgumentsUpdate(Answers[14], Answers[13], Answers[15])
+                    self.PersonList[i].StudyComfort.ArgumentsUpdate(Answers[16],Answers[17],Answers[18],Answers[19],Answers[21])
 
                     #self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe] tymczasowy update wag
                     #self.PersonList[i].TeamEff.weightsUpdate(1, 2, 3, 4)  # [tymaczasowe]
                     #self.PersonList[i].Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe]
 
                 if self.TeamWorkType == 1:
-                    self.PersonList[i].Comfort.ArgumentsUpdate(Answers[22],
-                    Answers[23], Answers[24], Answers[25], Answers[26], Answers[31])
-                    self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[28], Answers[27], Answers[30], Answers[33])
-                    self.PersonList[i].TeamComm.R_ArgumentsUpdate(Answers[35], Answers[34], Answers[36], Answers[46], Answers[45],Answers[47] )
-                    self.PersonList[i].StudyComfort.ArgumentsUpdate(Answers[37], Answers[38], Answers[39], Answers[40],
-                                                                    Answers[42])
+                    self.PersonList[i].Comfort.ArgumentsUpdate(Answers[1],
+                    Answers[2], Answers[3], Answers[4], Answers[5], Answers[9])
+                    self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[7], Answers[6], Answers[9], Answers[12])
+                    self.PersonList[i].TeamComm.R_ArgumentsUpdate(Answers[14], Answers[13], Answers[15], Answers[25], Answers[24],Answers[26] )
+                    self.PersonList[i].StudyComfort.ArgumentsUpdate(Answers[16], Answers[17], Answers[18], Answers[19],
+                                                                    Answers[21])
                     #self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5)  # # [tymaczasowe] tymczasowy update wag
                     #self.PersonList[i].TeamEff.weightsUpdate(1, 2, 3, 4)  # [tymaczasowe]
                     #self.PersonList[i].Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe]

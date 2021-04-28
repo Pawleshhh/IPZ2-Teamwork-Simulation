@@ -51,7 +51,7 @@ def StartSimulation(Arg):
 
     #Persons = [Person1, Person2, Person3]
 
-    IterationNumber = 5
+    IterationNumber = 1
     TeamMemeberAmount = 10
     TeamType = 0#pracownik 1 student 0
     TeamWorkType = 0# zdalne1 lub stacjonarne 0
@@ -72,8 +72,125 @@ def StartSimulation(Arg):
 
     for i in range(0,10):
         Arg1.append(Person1)
+
     #Arg1.append(Person2)
     #Arg1.append(Person3)
+    # P1 = [1, 1, 2, 1, 1, 1]  # informatycy
+    # P2 = [1, 1, 2, 1, 1, 1]
+    # P3 = [1, 1, 2, 1, 1, 2]
+    # P4 = [1, 2, 2, 1, 1, 3]
+    # P5 = [1, 2, 2, 1, 1, 3]
+    # P6 = [1, 2, 2, 1, 1, 3]
+    # P7 = [2, 3, 2, 1, 1, 2]
+    # P8 = [2, 3, 3, 1, 1, 1]
+    # P9 = [2, 4, 3, 2, 1, 4]
+    # P10 = [2, 5, 3, 2, 1, 4]
+    # P11 = [1, 1, 2, 1, 1, 1]
+    # P12 = [1, 1, 2, 1, 1, 1]
+    # P13 = [1, 1, 2, 1, 1, 2]
+    # P14 = [1, 2, 2, 1, 1, 3]
+    # P15 = [1, 2, 2, 1, 1, 3]
+    # P16 = [1, 2, 2, 1, 1, 3]
+    # P17 = [2, 3, 2, 1, 1, 2]
+    # P18 = [2, 3, 3, 1, 1, 1]
+    # P19 = [2, 4, 3, 2, 1, 4]
+    # P20 = [2, 5, 3, 2, 1, 4]  # infomracytyc
+    # P21 = [1, 3, 1, 1, 1, 1]  # zarządzanie
+    # P22 = [1, 3, 2, 2, 1, 2]
+    # P23 = [2, 3, 3, 3, 1, 3]
+    # P24 = [2, 3, 4, 4, 2, 4]
+    # P25 = [1, 3, 2, 2, 1, 2]
+    # P26 = [1, 3, 3, 2, 1, 3]
+    # P27 = [2, 3, 4, 4, 2, 4]  # zarządzanie
+    # P28 = [1, 2, 1, 2, 1, 1]  # ekonomia
+    # P29 = [2, 2, 2, 2, 1, 2]
+    # P30 = [1, 2, 1, 2, 1, 3]
+    # P31 = [2, 2, 2, 2, 2, 4]  # ekonomia
+    # P32 = [1, 4, 1, 2, 1, 1]  # psychologia
+    # P33 = [2, 4, 2, 2, 1, 2]
+    # P34 = [1, 4, 1, 2, 1, 3]
+    # P35 = [2, 4, 2, 2, 2, 4]  # psychologia
+    # P36 = [1, 5, 1, 2, 1, 1]  # mechatronika
+    # P37 = [2, 5, 2, 2, 1, 2]
+    # P38 = [1, 5, 1, 2, 1, 3]
+    # P39 = [2, 5, 2, 2, 2, 4]  # mechatronika
+    # P40 = [1, 6, 1, 2, 1, 1]  # medycyna
+    # P41 = [2, 6, 2, 2, 1, 2]
+    # P42 = [1, 6, 1, 2, 1, 3]
+    # P43 = [2, 6, 2, 2, 2, 4]  # medycyna
+    # P44 = [1, 7, 1, 1, 1, 1]  # inne
+    # P45 = [2, 7, 2, 1, 1, 2]
+    # P46 = [1, 7, 1, 2, 1, 3]
+    # P47 = [2, 7, 2, 1, 2, 4]
+    # P48 = [1, 7, 1, 2, 1, 1]
+    # P49 = [2, 7, 2, 4, 1, 2]
+    # P50 = [1, 7, 1, 2, 1, 3]  # inne
+
+    # P19 = [2, 4, 4, 2, 1, 4]
+    # P20 = [1, 4, 4, 2, 1, 4]
+    # P21 = [1, 5, 4, 2, 1, 4]
+    # P22 = [2, 5, 4, 2, 1, 4]
+    # P23 = [1, 5, 4, 2, 1, 4]
+    # P24 = [1, 6, 4, 2, 1, 4]
+    # P25 = [2, 6, 4, 2, 1, 4]
+    # P26 = [1, 7, 4, 2, 1, 4]
+    # P27 = [2, 7, 4, 2, 1, 4]
+    # P28 = [1, 7, 4, 2, 1, 4]
+    # P29 = [1, 7, 4, 2, 1, 4]
+    # P30 = [1, 7, 4, 2, 1, 4]
+
+    # Arg1.append(P1)
+    # Arg1.append(P2)
+    # Arg1.append(P3)
+    # Arg1.append(P4)
+    # Arg1.append(P5)
+    # Arg1.append(P6)
+    # Arg1.append(P7)
+    # Arg1.append(P8)
+    # Arg1.append(P9)
+    # Arg1.append(P10)
+    # Arg1.append(P11)
+    # Arg1.append(P12)
+    # Arg1.append(P13)
+    # Arg1.append(P14)
+    # Arg1.append(P15)
+    # Arg1.append(P16)
+    # Arg1.append(P17)
+    # Arg1.append(P18)
+    # Arg1.append(P19)
+    # Arg1.append(P20)
+    # Arg1.append(P21)
+    # Arg1.append(P22)
+    # Arg1.append(P23)
+    # Arg1.append(P24)
+    # Arg1.append(P25)
+    # Arg1.append(P26)
+    # Arg1.append(P27)
+    # Arg1.append(P28)
+    # Arg1.append(P29)
+    # Arg1.append(P30)
+    # Arg1.append(P31)
+    # Arg1.append(P32)
+    # Arg1.append(P33)
+    # Arg1.append(P34)
+    # Arg1.append(P35)
+    # Arg1.append(P36)
+    # Arg1.append(P37)
+    # Arg1.append(P38)
+    # Arg1.append(P39)
+    # Arg1.append(P40)
+    # Arg1.append(P41)
+    # Arg1.append(P42)
+    # Arg1.append(P43)
+    # Arg1.append(P44)
+    # Arg1.append(P45)
+    # Arg1.append(P46)
+    # Arg1.append(P47)
+    # Arg1.append(P48)
+    # Arg1.append(P49)
+    # Arg1.append(P50)
+
+
 
     T2 = ReadTeam(Arg1)
     T2.Iteration()
@@ -88,6 +205,7 @@ def StartSimulation(Arg):
     Team_TeamEffectiveness_F = []
     Team_Help_F = []
     Team_Help_F = []
+    Team_Study_Comfort_F = []
     Team_TeamComm_F = []
 
     TT1 = []
@@ -120,7 +238,6 @@ def StartSimulation(Arg):
     Team_Help_F.append(TH1)
     Team_Help_F.append(TH2)
 
-
     TTC1 = []
     TTC2 = []
     Team_TeamComm_F.append(TTC1)
@@ -131,13 +248,12 @@ def StartSimulation(Arg):
     Team_Study_Comfort_F.append(TSC1)
     Team_Study_Comfort_F.append(TSC2)
 
-
     ox = list(range(0, T2.IterationAmount))
     print('test arange:', ox)
 
-    for i in range (0,len(T2.Team_Tired_Factor)):
-        Team_Tired_F[0].append(ox[i])#1
-        Team_Tired_F[1].append(T2.Team_Tired_Factor[i])#2
+    for i in range(0, len(T2.Team_Tired_Factor)):
+        Team_Tired_F[0].append(ox[i])  # 1
+        Team_Tired_F[1].append(T2.Team_Tired_Factor[i])  # 2
 
         Team_WorkConditions_F[0].append(ox[i])
         Team_WorkConditions_F[1].append(T2.Team_WorkConditions_Factor[i])
@@ -149,16 +265,16 @@ def StartSimulation(Arg):
         Team_SelfImprovement_F[1].append(T2.Team_SelfImprovement_Factor[i])
 
         Team_TeamEffectiveness_F[0].append(ox[i])
-        Team_TeamEffectiveness_F.append(T2.Team_TeamEffectiveness_Factor[i])
+        Team_TeamEffectiveness_F[1].append(T2.Team_TeamEffectiveness_Factor[i])
 
-        Team_Help_F.append[0].append(ox[i])
-        Team_Help_F.append(TH2).append(T2.Team_Help_Factor[i])
+        Team_Help_F[0].append(ox[i])
+        Team_Help_F[1].append(T2.Team_Help_Factor[i])
 
-        Team_TeamComm_F.append(ox[i])
-        Team_TeamComm_F.append(T2.Team_TeamComm_Factor[i])
+        Team_TeamComm_F[0].append(ox[i])
+        Team_TeamComm_F[1].append(T2.Team_TeamComm_Factor[i])
 
-        Team_Study_Comfort_F.append(ox[i])
-        Team_Study_Comfort_F.append(T2.Team_Comfort_Factor[i])
+        Team_Study_Comfort_F[0].append(ox[i])
+        Team_Study_Comfort_F[1].append(T2.Team_Comfort_Factor[i])
 
     ListMain.append(Team_Tired_F)
     ListMain.append(Team_WorkConditions_F)
@@ -169,7 +285,10 @@ def StartSimulation(Arg):
     ListMain.append(Team_TeamComm_F)
     ListMain.append(Team_Study_Comfort_F)
 
+    ListMain.append([[1], [1]])
+
     return ListMain
+
 
 
      

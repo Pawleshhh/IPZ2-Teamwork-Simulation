@@ -10,7 +10,7 @@ def funkcja(osoby, nazwa1, nazwa2, c):
     os = (osoby[osoby['' + nazwa1] == nazwa2])
 
     all = len(os)
-    print('os wynosi: ', all)
+    #print('os wynosi: ', all)
     wynik = pd.DataFrame(index=[1, 2, 3, 4, 5])
 
     for a in os.columns[26:c]:
@@ -53,7 +53,7 @@ def answersSelection(dane,TeamType):
             engine='openpyxl',
         )
         method = osoby.columns[20:26]
-        print(method)
+        #print(method) 2604
         c = 74
 
 
@@ -64,7 +64,7 @@ def answersSelection(dane,TeamType):
     k = 0
 
     for b in method:
-        print(dane[k])
+        #print(dane[k]) #2604
         fun = funkcja(osoby, b, dane[k], c)  #dane[k]-tutaj przekaż echy osoby  osoby
         k = k + 1
         fun1 = fun1 + fun
@@ -72,7 +72,7 @@ def answersSelection(dane,TeamType):
 # print(fun1)
 
     randarray = losowanie(fun1)
-    print(randarray)
+    #print(randarray) #2604
     return randarray
 
 def A_inject(liczba):

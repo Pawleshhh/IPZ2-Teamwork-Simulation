@@ -5,6 +5,11 @@ from Team import Team
 import os
 import xlrd
 import matplotlib.pyplot as plt
+import sqlite3
+import random
+
+path='D:\\ZUT\\semestr5\\Projekt\\IPZ2-Teamwork-Simulation\\Data\\DB\\ankieta.db'
+
 class Comfort:
     def __init__(self, tiredWeek, breakTime, atmosfere, ergonomics, selfImpovement, tired1day):
         self.TiredWeek = [] # zaincijuj pusta tablice zeby zachowac ifno o poprzednich iteracjach
@@ -41,7 +46,92 @@ class Comfort:
         self.Tired1day.append(tired1day)
 
 
-def funkcja(osoby, nazwa1, nazwa2, c):
+
+def sql(which, character, characterint):
+        conn = sqlite3.connect(path)
+        cur = conn.cursor()
+        test = '' + character
+        # print("SELECT Count(*) FROM studenci WHERE " + str(test) + " =" + str(characterint))
+        cur.execute("SELECT Count(*) FROM studenci WHERE " + str(test) + " =" + str(characterint))
+        result1 = cur.fetchall()
+        ilosc = sum(result1[0])
+        wynik = pd.DataFrame(index=[1, 2, 3, 4, 5])
+        if which == 0:
+            for i in range(1, 23):
+                tab = []
+                for a in range(1, 6):
+                    # print("SELECT Count(*) FROM studenci_stacjo WHERE " + str(test) + " ='" + str(characterint)+"' AND st_pyt" + str(i) + "=" + str(a))
+                    # cur.execute("SELECT Count(*) FROM ipz WHERE Cecha="+str(test)+" AND Pyt"+str(i)+"="+str(a))
+                    cur.execute(
+                        "SELECT Count(*) FROM studenci_stacjo JOIN studenci on studenci.student_id=studenci_stacjo.student_id WHERE studenci." + str(
+                            test) + " ='" + str(characterint) + "' AND st_pyt" + str(i) + "=" + str(a))
+                    result = cur.fetchall()
+                    tab.append(sum(result[0]))
+                    # wynik[a][i] = sum(result[0])
+                # print(tab)
+                wynik['' + str(i - 1)] = tab
+            wynik = wynik / ilosc
+            return wynik
+        else:
+            for i in range(1, 28):
+                tab = []
+                for a in range(1, 6):
+                    # print("SELECT Count(*) FROM studenci_stacjo WHERE " + str(test) + " ='" + str(characterint)+"' AND st_pyt" + str(i) + "=" + str(a))
+                    cur.execute(
+                        "SELECT Count(*) FROM studenci_zdal JOIN studenci on studenci.student_id=studenci_zdal.student_id WHERE studenci." + str(
+                            test) + " ='" + str(characterint) + "' AND zd_pyt" + str(i) + "=" + str(a))
+                    result = cur.fetchall()
+                    tab.append(sum(result[0]))
+                    # wynik[a][i]=sum(result[0])
+                wynik['' + str(i - 1)] = tab
+
+            wynik = wynik / ilosc
+            # print("test2",wynik)
+            return wynik
+
+def losowanie(Baza):
+    wylos = []
+    for a in range(0, len(Baza.columns)):
+        tabRand = []
+        for b in range(0, 5):
+            n = int(Baza.iloc[b, a] * 100)
+            tabRand += n * [b + 1]
+        # print(tabRand)
+        if len(tabRand) != 0:
+            rand = random.choice(tabRand)
+        else:
+            rand = 0
+        # print(rand)
+        wylos.append(rand)
+    return wylos
+
+
+def answersSelection(dane, TeamType):
+    # method = osoby.columns[19:26]
+    if (TeamType == 0):
+        # print(fun1)
+        fun1 = pd.DataFrame(index=[1, 2, 3, 4, 5])
+        fun1 = fun1.replace(np.nan, 0)  # inaczej sa same nun trzeba zamienic
+    else:
+        fun1 = pd.DataFrame(index=[1, 2, 3, 4, 5])
+        fun1 = fun1.replace(np.nan, 0)  # inaczej sa same nun trzeba zamienic
+    k = 0
+    # method=['plec','kierunek','rok','stopien','tryb']#co z osobowoscia? Bo 1-6 pytan
+    method = ['kierunek', 'rok', 'stopien', 'tryb', 'osobowosc']
+    fun1 = sql(TeamType, 'plec', dane[k])
+    for meth in method:
+        # print(dane[k])
+        fun = sql(TeamType, meth, dane[k])
+        k = k + 1
+        fun1 = fun + fun1
+    fun1 = fun1 / (len(method) + 1)
+    print(fun1)
+
+    randarray = losowanie(fun1)
+    # print(randarray)
+    return randarray
+#----------------------
+def funkcjaold(osoby, nazwa1, nazwa2, c):
     os = (osoby[osoby['' + nazwa1] == nazwa2])
 
     all = len(os)
@@ -59,7 +149,7 @@ def funkcja(osoby, nazwa1, nazwa2, c):
     return wynik
 
 
-def losowanie(Baza):
+def losowanieold(Baza):
     wylos = []
     for a in range(0, len(Baza.columns)):
         tabRand = []
@@ -73,7 +163,7 @@ def losowanie(Baza):
     return wylos
 
 
-def answersSelection(dane, TeamType):
+def answersSelectionold(dane, TeamType):
     # osoby = pd.read_excel('kopia.xlsx')
 
     if TeamType == 1:
@@ -110,7 +200,7 @@ def answersSelection(dane, TeamType):
     return randarray
 
 
-def A_inject(liczba):
+def A_injectold(liczba):
     osoby = pd.read_excel(os.path.join('D:\ZUT\semestr5\Projekt_inżynier\IPZ_ABM', "ABM", "studenci.xlsx"),
                           engine='openpyxl', )
     tab = []
@@ -481,34 +571,34 @@ class Team:
         for j in range(self.IterationAmount):
 
             for i in range(self.TeamMemAmount):
-                # Answers = ProbFunctions.answersSelection(self.PersonList[i].Chartable, self.TeamType)
+                Answers = answersSelection(self.PersonList[i].Chartable, self.TeamWorkType)
                 # Answers = ProbFunctions.A_inject(index)
-                Answers = np.linspace(0, 43, 42)
+                #Answers = np.linspace(0, 43, 42)
 
                 index = index + 1
                 print("poszlo ", index)
                 if self.TeamWorkType == 0:
-                    self.PersonList[i].Comfort.ArgumentsUpdate(Answers[0],
-                                                               Answers[1], Answers[2], Answers[3], Answers[4],
+                    self.PersonList[i].Comfort.ArgumentsUpdate(Answers[1],
+                                                               Answers[2], Answers[3], Answers[4], Answers[5],
                                                                Answers[9])
-                    self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[6], Answers[5], Answers[8], Answers[11])
-                    self.PersonList[i].TeamComm.ArgumentsUpdate(Answers[13], Answers[12], Answers[14])
-                    self.PersonList[i].StudyComfort.ArgumentsUpdate(Answers[15], Answers[16], Answers[17], Answers[18],
-                                                                    Answers[20])
+                    self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[7], Answers[6], Answers[9], Answers[12])
+                    self.PersonList[i].TeamComm.ArgumentsUpdate(Answers[14], Answers[13], Answers[15])
+                    self.PersonList[i].StudyComfort.ArgumentsUpdate(Answers[16], Answers[17], Answers[18], Answers[19],
+                                                                    Answers[21])
 
                     # self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe] tymczasowy update wag
                     # self.PersonList[i].TeamEff.weightsUpdate(1, 2, 3, 4)  # [tymaczasowe]
                     # self.PersonList[i].Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe]
 
                 if self.TeamWorkType == 1:
-                    self.PersonList[i].Comfort.ArgumentsUpdate(Answers[22],
-                                                               Answers[23], Answers[24], Answers[25], Answers[26],
-                                                               Answers[31])
-                    self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[28], Answers[27], Answers[30], Answers[33])
-                    self.PersonList[i].TeamComm.R_ArgumentsUpdate(Answers[35], Answers[34], Answers[36], Answers[46],
-                                                                  Answers[45], Answers[47])
-                    self.PersonList[i].StudyComfort.ArgumentsUpdate(Answers[37], Answers[38], Answers[39], Answers[40],
-                                                                    Answers[42])
+                    self.PersonList[i].Comfort.ArgumentsUpdate(Answers[1],
+                                                               Answers[2], Answers[3], Answers[4], Answers[5],
+                                                               Answers[9])
+                    self.PersonList[i].TeamEff.ArgumentsUpdate(Answers[7], Answers[6], Answers[9], Answers[12])
+                    self.PersonList[i].TeamComm.R_ArgumentsUpdate(Answers[14], Answers[13], Answers[15], Answers[25],
+                                                                  Answers[24], Answers[26])
+                    self.PersonList[i].StudyComfort.ArgumentsUpdate(Answers[16], Answers[17], Answers[18], Answers[19],
+                                                                    Answers[21])
                     # self.PersonList[i].TeamComm.weightsUpdate(1, 2, 3, 4, 5)  # # [tymaczasowe] tymczasowy update wag
                     # self.PersonList[i].TeamEff.weightsUpdate(1, 2, 3, 4)  # [tymaczasowe]
                     # self.PersonList[i].Comfort.weightsUpdate(1, 2, 3, 4, 5, 6)  # [tymaczasowe]
@@ -758,7 +848,7 @@ def StartSimluation(Arg):
     IterationNumber = 1
     TeamMemeberAmount = 10
     TeamType = 0#pracownik 1 student 0
-    TeamWorkType = 0# zdalne1 lub stacjonarne 0
+    TeamWorkType = 1# zdalne1 lub stacjonarne 0
 
     #print('test 10.1  tablica tablic : ', Persons[0][2])
 

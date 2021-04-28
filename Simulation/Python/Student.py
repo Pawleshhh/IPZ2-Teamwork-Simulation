@@ -75,7 +75,7 @@ class Student:
         b = self.TeamEff.Engagement[i] * self.TeamEff.W[0][2]  #konflikt wagi z śrdenia zwykla?
         lst = (a + b)  # dzielic przez sume wag czy nie?
         S = lst
-        k = S / 1 + self.TeamEff.W[0][2]
+        k = S / (1 + self.TeamEff.W[0][2])
         self.SelfImprovement_Factor.append(k)
 
     def calculateTeamEffectivnessFactor(self, i):
@@ -84,7 +84,7 @@ class Student:
         c = [self.SelfImprovement_Factor[i]]
         lst = (a + b + c)  # dzielic przez sume wag czy nie?
         S = sum(lst)
-        k = S / 1 + self.TeamEff.W[0][0] + self.TeamEff.W[0][3]
+        k = S / (1 + self.TeamEff.W[0][0] + self.TeamEff.W[0][3])
         self.TeamEffectiveness_Factor.append(k)
 
 
@@ -107,7 +107,7 @@ class Student:
         if switch == 0:
             lst = (a + b)
             S = lst
-            k = S / 1 + self.TeamComm.W[0][4]
+            k = S / (1 + self.TeamComm.W[0][4])
 
         if switch == 1:
             WeightSum = self.TeamComm.W[0][3] + self.TeamComm.W[0][4] + self.TeamComm.W[0][5]
