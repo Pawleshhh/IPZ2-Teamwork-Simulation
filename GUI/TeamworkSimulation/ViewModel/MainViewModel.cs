@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 using TeamworkSimulation.Model;
-using TeamworkSimulation.ViewModel;
 
 namespace TeamworkSimulation.ViewModel
 {
