@@ -21,7 +21,7 @@ namespace TeamworkSimulation.Model.Simulation
 
         #region Properties
 
-        public SimulationResults SimulationResults { get; private set; }
+        public SimulationResultDirector ResultDirector { get; private set; }
 
         public SimulationEngine Engine { get; }
 
@@ -55,38 +55,7 @@ namespace TeamworkSimulation.Model.Simulation
             OnStarted();
 
             double[][][] simResult = await BeginSimulation<double[][][]>(attributes);
-            //await BeginSimulation(attributes);
-
-            List<List<double[]>> result = new List<List<double[]>>();
-
-            for(int x = 0; x < simResult.Length; x++)
-            {
-                result.Add(new List<double[]>());
-                for(int y = 0; y < simResult[x].Length; y++)
-                {
-                    result[x].Add(simResult[x][y]);
-                }
-            }
-
-            SimulationResults = new SimulationResults(
-                result[0],
-                result[1],
-                result[2],
-                result[3],
-                result[4],
-                result[5],
-                result[6],
-                result[7]);
-            //SimulationResults = new SimulationResults(
-            //    new List<double[]> { new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, new double[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 } },
-            //    new List<double[]> { new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, new double[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 } },
-            //    new List<double[]> { new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, new double[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 } },
-            //    new List<double[]> { new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, new double[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 } },
-            //    new List<double[]> { new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, new double[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 } },
-            //    new List<double[]> { new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, new double[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 } },
-            //    new List<double[]> { new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, new double[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 } },
-            //    new List<double[]> { new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, new double[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 } },
-            //    new List<double[]> { new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, new double[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 } });
+            SetResults(simResult);
 
             OnStopped();
         }
@@ -121,6 +90,37 @@ namespace TeamworkSimulation.Model.Simulation
             }
 
             return attributes;
+        }
+
+        protected virtual void SetResults(double[][][] simResult)
+        {
+            List<List<double[]>> result = new List<List<double[]>>();
+
+            for (int x = 0; x < simResult.Length; x++)
+            {
+                result.Add(new List<double[]>());
+                for (int y = 0; y < simResult[x].Length; y++)
+                {
+                    result[x].Add(simResult[x][y]);
+                }
+            }
+
+            List<ISimulationResultCollection> resultCollections = new List<ISimulationResultCollection>()
+            {
+                new SimulationPlotResultCollection(new List<PlotResult>()
+                {
+                    new PlotResult(result[0], "result1"),
+                    new PlotResult(result[1], "result2"),
+                    new PlotResult(result[2], "result3"),
+                    new PlotResult(result[3], "result4"),
+                    new PlotResult(result[4], "result5"),
+                    new PlotResult(result[5], "result6"),
+                    new PlotResult(result[6], "result7"),
+                    new PlotResult(result[7], "result8"),
+                })
+            };
+
+            ResultDirector = new SimulationResultDirector(resultCollections);
         }
 
         #endregion

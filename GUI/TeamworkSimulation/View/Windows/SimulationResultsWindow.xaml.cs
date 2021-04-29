@@ -23,5 +23,6 @@ namespace TeamworkSimulation.View
         {
             InitializeComponent();
         }
+
     }
 }

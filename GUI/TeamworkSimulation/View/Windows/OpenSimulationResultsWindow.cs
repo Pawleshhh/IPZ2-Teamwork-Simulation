@@ -14,7 +14,7 @@ namespace TeamworkSimulation.View
         {
             resultsWindow = new SimulationResultsWindow();
 
-            resultsWindow.DataContext = (SimulationResultsViewModel)parameter;
+            resultsWindow.DataContext = (SimulationResultDirectorViewModel)parameter;
 
             resultsWindow.Show();
         }

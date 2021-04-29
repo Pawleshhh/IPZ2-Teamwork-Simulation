@@ -15,34 +15,78 @@
     mc:Ignorable="d">
     <Grid>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="8*" />
-        </Grid.ColumnDefinitions>
 
-        <ListView
-            x:Name="plotsList"
-            Background="Transparent"
-            BorderBrush="{StaticResource DarkShark}"
-            BorderThickness="4"
-            ItemsSource="{Binding PlotModels}">
-            <ListView.ItemTemplate>
+        <TabControl Background="{StaticResource LightShark}" ItemsSource="{Binding ResultCollectionVMs}">
+            <TabControl.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Button
-                            Command="{Binding ElementName=simulationResultsWindow, Path=DataContext.SelectPlot}"
-                            CommandParameter="{Binding}"
-                            Content="Select"
-                            Foreground="{StaticResource Alto}"
-                            Style="{StaticResource DefaultButtonStyle}" />
-                        <TextBlock Foreground="{StaticResource Alto}" Text="{Binding Title, Mode=OneWay}" />
-
-                    </StackPanel>
+                    <TextBlock Text="{Binding Name}" />
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <Grid x:Name="plotResultsGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="8*" />
+                        </Grid.ColumnDefinitions>
 
-        <oxy:PlotView Grid.Column="1" Model="{Binding CurrentPlot}" />
+                        <ListView
+                            x:Name="plotsList"
+                            Background="Transparent"
+                            BorderBrush="{StaticResource DarkShark}"
+                            BorderThickness="1"
+                            ItemsSource="{Binding SimulationResultVMs}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button
+                                            HorizontalAlignment="Center"
+                                            Command="{Binding ElementName=plotResultsGrid, Path=DataContext.SelectPlot}"
+                                            CommandParameter="{Binding Plot}"
+                                            Content="{Binding Plot.Title, Mode=OneWay}"
+                                            Foreground="{StaticResource Alto}"
+                                            Style="{StaticResource DefaultButtonStyle}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                        <oxy:PlotView Grid.Column="1" Model="{Binding CurrentPlot}" />
+                    </Grid>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+
+        <!--<Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="8*" />
+            </Grid.ColumnDefinitions>
+
+            <ListView
+                        x:Name="plotsList"
+                        Background="Transparent"
+                        BorderBrush="{StaticResource DarkShark}"
+                        BorderThickness="1"
+                        ItemsSource="{Binding PlotModels}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Button
+                                        Command="{Binding ElementName=simulationResultsWindow, Path=DataContext.SelectPlot}"
+                                        CommandParameter="{Binding}"
+                                        Content="Select"
+                                        Foreground="{StaticResource Alto}"
+                                        Style="{StaticResource DefaultButtonStyle}" />
+                            <TextBlock Foreground="{StaticResource Alto}" Text="{Binding Title, Mode=OneWay}" />
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <oxy:PlotView Grid.Column="1" Model="{Binding CurrentPlot}" />
+        </Grid>-->
 
         <!--<Grid.RowDefinitions>
             <RowDefinition Height="*" />

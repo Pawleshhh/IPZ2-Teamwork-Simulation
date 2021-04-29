@@ -29,7 +29,7 @@ namespace TeamworkSimulation.ViewModel
 
         private readonly IOpenView simulationResultsView;
 
-        private SimulationResultsViewModel simulationResultsVM;
+        private SimulationResultDirectorViewModel simulationResultDirectiorVM;
 
         #endregion
 
@@ -47,9 +47,9 @@ namespace TeamworkSimulation.ViewModel
         {
             if (!IsWorking)
             {
-                simulationResultsVM = new SimulationResultsViewModel(manager.SimulationDirector.SimulationResults, null);
+                simulationResultDirectiorVM = new SimulationResultDirectorViewModel(manager.SimulationDirector.ResultDirector, null);
 
-                simulationResultsView.OpenView(simulationResultsVM);
+                simulationResultsView.OpenView(simulationResultDirectiorVM);
             }
 
             OnPropertyChanged(nameof(IsWorking));
