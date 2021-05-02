@@ -23,7 +23,7 @@ namespace TeamworkSimulation.Model.Simulation
         {
             return Engine.WorkOnSimulationAsync(m =>
             {
-                dynamic result = m.StartSimulation(1);
+                dynamic result = m.StartSimulation(attributes);
 
                 return (T)result;
             });

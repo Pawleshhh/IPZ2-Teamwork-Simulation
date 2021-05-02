@@ -8,8 +8,8 @@ namespace TeamworkSimulation.Model
     public enum CollegeDegree
     {
         Bachelors,
-        Masters,
         Engineers,
+        Masters,
         Doctor,
     }
 

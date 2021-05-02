@@ -12,6 +12,11 @@ namespace TeamworkSimulation.Model
         Psychology,
         Mechatronics,
         Medicine,
-        Other
+        Other,
+        Construction,
+        Logistics,
+        Architecture,
+        Biochemistry,
+        HumanHealthOrEnvironment
     }
 }

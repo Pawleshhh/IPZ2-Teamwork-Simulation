@@ -28,19 +28,7 @@ namespace TeamworkSimulation.Model.Simulation
 
         protected override int GetAge()
         {
-            return -1;
-            //int age = model.StudentExperience.Age;
-
-            //if (age < 20)
-            //    throw new InvalidOperationException();
-            //else if (age >= 20 && age < 30)
-            //    return 1;
-            //else if (age >= 30 && age < 40)
-            //    return 2;
-            //else if (age >= 40 && age < 50)
-            //    return 3;
-            //else
-            //    return 4;
+            throw new NotImplementedException();
         }
 
         protected virtual int GetCollegeYears()
