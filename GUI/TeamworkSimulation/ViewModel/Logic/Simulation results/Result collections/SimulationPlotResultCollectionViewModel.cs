@@ -16,6 +16,9 @@ namespace TeamworkSimulation.ViewModel
             : base(plotResultCollection, parent)
         {
             this.plotResultCollection = plotResultCollection;
+
+            if (SimulationResultVMs.Count >= 1)
+                SelectPlotModel(SimulationResultVMs[0].Plot);
         }
         #endregion
 

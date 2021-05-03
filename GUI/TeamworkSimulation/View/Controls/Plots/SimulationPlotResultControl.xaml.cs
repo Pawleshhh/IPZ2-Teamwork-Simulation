@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TeamworkSimulation.View.Controls.Plots
+namespace TeamworkSimulation.View
 {
     /// <summary>
-    /// Interaction logic for SimulationResultsControl.xaml
+    /// Interaction logic for SimulationPlotResultControl.xaml
     /// </summary>
-    public partial class SimulationResultsControl : UserControl
+    public partial class SimulationPlotResultControl : UserControl
     {
-        public SimulationResultsControl()
+        public SimulationPlotResultControl()
         {
             InitializeComponent();
         }

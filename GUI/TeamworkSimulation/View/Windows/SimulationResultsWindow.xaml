@@ -13,48 +13,27 @@
     Height="450"
     Background="{StaticResource LightShark}"
     mc:Ignorable="d">
+
+    <Window.Resources>
+        <local:SimulationResultSelector x:Key="simulationResultSelector" />
+        <DataTemplate x:Key="simulationPlotResultTemplate">
+            <local:SimulationPlotResultControl />
+        </DataTemplate>
+
+    </Window.Resources>
+
     <Grid>
 
 
-        <TabControl Background="{StaticResource LightShark}" ItemsSource="{Binding ResultCollectionVMs}">
+        <TabControl
+            Background="{StaticResource LightShark}"
+            ContentTemplateSelector="{StaticResource simulationResultSelector}"
+            ItemsSource="{Binding ResultCollectionVMs}">
             <TabControl.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}" />
                 </DataTemplate>
             </TabControl.ItemTemplate>
-            <TabControl.ContentTemplate>
-                <DataTemplate>
-                    <Grid x:Name="plotResultsGrid">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition Width="8*" />
-                        </Grid.ColumnDefinitions>
-
-                        <ListView
-                            x:Name="plotsList"
-                            Background="Transparent"
-                            BorderBrush="{StaticResource DarkShark}"
-                            BorderThickness="1"
-                            ItemsSource="{Binding SimulationResultVMs}">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button
-                                            HorizontalAlignment="Center"
-                                            Command="{Binding ElementName=plotResultsGrid, Path=DataContext.SelectPlot}"
-                                            CommandParameter="{Binding Plot}"
-                                            Content="{Binding Plot.Title, Mode=OneWay}"
-                                            Foreground="{StaticResource Alto}"
-                                            Style="{StaticResource DefaultButtonStyle}" />
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-
-                        <oxy:PlotView Grid.Column="1" Model="{Binding CurrentPlot}" />
-                    </Grid>
-                </DataTemplate>
-            </TabControl.ContentTemplate>
         </TabControl>
 
         <!--<Grid>

@@ -215,5 +215,5 @@ N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Deb
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\bin\Debug\netcoreapp3.1\IronPython.dll
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Windows\SimulationResultsWindow.g.cs
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Windows\SimulationResultsWindow.baml
-N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Plots\SimulationResultsControl.g.cs
-N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Plots\SimulationResultsControl.baml
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Plots\SimulationPlotResultControl.g.cs
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Plots\SimulationPlotResultControl.baml
