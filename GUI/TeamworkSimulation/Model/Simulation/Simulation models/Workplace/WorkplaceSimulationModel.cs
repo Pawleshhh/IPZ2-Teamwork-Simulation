@@ -24,7 +24,7 @@ namespace TeamworkSimulation.Model.Simulation
         protected abstract int GetWorkplaceType();
 
         protected virtual int GetIterations()
-            => 5;
+            => model.Iterations;
 
         #endregion
 

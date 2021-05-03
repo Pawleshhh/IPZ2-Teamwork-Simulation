@@ -6,6 +6,7 @@ FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\C
 FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Job controls\WorkerControl.xaml;;
 FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Job controls\WorkplaceControl.xaml;;
 FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Other\ColorsComboBox.xaml;;
+FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Plots\SimulationResultsControl.xaml;;
 FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Project tree\Project items\ProjectTreeItemControl.xaml;;
 FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Project tree\Project items\TeamMemberProjectTreeItemControl.xaml;;
 FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Project tree\Project items\TeamProjectTreeItemControl.xaml;;
@@ -14,5 +15,4 @@ FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\C
 FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Resources\DataProviders.xaml;;
 FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Windows\MainWindow.xaml;;
 FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Windows\SimulationResultsWindow.xaml;;
-FN:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\View\Controls\Plots\SimulationResultsControl.xaml;;
 

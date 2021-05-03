@@ -13,6 +13,10 @@ namespace TeamworkSimulation.Model
 
         int TotalTeamMemberCount { get; }
 
+        int Iterations { get; set; }
+        int MaximumIterations { get; }
+        int MinimumIterations { get; }
+
         IErgonomy Ergonomy { get; set; }
         ITechnology Technology { get; set; }
 

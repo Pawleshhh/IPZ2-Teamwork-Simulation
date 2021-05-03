@@ -59,6 +59,15 @@ namespace TeamworkSimulation.ViewModel
             set => SetProperty(() => isCurrent == value, () => isCurrent = value);
         }
 
+        public int Iterations
+        {
+            get => workplace.Iterations;
+            set => SetProperty(() => workplace.Iterations == value, () => workplace.Iterations = value);
+        }
+
+        public int MaximumIterations => workplace.MaximumIterations;
+        public int MinimumIterations => workplace.MinimumIterations;
+
         #endregion
 
         #region Methods
