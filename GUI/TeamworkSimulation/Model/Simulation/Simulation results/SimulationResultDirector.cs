@@ -8,21 +8,21 @@ namespace TeamworkSimulation.Model
     {
 
         #region Constructors
-        public SimulationResultDirector(IEnumerable<ISimulationResultCollection> resultCollections)
+        public SimulationResultDirector(IEnumerable<ISimulationResult> results)
         {
-            this.resultCollections = new List<ISimulationResultCollection>(resultCollections);
+            this.results = new List<ISimulationResult>(results);
         }
         #endregion
 
         #region Private fields
 
-        private List<ISimulationResultCollection> resultCollections;
+        private List<ISimulationResult> results;
 
         #endregion
 
         #region Properties
 
-        public IReadOnlyList<ISimulationResultCollection> ResultCollections => resultCollections;
+        public IReadOnlyList<ISimulationResult> Results => results;
 
         #endregion
 

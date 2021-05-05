@@ -10,7 +10,7 @@
     <Compile Update="View\Controls\Other\ColorsComboBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Controls\Plots\SimulationPlotResultControl.xaml.cs">
+    <Compile Update="View\Controls\Results\SimulationPlotResultControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\Controls\Project tree\Project items\ProjectTreeItemControl.xaml.cs">
@@ -25,6 +25,9 @@
     <Compile Update="View\Controls\Project tree\Project items\WorkplaceProjectTreeItemControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Controls\Results\SimulationResultCollectionControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Windows\SimulationResultsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,7 +36,7 @@
     <Page Update="View\Controls\Other\ColorsComboBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Controls\Plots\SimulationPlotResultControl.xaml">
+    <Page Update="View\Controls\Results\SimulationPlotResultControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Controls\Project tree\Project items\ProjectTreeItemControl.xaml">
@@ -46,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Controls\Project tree\Project items\WorkplaceProjectTreeItemControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Controls\Results\SimulationResultCollectionControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Resources\AppColors.xaml">

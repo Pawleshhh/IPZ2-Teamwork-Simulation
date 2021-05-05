@@ -4,31 +4,32 @@ using System.Text;
 
 namespace TeamworkSimulation.Model
 {
-    public abstract class SimulationResultCollection<T> : ISimulationResultCollection
-        where T : ISimulationResult
+    public class SimulationResultCollection : ISimulationResult
     {
 
         #region Constructors
 
-        public SimulationResultCollection(IEnumerable<T> results)
+        public SimulationResultCollection(IEnumerable<ISimulationResult> results, string name)
         {
-            this.results = new List<T>(results);
+            this.results = new List<ISimulationResult>(results);
+            this.Name = name;
         }
 
         #endregion
 
         #region Private fields
 
-        private List<T> results;
+        private List<ISimulationResult> results;
 
         #endregion
 
         #region Properties
 
-        public IReadOnlyList<T> Results => results;
+        public string Name { get; }
 
-        IReadOnlyList<ISimulationResult> ISimulationResultCollection.Results =>
-            (IReadOnlyList<ISimulationResult>)results;
+        public IReadOnlyList<ISimulationResult> Result => results;
+        //IReadOnlyList<ISimulationResult> ISimulationResultCollection.Result => (IReadOnlyList<ISimulationResult>)results;
+        object ISimulationResult.Result => results;
 
         #endregion
 

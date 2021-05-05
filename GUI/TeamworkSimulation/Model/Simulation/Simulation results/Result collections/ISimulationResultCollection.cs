@@ -4,10 +4,10 @@ using System.Text;
 
 namespace TeamworkSimulation.Model
 {
-    public interface ISimulationResultCollection
-    {
+    //public interface ISimulationResultCollection : ISimulationResult
+    //{
 
-        IReadOnlyList<ISimulationResult> Results { get; }
+    //    new IReadOnlyList<ISimulationResult> Result { get; }
 
-    }
+    //}
 }

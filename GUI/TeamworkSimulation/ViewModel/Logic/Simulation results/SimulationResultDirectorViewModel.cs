@@ -17,24 +17,24 @@ namespace TeamworkSimulation.ViewModel
             this.director = director;
             ParentViewModel = parent;
 
-            resultCollectionVMs = new ObservableCollection<ISimulationResultCollectionViewModel>(
-                director.ResultCollections.Select(n => SimulationResultCollectionViewModelFactory.CreateSimulationResultCollectionVM(n, this)));
+            resultCollectionVMs = new ObservableCollection<SimulationResultViewModel>(
+                director.Results.Select(n => SimulationResultViewModelFactory.CreateSimulationResultVM(n, this)));
 
-            ResultCollectionVMs = new ReadOnlyObservableCollection<ISimulationResultCollectionViewModel>(resultCollectionVMs);
+            Results = new ReadOnlyObservableCollection<SimulationResultViewModel>(resultCollectionVMs);
         }
         #endregion
 
         #region Private fields
 
         private SimulationResultDirector director;
-        private ObservableCollection<ISimulationResultCollectionViewModel> resultCollectionVMs;
+        private ObservableCollection<SimulationResultViewModel> resultCollectionVMs;
 
         #endregion
 
         #region Properties
         public IViewModel ParentViewModel { get; set; }
 
-        public ReadOnlyObservableCollection<ISimulationResultCollectionViewModel> ResultCollectionVMs { get; }
+        public ReadOnlyObservableCollection<SimulationResultViewModel> Results { get; }
 
         #endregion
 

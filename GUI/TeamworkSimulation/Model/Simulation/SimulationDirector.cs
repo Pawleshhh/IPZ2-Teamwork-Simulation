@@ -105,19 +105,19 @@ namespace TeamworkSimulation.Model.Simulation
                 }
             }
 
-            List<ISimulationResultCollection> resultCollections = new List<ISimulationResultCollection>()
+            List<ISimulationResult> resultCollections = new List<ISimulationResult>()
             {
-                new SimulationPlotResultCollection(new List<PlotResult>()
+                new SimulationResultCollection(new List<PlotResult>()
                 {
-                    new PlotResult(result[0], "result1"),
-                    new PlotResult(result[1], "result2"),
-                    new PlotResult(result[2], "result3"),
-                    new PlotResult(result[3], "result4"),
-                    new PlotResult(result[4], "result5"),
-                    new PlotResult(result[5], "result6"),
-                    new PlotResult(result[6], "result7"),
-                    new PlotResult(result[7], "result8"),
-                })
+                    new PlotResult(result[0], "plot 1"),
+                    new PlotResult(result[1], "plot 2"),
+                    new PlotResult(result[2], "plot 3"),
+                    new PlotResult(result[3], "plot 4"),
+                    new PlotResult(result[4], "plot 5"),
+                    new PlotResult(result[5], "plot 6"),
+                    new PlotResult(result[6], "plot 7"),
+                    new PlotResult(result[7], "plot 8"),
+                }, "Plots")
             };
 
             ResultDirector = new SimulationResultDirector(resultCollections);

@@ -8,66 +8,66 @@ using TeamworkSimulation.Model;
 
 namespace TeamworkSimulation.ViewModel
 {
-    public class SimulationPlotResultCollectionViewModel : SimulationResultCollectionViewModel<PlotResultViewModel>
-    {
+    //public class SimulationPlotResultCollectionViewModel : SimulationResultCollectionViewModel<PlotResultViewModel>
+    //{
 
-        #region Constructors
-        public SimulationPlotResultCollectionViewModel(SimulationPlotResultCollection plotResultCollection, IViewModel parent)
-            : base(plotResultCollection, parent)
-        {
-            this.plotResultCollection = plotResultCollection;
+    //    #region Constructors
+    //    public SimulationPlotResultCollectionViewModel(SimulationPlotResultCollection plotResultCollection, IViewModel parent)
+    //        : base(plotResultCollection, parent)
+    //    {
+    //        this.plotResultCollection = plotResultCollection;
 
-            if (SimulationResultVMs.Count >= 1)
-                SelectPlotModel(SimulationResultVMs[0].Plot);
-        }
-        #endregion
+    //        if (SimulationResultVMs.Count >= 1)
+    //            SelectPlotModel(SimulationResultVMs[0].Plot);
+    //    }
+    //    #endregion
 
-        #region Private fields
-        private readonly SimulationPlotResultCollection plotResultCollection;
-        #endregion
+    //    #region Private fields
+    //    private readonly SimulationPlotResultCollection plotResultCollection;
+    //    #endregion
 
-        #region Properties
+    //    #region Properties
 
-        public override string Name => "Plots";
+    //    public override string Name => "Plots";
 
 
-        public PlotModel CurrentPlot { get; private set; }
+    //    public PlotModel CurrentPlot { get; private set; }
 
-        #endregion
+    //    #endregion
 
-        #region Methods
+    //    #region Methods
 
-        protected override ObservableCollection<PlotResultViewModel> CreateCollection()
-        {
-            ObservableCollection<PlotResultViewModel> observable = new ObservableCollection<PlotResultViewModel>();
-            foreach(var result in resultCollection.Results)
-            {
-                observable.Add(new PlotResultViewModel((PlotResult)result, this));
-            }
+    //    protected override ObservableCollection<PlotResultViewModel> CreateCollection()
+    //    {
+    //        ObservableCollection<PlotResultViewModel> observable = new ObservableCollection<PlotResultViewModel>();
+    //        foreach(var result in resultCollection.Results)
+    //        {
+    //            observable.Add(new PlotResultViewModel((PlotResult)result, this));
+    //        }
 
-            return observable;
-        }
+    //        return observable;
+    //    }
 
-        private void SelectPlotModel(PlotModel plt)
-        {
-            CurrentPlot = plt;
-            OnPropertyChanged(nameof(CurrentPlot));
-        }
+    //    private void SelectPlotModel(PlotModel plt)
+    //    {
+    //        CurrentPlot = plt;
+    //        OnPropertyChanged(nameof(CurrentPlot));
+    //    }
 
-        #endregion
+    //    #endregion
 
-        #region Commands
+    //    #region Commands
 
-        private ICommand selectPlot;
+    //    private ICommand selectPlot;
 
-        public ICommand SelectPlot => RelayCommand.Create(ref selectPlot, o =>
-        {
-            if (o is PlotModel plt)
-            {
-                SelectPlotModel(plt);
-            }
-        });
+    //    public ICommand SelectPlot => RelayCommand.Create(ref selectPlot, o =>
+    //    {
+    //        if (o is PlotModel plt)
+    //        {
+    //            SelectPlotModel(plt);
+    //        }
+    //    });
 
-        #endregion
-    }
+    //    #endregion
+    //}
 }

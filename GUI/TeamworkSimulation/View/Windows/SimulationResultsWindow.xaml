@@ -19,6 +19,9 @@
         <DataTemplate x:Key="simulationPlotResultTemplate">
             <local:SimulationPlotResultControl />
         </DataTemplate>
+        <DataTemplate x:Key="simulationResultCollectionTemplate">
+            <local:SimulationResultCollectionControl />
+        </DataTemplate>
 
     </Window.Resources>
 
@@ -28,7 +31,7 @@
         <TabControl
             Background="{StaticResource LightShark}"
             ContentTemplateSelector="{StaticResource simulationResultSelector}"
-            ItemsSource="{Binding ResultCollectionVMs}">
+            ItemsSource="{Binding Results}">
             <TabControl.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}" />

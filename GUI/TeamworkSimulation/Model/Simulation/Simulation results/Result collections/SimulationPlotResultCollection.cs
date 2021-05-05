@@ -4,10 +4,10 @@ using System.Text;
 
 namespace TeamworkSimulation.Model
 {
-    public class SimulationPlotResultCollection : SimulationResultCollection<PlotResult>
-    {
-        public SimulationPlotResultCollection(IEnumerable<PlotResult> results) : base(results)
-        {
-        }
-    }
+    //public class SimulationPlotResultCollection : SimulationResultCollection<PlotResult>
+    //{
+    //    public SimulationPlotResultCollection(IEnumerable<PlotResult> results) : base(results)
+    //    {
+    //    }
+    //}
 }

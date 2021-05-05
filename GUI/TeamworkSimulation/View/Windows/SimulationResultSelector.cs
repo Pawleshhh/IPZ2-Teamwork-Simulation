@@ -14,11 +14,13 @@ namespace TeamworkSimulation.View
         {
             FrameworkElement element = container as FrameworkElement;
 
-            if (item is ISimulationResultCollectionViewModel simResultCollVM)
+            if (item is SimulationResultViewModel simResultCollVM)
             {
                 switch (simResultCollVM)
                 {
-                    case SimulationPlotResultCollectionViewModel _:
+                    case SimulationResultCollectionViewModel _:
+                        return element.FindResource("simulationResultCollectionTemplate") as DataTemplate;
+                    case PlotResultViewModel _:
                         return element.FindResource("simulationPlotResultTemplate") as DataTemplate;
                 }
             }

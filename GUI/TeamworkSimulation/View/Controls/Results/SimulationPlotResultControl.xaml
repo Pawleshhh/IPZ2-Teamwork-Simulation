@@ -11,7 +11,8 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Grid x:Name="plotResultsGrid">
-        <Grid.ColumnDefinitions>
+        <oxy:PlotView Model="{Binding Plot}" />
+        <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*" />
             <ColumnDefinition Width="8.5*" />
         </Grid.ColumnDefinitions>
@@ -25,7 +26,8 @@
             ItemsSource="{Binding SimulationResultVMs}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <!--<Button
+        -->
+        <!--<Button
                         HorizontalAlignment="Center"
                         Background="Transparent"
                         BorderBrush="Transparent"
@@ -37,6 +39,7 @@
                             <TextBlock Text="{Binding Plot.Title, Mode=OneWay}" />
                         </Button.Content>
                     </Button>-->
+        <!--
                     <TextBlock Foreground="{StaticResource Alto}" Text="{Binding Plot.Title, Mode=OneWay}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="PreviewMouseDown">
@@ -48,6 +51,6 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <oxy:PlotView Grid.Column="1" Model="{Binding CurrentPlot}" />
+        <oxy:PlotView Grid.Column="1" Model="{Binding CurrentPlot}" />-->
     </Grid>
 </UserControl>

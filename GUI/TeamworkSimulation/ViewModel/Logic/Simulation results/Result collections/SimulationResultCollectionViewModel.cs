@@ -5,44 +5,66 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Linq;
 using TeamworkSimulation.Model;
+using System.Windows.Input;
 
 namespace TeamworkSimulation.ViewModel
 {
-    public abstract class SimulationResultCollectionViewModel<T> : NotifyPropertyChanges, ISimulationResultCollectionViewModel
-        where T : SimulationResultViewModel
+    public class SimulationResultCollectionViewModel : SimulationResultViewModel
     {
 
         #region Constructors
-        public SimulationResultCollectionViewModel(ISimulationResultCollection resultCollection, IViewModel parent)
+        public SimulationResultCollectionViewModel(SimulationResultCollection resultCollection, IViewModel parent)
+            : base(resultCollection, parent)
         {
             this.resultCollection = resultCollection;
             ParentViewModel = parent;
 
-            simulationResultVMs = CreateCollection();
-            SimulationResultVMs = new ReadOnlyObservableCollection<T>(simulationResultVMs);
+            simulationResultVMs = new ObservableCollection<SimulationResultViewModel>(
+                resultCollection.Result.Select(n => SimulationResultViewModelFactory.CreateSimulationResultVM(n, this)));
+            SimulationResultVMs = new ReadOnlyObservableCollection<SimulationResultViewModel>(simulationResultVMs);
+
+            if (SimulationResultVMs.Count > 0)
+                SetSelectedResult(SimulationResultVMs[0]);
         }
         #endregion
 
         #region Private fields
-        protected readonly ISimulationResultCollection resultCollection;
-        private ObservableCollection<T> simulationResultVMs;
+
+        protected readonly SimulationResultCollection resultCollection;
+        private ObservableCollection<SimulationResultViewModel> simulationResultVMs;
 
         #endregion
 
         #region Properties
-        public IViewModel ParentViewModel { get; set; }
+        public ReadOnlyObservableCollection<SimulationResultViewModel> SimulationResultVMs { get; }
 
-        public abstract string Name { get; }
-
-        public ReadOnlyObservableCollection<T> SimulationResultVMs { get; }
-        IReadOnlyList<SimulationResultViewModel> ISimulationResultCollectionViewModel.SimulationResultVMs => SimulationResultVMs;
+        public SimulationResultViewModel SelectedResult { get; private set; }
 
         #endregion
 
         #region Methods
 
-        protected abstract ObservableCollection<T> CreateCollection();
+        private void SetSelectedResult(SimulationResultViewModel resultVM)
+        {
+            SelectedResult = resultVM;
+            OnPropertyChanged(nameof(SelectedResult));
+        }
 
         #endregion
+
+        #region Commands
+
+        private ICommand selectResult;
+
+        public ICommand SelectResult => RelayCommand.Create(ref selectResult, o =>
+        {
+            if (o is SimulationResultViewModel r)
+            {
+                SetSelectedResult(r);
+            }
+        });
+
+        #endregion
+
     }
 }
