@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeamworkSimulation.ViewModel;
 
 namespace TeamworkSimulation.View
 {
@@ -21,6 +22,8 @@ namespace TeamworkSimulation.View
         public SimulationPlotResultControl()
         {
             InitializeComponent();
+
+            //DataContextChanged += (s, e) => plotView.Model = ((PlotResultViewModel)DataContext).Plot;
         }
     }
 }

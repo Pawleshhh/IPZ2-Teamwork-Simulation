@@ -11,7 +11,7 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Grid x:Name="plotResultsGrid">
-        <oxy:PlotView Model="{Binding Plot}" />
+        <oxy:PlotView x:Name="plotView" Model="{Binding Plot}" />
         <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*" />
             <ColumnDefinition Width="8.5*" />

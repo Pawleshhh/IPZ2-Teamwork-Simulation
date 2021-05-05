@@ -27,7 +27,7 @@ namespace TeamworkSimulation.View
 
         private void mainContent_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            //mainContent.ContentTemplate = simulationResultSelector.SelectTemplate(mainContent.DataContext, mainContent);
+            mainContent.ContentTemplate = simulationResultSelector.SelectTemplate(mainContent.DataContext, mainContent);
         }
 
     }

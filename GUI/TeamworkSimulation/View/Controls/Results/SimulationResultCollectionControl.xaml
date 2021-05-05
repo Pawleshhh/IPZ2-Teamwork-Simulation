@@ -13,7 +13,7 @@
 
     <UserControl.Resources>
         <DataTemplate x:Key="simulationPlotResultTemplate">
-            <local:SimulationPlotResultControl DataContext="{Binding ElementName=plotResultsGrid, Path=DataContext.SelectedResult}" />
+            <local:SimulationPlotResultControl />
         </DataTemplate>
         <DataTemplate x:Key="simulationResultCollectionTemplate">
             <local:SimulationResultCollectionControl />
@@ -58,12 +58,12 @@
         </ListView>
 
 
-        <oxy:PlotView Grid.Column="1" Model="{Binding SelectedResult.Plot}" />
-        <!--<ContentControl
+        <!--<oxy:PlotView Grid.Column="1" Model="{Binding SelectedResult.Plot}" />-->
+        <ContentControl
             x:Name="mainContent"
             Grid.Column="1"
             DataContext="{Binding ElementName=plotResultsGrid, Path=DataContext.SelectedResult}"
-            DataContextChanged="mainContent_DataContextChanged" />-->
+            DataContextChanged="mainContent_DataContextChanged" />
 
     </Grid>
 </UserControl>
