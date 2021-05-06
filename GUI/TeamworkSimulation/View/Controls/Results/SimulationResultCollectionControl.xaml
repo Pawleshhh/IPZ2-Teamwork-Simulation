@@ -63,7 +63,7 @@
         <ContentPresenter
             x:Name="mainContent"
             Grid.Column="1"
-            Content="{Binding ElementName=resultList, Path=SelectedItem}"
+            Content="{Binding SelectedResult}"
             ContentTemplateSelector="{StaticResource simulationResultSelector}" />
 
     </Grid>

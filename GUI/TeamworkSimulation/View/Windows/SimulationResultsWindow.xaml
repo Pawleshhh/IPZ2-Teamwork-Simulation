@@ -28,7 +28,7 @@
     <Grid>
 
 
-        <TabControl
+        <local:TabControlEx
             Background="{StaticResource LightShark}"
             ContentTemplateSelector="{StaticResource simulationResultSelector}"
             ItemsSource="{Binding Results}">
@@ -37,7 +37,7 @@
                     <TextBlock Text="{Binding Name}" />
                 </DataTemplate>
             </TabControl.ItemTemplate>
-        </TabControl>
+        </local:TabControlEx>
 
         <!--<Grid>
             <Grid.ColumnDefinitions>
