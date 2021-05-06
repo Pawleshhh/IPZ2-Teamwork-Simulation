@@ -219,3 +219,4 @@ N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Deb
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.dll
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.pdb
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.genruntimeconfig.cache
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.csprojAssemblyReference.cache

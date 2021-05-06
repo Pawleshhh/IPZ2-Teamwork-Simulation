@@ -9,7 +9,25 @@ namespace TeamworkSimulation.Model.Simulation
 {
     public class PythonSimulationDirector : SimulationDirector
     {
+
+        private IntPtr threadState;
+
         #region Methods
+
+        protected override void OnStarted()
+        {
+            if (!PythonEngine.IsInitialized)
+            {
+                PythonEngine.Initialize();
+                threadState = PythonEngine.BeginAllowThreads();
+            }
+            base.OnStarted();
+        }
+
+        protected override void OnStopped()
+        {
+            base.OnStopped();
+        }
 
         protected override Task BeginSimulation(List<int[]> attributes)
         {
