@@ -19,7 +19,11 @@ namespace TeamworkSimulation.Model
         [DataMember]
         private List<T> teams = new List<T>();
 
+        [DataMember]
         private int iterations = 2;
+
+        [DataMember]
+        private bool isRemote;
 
         #endregion
 
@@ -52,14 +56,22 @@ namespace TeamworkSimulation.Model
                     throw new ArgumentException(nameof(value));
 
                 iterations = value;
+                InvokeItemChangedEvent();
             }
         }
 
         public IErgonomy Ergonomy { get; set; }
         public ITechnology Technology { get; set; }
 
-        [DataMember]
-        public bool IsRemote { get; set; }
+        public bool IsRemote
+        {
+            get => isRemote;
+            set
+            {
+                isRemote = value;
+                InvokeItemChangedEvent();
+            }
+        }
 
         #endregion
 

@@ -55,6 +55,18 @@ namespace TeamworkSimulation.ViewModel
             OnPropertyChanged(nameof(IsWorking));
         }
 
+        private void LoadNewProject()
+        {
+            if (!manager.WhenClosing())
+                return;
+
+            if (!manager.LoadProject())
+                return;
+
+            ProjectVM = new ProjectViewModel(manager.Project);
+            OnPropertyChanged(nameof(ProjectVM));
+        }
+
         #endregion
 
         #region Commands
@@ -75,14 +87,7 @@ namespace TeamworkSimulation.ViewModel
 
         public ICommand LoadProject => RelayCommand.Create(ref loadProject, o =>
         {
-            if (!manager.WhenClosing())
-                return;
-
-            if (!manager.LoadProject())
-                return;
-
-            ProjectVM = new ProjectViewModel(manager.Project);
-            OnPropertyChanged(nameof(ProjectVM));
+            LoadNewProject();
         });
 
         private ICommand saveProject;

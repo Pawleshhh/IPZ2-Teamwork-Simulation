@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Input;
 using TeamworkSimulation.Model;
@@ -19,8 +20,9 @@ namespace TeamworkSimulation.ViewModel
             this.project = project ?? throw new ArgumentNullException(nameof(project));
 
             workplaceVMs = new ObservableCollection<WorkplaceViewModel>(
-                project.Workplaces.Select(n => new WorkplaceViewModel(n)));
+                project.Workplaces.Select(n => new WorkplaceViewModel(n, this)));
             WorkplaceVMs = new ReadOnlyObservableCollection<WorkplaceViewModel>(workplaceVMs);
+            AddToProjectItemCollection();
 
             WorkplaceTemplateVM = new WorkplaceTemplateViewModel(project.WorkplaceTemplateBuilder);
 
@@ -77,6 +79,12 @@ namespace TeamworkSimulation.ViewModel
 
         #region Methods
 
+        private void AddToProjectItemCollection()
+        {
+            foreach (var workplace in workplaceVMs)
+                AddProjectItem(workplace);
+        }
+
         public void Add()
         {
             project.AddWorkplace();
@@ -97,7 +105,7 @@ namespace TeamworkSimulation.ViewModel
 
         private void Project_Added(object sender, DataEventArgs<(int, IWorkplace)> e)
         {
-            WorkplaceViewModel workplaceViewModel = new WorkplaceViewModel(e.Value.Item2) { ParentViewModel = this };
+            WorkplaceViewModel workplaceViewModel = new WorkplaceViewModel(e.Value.Item2, this);
             workplaceVMs.Add(workplaceViewModel);
             AddProjectItem(workplaceViewModel);
 

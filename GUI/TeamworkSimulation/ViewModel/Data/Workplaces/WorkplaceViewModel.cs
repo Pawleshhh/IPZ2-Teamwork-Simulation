@@ -14,7 +14,7 @@ namespace TeamworkSimulation.ViewModel
 
         #region Constructors
 
-        public WorkplaceViewModel(IWorkplace workplace)
+        public WorkplaceViewModel(IWorkplace workplace, IViewModel parent)
             :base(workplace)
         {
             this.workplace = workplace ?? throw new ArgumentNullException(nameof(workplace));
@@ -30,6 +30,8 @@ namespace TeamworkSimulation.ViewModel
 
             foreach (var v in teamVMs)
                 AddProjectItem(v);
+
+            ParentViewModel = parent;
         }
 
         #endregion
