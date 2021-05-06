@@ -12,6 +12,7 @@
     mc:Ignorable="d">
 
     <UserControl.Resources>
+        <local:SimulationResultSelector x:Key="simulationResultSelector" />
         <DataTemplate x:Key="simulationPlotResultTemplate">
             <local:SimulationPlotResultControl />
         </DataTemplate>
@@ -59,11 +60,11 @@
 
 
         <!--<oxy:PlotView Grid.Column="1" Model="{Binding SelectedResult.Plot}" />-->
-        <ContentControl
+        <ContentPresenter
             x:Name="mainContent"
             Grid.Column="1"
-            DataContext="{Binding ElementName=plotResultsGrid, Path=DataContext.SelectedResult}"
-            DataContextChanged="mainContent_DataContextChanged" />
+            Content="{Binding ElementName=resultList, Path=SelectedItem}"
+            ContentTemplateSelector="{StaticResource simulationResultSelector}" />
 
     </Grid>
 </UserControl>

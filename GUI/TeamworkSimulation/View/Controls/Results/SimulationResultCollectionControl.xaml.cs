@@ -30,5 +30,9 @@ namespace TeamworkSimulation.View
             mainContent.ContentTemplate = simulationResultSelector.SelectTemplate(mainContent.DataContext, mainContent);
         }
 
+        private void MainContent_ContentLoaded(object sender, RoutedEventArgs e)
+        {
+            ((FrameworkElement)sender).DataContext = resultList.SelectedItem;
+        }
     }
 }

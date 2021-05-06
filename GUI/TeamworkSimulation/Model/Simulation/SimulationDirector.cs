@@ -117,7 +117,8 @@ namespace TeamworkSimulation.Model.Simulation
                     new PlotResult(result[5], "plot 6"),
                     new PlotResult(result[6], "plot 7"),
                     new PlotResult(result[7], "plot 8"),
-                }, "Plots")
+                }, "Plots"),
+                new PlotResult(new List<double[]>(){ new double[] { 1, 2, 3 }, new double[] { 3, 2, 1 } }, "Plot test")
             };
 
             ResultDirector = new SimulationResultDirector(resultCollections);
