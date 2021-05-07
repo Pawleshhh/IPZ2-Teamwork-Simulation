@@ -12,11 +12,6 @@ namespace TeamworkSimulation.Model
     {
         #region Constructors
 
-        public Worker()
-        {
-            SimulationModel = new WorkerSimulationModel(this);
-        }
-
         #endregion
 
         #region Private fields
@@ -57,6 +52,11 @@ namespace TeamworkSimulation.Model
 
         protected override IExperience GetExperience()
             => WorkerExperience;
+
+        protected override ISimulationModel GetSimulationModel()
+        {
+            return new WorkerSimulationModel(this);
+        }
 
         #endregion
 

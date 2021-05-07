@@ -12,10 +12,19 @@ namespace TeamworkSimulation.Model
 
         protected ModelItem()
         {
-            SimulationModel = SimulationModel<ModelItem>.GetEmptySimulationModel(this);
         }
 
-        public ISimulationModel SimulationModel { get; protected set; }
+        private ISimulationModel simulationModel;
+
+        public ISimulationModel SimulationModel
+        {
+            get => simulationModel ??= GetSimulationModel();
+        }
+
+        protected virtual ISimulationModel GetSimulationModel()
+        {
+            return SimulationModel<ModelItem>.GetEmptySimulationModel(this);
+        }
 
     }
 }

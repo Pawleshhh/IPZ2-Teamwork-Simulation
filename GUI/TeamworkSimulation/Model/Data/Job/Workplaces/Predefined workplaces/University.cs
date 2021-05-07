@@ -9,8 +9,12 @@ namespace TeamworkSimulation.Model
     {
         public University()
         {
-            SimulationModel = new UnivercitySimulationModel(this);
             ItemName = "University";
+        }
+
+        protected override ISimulationModel GetSimulationModel()
+        {
+            return new UnivercitySimulationModel(this);
         }
 
     }

@@ -13,11 +13,6 @@ namespace TeamworkSimulation.Model
     {
         #region Constructors
 
-        public Student()
-        {
-            SimulationModel = new StudentSimulationModel(this);
-        }
-
         #endregion
         #region Properties
         [DataMember]
@@ -42,6 +37,11 @@ namespace TeamworkSimulation.Model
 
         protected override IExperience GetExperience()
             => StudentExperience;
+
+        protected override ISimulationModel GetSimulationModel()
+        {
+            return new StudentSimulationModel(this);
+        }
 
         #endregion
     }
