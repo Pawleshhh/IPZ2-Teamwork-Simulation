@@ -6,6 +6,7 @@
     xmlns:fa="http://schemas.fontawesome.io/icons/"
     xmlns:local="clr-namespace:TeamworkSimulation.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpft="http://schemas.xceed.com/wpf/xaml/toolkit"
     x:Name="mainWindow"
     Title="MainWindow"
     Width="800"
@@ -28,6 +29,7 @@
             <RowDefinition Height="20" />
             <RowDefinition Height="40" />
             <RowDefinition />
+            <RowDefinition Height="60" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="160" />
@@ -95,9 +97,48 @@
             BorderBrush="Black"
             BorderThickness="1"
             DataContext="{Binding ProjectVM}" />
+
+        <!--  Simulation parameters  -->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="14"
+                Text="Iterations:" />
+            <wpft:IntegerUpDown
+                Grid.Column="1"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Maximum="{Binding MaximumIterations, Mode=OneWay}"
+                Minimum="{Binding MinimumIterations, Mode=OneWay}"
+                Value="{Binding Iterations, Mode=TwoWay}" />
+            <TextBlock
+                Grid.Row="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="14"
+                Text="Simulation count:" />
+            <wpft:IntegerUpDown
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Maximum="{Binding MaximumSimulationCount, Mode=OneWay}"
+                Minimum="{Binding MinimumSimulationCount, Mode=OneWay}"
+                Value="{Binding SimulationCount, Mode=TwoWay}" />
+        </Grid>
+
         <local:WorkplaceControl
             Grid.Row="1"
-            Grid.RowSpan="2"
+            Grid.RowSpan="3"
             Grid.Column="1"
             BorderBrush="Black"
             DataContext="{Binding ProjectVM.SelectedWorkplaceVM}"

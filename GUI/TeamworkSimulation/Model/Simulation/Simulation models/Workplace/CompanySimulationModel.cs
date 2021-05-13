@@ -19,7 +19,6 @@ namespace TeamworkSimulation.Model.Simulation
             {
                 GetWorkplaceType(),
                 GetWorkplaceMode(),
-                GetIterations()
             };
         }
 

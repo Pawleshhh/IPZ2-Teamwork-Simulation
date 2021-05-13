@@ -40,6 +40,25 @@ namespace TeamworkSimulation.ViewModel
         public bool IsWorking => manager.SimulationDirector.IsWorking;
 
         public bool CanShowResults => simulationResultDirectiorVM != null;
+
+        public int Iterations
+        {
+            get => manager.SimulationDirector.Iterations;
+            set => SetProperty(() => manager.SimulationDirector.Iterations == value, () => manager.SimulationDirector.Iterations = value);
+        }
+
+        public int MaximumIterations => manager.SimulationDirector.MaximumIterations;
+        public int MinimumIterations => manager.SimulationDirector.MinimumIterations;
+
+        public int SimulationCount
+        {
+            get => manager.SimulationDirector.SimulationCount;
+            set => SetProperty(() => manager.SimulationDirector.SimulationCount == value, () => manager.SimulationDirector.SimulationCount = value);
+        }
+
+        public int MaximumSimulationCount => manager.SimulationDirector.MaximumSimulationCount;
+        public int MinimumSimulationCount => manager.SimulationDirector.MinimumSimulationCount;
+
         #endregion
 
         #region Methods

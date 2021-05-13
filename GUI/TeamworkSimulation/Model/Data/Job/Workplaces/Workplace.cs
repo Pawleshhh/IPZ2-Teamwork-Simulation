@@ -20,9 +20,6 @@ namespace TeamworkSimulation.Model
         private List<T> teams = new List<T>();
 
         [DataMember]
-        private int iterations = 2;
-
-        [DataMember]
         private bool isRemote;
 
         #endregion
@@ -41,22 +38,6 @@ namespace TeamworkSimulation.Model
                     count += team.TeamMembers.Count;
 
                 return count;
-            }
-        }
-
-        public int MaximumIterations { get; } = 10;
-        public int MinimumIterations { get; } = 2;
-
-        public int Iterations
-        {
-            get => iterations;
-            set
-            {
-                if (iterations <= 0)
-                    throw new ArgumentException(nameof(value));
-
-                iterations = value;
-                InvokeItemChangedEvent();
             }
         }
 

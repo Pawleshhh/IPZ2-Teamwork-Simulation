@@ -90,7 +90,7 @@
                 FontSize="16"
                 Foreground="{StaticResource Alto}"
                 IsChecked="{Binding IsRemote, Mode=TwoWay}" />
-            <TextBlock
+            <!--<TextBlock
                 Margin="10,5,0,0"
                 VerticalAlignment="Center"
                 FontSize="16"
@@ -100,7 +100,7 @@
                 VerticalAlignment="Center"
                 Maximum="{Binding MaximumIterations, Mode=OneWay}"
                 Minimum="{Binding MinimumIterations, Mode=OneWay}"
-                Value="{Binding Iterations, Mode=TwoWay}" />
+                Value="{Binding Iterations, Mode=TwoWay}" />-->
         </StackPanel>
 
         <Button

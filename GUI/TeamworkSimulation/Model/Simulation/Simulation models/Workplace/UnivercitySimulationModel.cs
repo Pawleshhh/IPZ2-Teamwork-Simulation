@@ -18,8 +18,7 @@ namespace TeamworkSimulation.Model.Simulation
             return new int[]
             {
                 GetWorkplaceType(),
-                GetWorkplaceMode(),
-                GetIterations()
+                GetWorkplaceMode()
             };
         }
 
