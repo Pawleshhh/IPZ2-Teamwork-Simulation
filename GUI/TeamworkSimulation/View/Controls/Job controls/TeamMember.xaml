@@ -73,6 +73,13 @@
                 <fa:ImageAwesome Icon="TrashOutline" />
             </Button>
 
+            <CheckBox
+                Grid.Row="2"
+                Grid.Column="3"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                IsChecked="{Binding UseModel, Mode=TwoWay}" />
+
             <StackPanel VerticalAlignment="Center" Orientation="Vertical">
                 <TextBlock Text="Gender" />
                 <ComboBox

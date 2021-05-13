@@ -12,7 +12,7 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\App.xaml
 241519292704
 
-129422764045
+130-527731682
 218-1726975930
 View\Controls\Job controls\StudentControl.xaml;View\Controls\Job controls\TeamControl.xaml;View\Controls\Job controls\TeamMember.xaml;View\Controls\Job controls\WorkerControl.xaml;View\Controls\Job controls\WorkplaceControl.xaml;View\Controls\Other\ColorsComboBox.xaml;View\Controls\Project tree\Project items\ProjectTreeItemControl.xaml;View\Controls\Project tree\Project items\TeamMemberProjectTreeItemControl.xaml;View\Controls\Project tree\Project items\TeamProjectTreeItemControl.xaml;View\Controls\Project tree\Project items\WorkplaceProjectTreeItemControl.xaml;View\Controls\Project tree\ProjectTreeControl.xaml;View\Controls\Results\SimulationPlotResultControl.xaml;View\Controls\Results\SimulationResultCollectionControl.xaml;View\Resources\AppColors.xaml;View\Resources\ButtonStyles.xaml;View\Resources\ComboBoxStyles.xaml;View\Resources\DataProviders.xaml;View\Resources\MenuStyles.xaml;View\Resources\ScrollStyles.xaml;View\Resources\TextBoxStyles.xaml;View\Resources\TreeViewStyles.xaml;View\Resources\UpDownControlsStyles.xaml;View\Windows\MainWindow.xaml;View\Windows\SimulationResultsWindow.xaml;
 

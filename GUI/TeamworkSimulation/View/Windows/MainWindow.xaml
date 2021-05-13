@@ -37,7 +37,7 @@
         </Grid.ColumnDefinitions>
 
         <Border
-            Grid.RowSpan="3"
+            Grid.RowSpan="4"
             Grid.ColumnSpan="2"
             Panel.ZIndex="100"
             Background="Gray"

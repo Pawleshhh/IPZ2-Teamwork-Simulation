@@ -9,13 +9,13 @@ using TeamworkSimulation.Model;
 
 namespace TeamworkSimulation.ViewModel
 {
-    public class TeamViewModel : ProjectItemViewModel
+    public class TeamViewModel : ModelItemViewModel
     {
 
         #region Constructors
 
         public TeamViewModel(ITeam team)
-            :base(team)
+            :base((ModelItem)team)
         {
             this.team = team ?? throw new ArgumentNullException(nameof(team));
             teamMemberVMs = new ObservableCollection<TeamMemberViewModel>(

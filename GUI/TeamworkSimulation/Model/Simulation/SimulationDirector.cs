@@ -124,16 +124,18 @@ namespace TeamworkSimulation.Model.Simulation
             {
                 ModelItem current = stack.Pop();
 
-                int[] attr = current.SimulationModel.GetAttributes();
-                if (attr.Length > 0)
-                    attributes.Add(attr);
+                if (current.UseModel)
+                {
+                    int[] attr = current.SimulationModel.GetAttributes();
+                    if (attr.Length > 0)
+                        attributes.Add(attr);
 
-                var modelItems = ((IProjectItem)current).GetProjectItems().Where(n => n is ModelItem)
-                    .Select(m => (ModelItem)m);
+                    var modelItems = ((IProjectItem)current).GetProjectItems().Where(n => n is ModelItem)
+                        .Select(m => (ModelItem)m);
 
-                foreach (var item in modelItems)
-                    stack.Push(item);
-
+                    foreach (var item in modelItems)
+                        stack.Push(item);
+                }
             }
 
             return attributes;

@@ -9,13 +9,13 @@ using TeamworkSimulation.Model;
 
 namespace TeamworkSimulation.ViewModel
 {
-    public class WorkplaceViewModel : ProjectItemViewModel
+    public class WorkplaceViewModel : ModelItemViewModel
     {
 
         #region Constructors
 
         public WorkplaceViewModel(IWorkplace workplace, IViewModel parent)
-            :base(workplace)
+            :base((ModelItem)workplace)
         {
             this.workplace = workplace ?? throw new ArgumentNullException(nameof(workplace));
 

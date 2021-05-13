@@ -6,13 +6,13 @@ using TeamworkSimulation.Model;
 
 namespace TeamworkSimulation.ViewModel
 {
-    public abstract class TeamMemberViewModel : ProjectItemViewModel
+    public abstract class TeamMemberViewModel : ModelItemViewModel
     {
 
         #region Constructors
 
         protected TeamMemberViewModel(ITeamMember teamMember)
-            :base(teamMember)
+            :base((ModelItem)teamMember)
         {
             this.teamMember = teamMember ?? throw new ArgumentNullException(nameof(teamMember));
             ExperienceVM = ExperienceViewModelFactory.Create(teamMember.Experience);

@@ -138,6 +138,10 @@
                 CommandParameter="{Binding}">
                 <fa:ImageAwesome Icon="TrashOutline" />
             </Button>
+            <CheckBox
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                IsChecked="{Binding UseModel, Mode=TwoWay}" />
         </StackPanel>
 
         <ListView
