@@ -99,7 +99,7 @@
             DataContext="{Binding ProjectVM}" />
 
         <!--  Simulation parameters  -->
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="3" DataContext="{Binding SimulationDirectorVM, Mode=OneWay}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="7*" />
                 <ColumnDefinition Width="3*" />

@@ -4,7 +4,7 @@ using TeamworkSimulation.Model;
 
 namespace TeamworkSimulation.ViewModel
 {
-    public class MainViewModel : NotifyPropertyChanges
+    public class MainViewModel : NotifyPropertyChanges, IViewModel
     {
 
         #region Constructors
@@ -12,6 +12,8 @@ namespace TeamworkSimulation.ViewModel
         public MainViewModel(TeamworkSimulationManager manager, IOpenView simulationResultsView)
         {
             this.manager = manager;
+            SimulationDirectorVM = new SimulationDirectorViewModel(manager.SimulationDirector, this);
+
             manager.CreateNewProject();
             ProjectVM = new ProjectViewModel(manager.Project);
 
@@ -35,35 +37,15 @@ namespace TeamworkSimulation.ViewModel
 
         #region Properties
 
+        public IViewModel ParentViewModel { get; set; }
+
         public ProjectViewModel ProjectVM { get; private set; }
+
+        public SimulationDirectorViewModel SimulationDirectorVM { get; }
 
         public bool IsWorking => manager.SimulationDirector.IsWorking;
 
         public bool CanShowResults => simulationResultDirectiorVM != null;
-
-        public int Iterations
-        {
-            get => manager.SimulationDirector.Iterations;
-            set => SetProperty(() => manager.SimulationDirector.Iterations == value, () => manager.SimulationDirector.Iterations = value);
-        }
-
-        public int MaximumIterations => manager.SimulationDirector.MaximumIterations;
-        public int MinimumIterations => manager.SimulationDirector.MinimumIterations;
-
-        public int SimulationCount
-        {
-            get => manager.SimulationDirector.SimulationCount;
-            set => SetProperty(() => manager.SimulationDirector.SimulationCount == value, () => manager.SimulationDirector.SimulationCount = value);
-        }
-
-        public int MaximumSimulationCount => manager.SimulationDirector.MaximumSimulationCount;
-        public int MinimumSimulationCount => manager.SimulationDirector.MinimumSimulationCount;
-
-        public bool KeepPreviousResults
-        {
-            get => manager.SimulationDirector.KeepPreviousResults;
-            set => SetProperty(() => manager.SimulationDirector.KeepPreviousResults == value, () => manager.SimulationDirector.KeepPreviousResults = value);
-        }
 
         #endregion
 
