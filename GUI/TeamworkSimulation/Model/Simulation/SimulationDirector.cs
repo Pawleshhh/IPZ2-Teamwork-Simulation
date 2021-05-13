@@ -27,6 +27,8 @@ namespace TeamworkSimulation.Model.Simulation
         private int iterations;
         private int simulationCount;
 
+        private int simulationCountSum;
+
         #endregion
 
         #region Properties
@@ -65,6 +67,8 @@ namespace TeamworkSimulation.Model.Simulation
                 simulationCount = value;
             }
         }
+
+        public bool KeepPreviousResults { get; set; }
 
         #endregion
 
@@ -144,9 +148,21 @@ namespace TeamworkSimulation.Model.Simulation
         protected virtual void SetResults(List<double[][][]> allSimResults)
         {
 
-            List<ISimulationResult> resultCollections = new List<ISimulationResult>();
+            List<ISimulationResult> resultCollections;
 
-            int i = 1;
+            if (KeepPreviousResults && ResultDirector != null)
+            {
+                resultCollections = new List<ISimulationResult>(ResultDirector.Results);
+                simulationCountSum++;
+            }
+            else
+            {
+                resultCollections = new List<ISimulationResult>();
+                simulationCountSum = 1;
+            }
+
+            int i = simulationCountSum,
+                j = 1;
             foreach (var simResult in allSimResults)
             {
                 List<List<double[]>> result = new List<List<double[]>>();
@@ -169,9 +185,7 @@ namespace TeamworkSimulation.Model.Simulation
                         new PlotResult(result[5], "Help"),
                         new PlotResult(result[6], "Self improvement"),
                         new PlotResult(result[7], "Communication"),
-                    }, $"Simulation {i}"));
-
-                i++;
+                    }, $"Simulation {i}.{j++}"));
             }
 
             ResultDirector = new SimulationResultDirector(resultCollections);

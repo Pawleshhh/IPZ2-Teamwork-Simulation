@@ -59,6 +59,12 @@ namespace TeamworkSimulation.ViewModel
         public int MaximumSimulationCount => manager.SimulationDirector.MaximumSimulationCount;
         public int MinimumSimulationCount => manager.SimulationDirector.MinimumSimulationCount;
 
+        public bool KeepPreviousResults
+        {
+            get => manager.SimulationDirector.KeepPreviousResults;
+            set => SetProperty(() => manager.SimulationDirector.KeepPreviousResults == value, () => manager.SimulationDirector.KeepPreviousResults = value);
+        }
+
         #endregion
 
         #region Methods
