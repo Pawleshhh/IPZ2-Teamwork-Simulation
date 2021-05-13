@@ -118,7 +118,32 @@ namespace TeamworkSimulation.Model.Simulation
                     new PlotResult(result[6], "plot 7"),
                     new PlotResult(result[7], "plot 8"),
                 }, "Plots"),
-                new PlotResult(new List<double[]>(){ new double[] { 1, 2, 3 }, new double[] { 3, 2, 1 } }, "Plot test")
+                new PlotResult(new List<double[]>(){ new double[] { 1, 2, 3 }, new double[] { 3, 2, 1 } }, "Plot test 1"),
+                new SimulationResultCollection(new List<SimulationResultCollection>()
+                {
+                    new SimulationResultCollection(new List<PlotResult>()
+                    {
+                        new PlotResult(result[0], "plot 1.1"),
+                        new PlotResult(result[1], "plot 1.2"),
+                        new PlotResult(result[2], "plot 1.3"),
+                        new PlotResult(result[3], "plot 1.4"),
+                        new PlotResult(result[4], "plot 1.5"),
+                        new PlotResult(result[5], "plot 1.6"),
+                        new PlotResult(result[6], "plot 1.7"),
+                        new PlotResult(result[7], "plot 1.8"),
+                    }, "Plots 1"),
+                    new SimulationResultCollection(new List<PlotResult>()
+                    {
+                        new PlotResult(result[0], "plot 2.1"),
+                        new PlotResult(result[1], "plot 2.2"),
+                        new PlotResult(result[2], "plot 2.3"),
+                        new PlotResult(result[3], "plot 2.4"),
+                        new PlotResult(result[4], "plot 2.5"),
+                        new PlotResult(result[5], "plot 2.6"),
+                        new PlotResult(result[6], "plot 2.7"),
+                        new PlotResult(result[7], "plot 2.8"),
+                    }, "Plots 2"),
+                }, "Plot test 2")
             };
 
             ResultDirector = new SimulationResultDirector(resultCollections);

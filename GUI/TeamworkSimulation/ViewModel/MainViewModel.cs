@@ -39,19 +39,14 @@ namespace TeamworkSimulation.ViewModel
 
         public bool IsWorking => manager.SimulationDirector.IsWorking;
 
+        public bool CanShowResults => simulationResultDirectiorVM != null;
         #endregion
 
         #region Methods
 
         private void SimulationDirector_IsWorkingChanged(object sender, EventArgs e)
         {
-            if (!IsWorking)
-            {
-                simulationResultDirectiorVM = new SimulationResultDirectorViewModel(manager.SimulationDirector.ResultDirector, null);
-
-                simulationResultsView.OpenView(simulationResultDirectiorVM);
-            }
-
+            ShowSimulationResults();
             OnPropertyChanged(nameof(IsWorking));
         }
 
@@ -65,6 +60,21 @@ namespace TeamworkSimulation.ViewModel
 
             ProjectVM = new ProjectViewModel(manager.Project);
             OnPropertyChanged(nameof(ProjectVM));
+        }
+
+        private void ShowSimulationResults()
+        {
+            if (!IsWorking)
+            {
+                simulationResultDirectiorVM = new SimulationResultDirectorViewModel(manager.SimulationDirector.ResultDirector, null);
+
+                if (simulationResultsView.IsOpened)
+                    simulationResultsView.CloseView();
+
+                simulationResultsView.OpenView(simulationResultDirectiorVM);
+
+                OnPropertyChanged(nameof(CanShowResults));
+            }
         }
 
         #endregion
@@ -103,6 +113,13 @@ namespace TeamworkSimulation.ViewModel
         {
             manager.SimulationDirector.StartSimulation(manager.Project);
         });
+
+        private ICommand showResults;
+
+        public ICommand ShowResults => RelayCommand.Create(ref showResults, o =>
+        {
+            ShowSimulationResults();
+        }, o => CanShowResults);
 
         #endregion
 

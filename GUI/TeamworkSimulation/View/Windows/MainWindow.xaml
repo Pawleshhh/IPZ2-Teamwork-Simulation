@@ -56,6 +56,7 @@
             </MenuItem>
             <MenuItem Header="Simulation" Style="{StaticResource DefaultMenuItemStyle}">
                 <MenuItem Command="{Binding StartSimulation}" Header="Start" />
+                <MenuItem Command="{Binding ShowResults}" Header="Results" />
             </MenuItem>
         </Menu>
 

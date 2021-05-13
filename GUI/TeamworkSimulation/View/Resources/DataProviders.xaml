@@ -2,6 +2,8 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:model="clr-namespace:TeamworkSimulation.Model"
+    xmlns:oxy="http://oxyplot.org/wpf"
+    xmlns:oxyplt="clr-namespace:OxyPlot;assembly=OxyPlot"
     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <ObjectDataProvider
         x:Key="personalities"
@@ -68,5 +70,13 @@
             <x:Type Type="model:FieldOfStudy" />
         </ObjectDataProvider.MethodParameters>
     </ObjectDataProvider>
+    <!--<ObjectDataProvider
+        x:Key="plotTypes"
+        MethodName="GetValues"
+        ObjectType="{x:Type oxyplt:PlotType}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type Type="oxyplt:PlotType" />
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>-->
 
 </ResourceDictionary>

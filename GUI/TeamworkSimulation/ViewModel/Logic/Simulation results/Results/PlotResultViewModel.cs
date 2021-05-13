@@ -3,6 +3,7 @@ using OxyPlot.Series;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using TeamworkSimulation.Model;
 
 namespace TeamworkSimulation.ViewModel
@@ -100,6 +101,23 @@ namespace TeamworkSimulation.ViewModel
             }
             return null;
         }
+
+        private void ResetPlot()
+        {
+            Plot.ResetAllAxes();
+            OnPropertyChanged(nameof(Plot));
+        }
+        #endregion
+
+        #region Commands
+
+        private ICommand resetPlotModel;
+
+        public ICommand ResetPlotModel => RelayCommand.Create(ref resetPlotModel, o =>
+        {
+            ResetPlot();
+        });
+
         #endregion
 
     }
