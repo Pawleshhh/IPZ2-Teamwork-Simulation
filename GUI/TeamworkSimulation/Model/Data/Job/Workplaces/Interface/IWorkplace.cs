@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TeamworkSimulation.Model
 {
-    public interface IWorkplace : IProjectItem
+    public interface IWorkplace : IModelItem
     {
 
         #region Properties

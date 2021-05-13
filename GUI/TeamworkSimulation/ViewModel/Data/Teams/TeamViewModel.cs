@@ -15,7 +15,7 @@ namespace TeamworkSimulation.ViewModel
         #region Constructors
 
         public TeamViewModel(ITeam team)
-            :base((ModelItem)team)
+            :base(team)
         {
             this.team = team ?? throw new ArgumentNullException(nameof(team));
             teamMemberVMs = new ObservableCollection<TeamMemberViewModel>(

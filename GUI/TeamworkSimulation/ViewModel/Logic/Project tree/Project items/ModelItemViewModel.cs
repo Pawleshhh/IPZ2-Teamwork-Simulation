@@ -8,13 +8,13 @@ namespace TeamworkSimulation.ViewModel
 {
     public abstract class ModelItemViewModel : ProjectItemViewModel
     {
-        protected ModelItemViewModel(ModelItem modelItem) : base(modelItem)
+        protected ModelItemViewModel(IModelItem modelItem) : base(modelItem)
         {
             this.modelItem = modelItem;
             modelItem.UseModelChanged += ModelItem_UseModelChanged;
         }
 
-        private ModelItem modelItem;
+        private IModelItem modelItem;
 
         public bool UseModel
         {

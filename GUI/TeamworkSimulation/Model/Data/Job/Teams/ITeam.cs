@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace TeamworkSimulation.Model
 {
-    public interface ITeam : IProjectItem
+    public interface ITeam : IModelItem
     {
 
         #region Properties

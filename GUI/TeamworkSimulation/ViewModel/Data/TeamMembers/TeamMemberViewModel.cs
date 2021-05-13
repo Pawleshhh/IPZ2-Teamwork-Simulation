@@ -12,7 +12,7 @@ namespace TeamworkSimulation.ViewModel
         #region Constructors
 
         protected TeamMemberViewModel(ITeamMember teamMember)
-            :base((ModelItem)teamMember)
+            :base(teamMember)
         {
             this.teamMember = teamMember ?? throw new ArgumentNullException(nameof(teamMember));
             ExperienceVM = ExperienceViewModelFactory.Create(teamMember.Experience);

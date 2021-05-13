@@ -15,7 +15,7 @@ namespace TeamworkSimulation.ViewModel
         #region Constructors
 
         public WorkplaceViewModel(IWorkplace workplace, IViewModel parent)
-            :base((ModelItem)workplace)
+            :base(workplace)
         {
             this.workplace = workplace ?? throw new ArgumentNullException(nameof(workplace));
 

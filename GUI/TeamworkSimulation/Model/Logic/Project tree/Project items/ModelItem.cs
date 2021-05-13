@@ -8,7 +8,7 @@ using TeamworkSimulation.Model.Simulation;
 namespace TeamworkSimulation.Model
 {
     [DataContract]
-    public abstract class ModelItem : ProjectItem
+    public abstract class ModelItem : ProjectItem, IModelItem
     {
 
         protected ModelItem()

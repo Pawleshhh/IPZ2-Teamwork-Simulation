@@ -5,7 +5,7 @@ using TeamworkSimulation.Model.Simulation;
 
 namespace TeamworkSimulation.Model
 {
-    public interface ITeamMember : IProjectItem
+    public interface ITeamMember : IModelItem
     {
 
         Genders Gender { get; set; }
