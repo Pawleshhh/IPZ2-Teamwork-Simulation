@@ -8,6 +8,24 @@ namespace TeamworkSimulation.Utility
     public static class Statistics
     {
 
+        public static double[] StatisticsCollection(List<double[]> values, Func<double[], double> statistic)
+        {
+            double[] result = new double[values[0].Length];
+            for(int i = 0; i < values[0].Length; i++)
+            {
+                double[] array = new double[values.Count];
+
+                for(int j = 0; j < array.Length; j++)
+                {
+                    array[j] = values[j][i];
+                }
+
+                result[i] = statistic(array);
+            }
+
+            return result;
+        }
+
         public static double Mean(double[] values)
         {
             if (CheckArray(values))

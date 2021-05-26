@@ -30,6 +30,8 @@ namespace TeamworkSimulation.Model.Simulation
 
         private int simulationCountSum;
 
+        private readonly SimulationResultInterpreter resultInterpreter = new SimulationResultInterpreter();
+
         #endregion
 
         #region Properties
@@ -151,76 +153,18 @@ namespace TeamworkSimulation.Model.Simulation
 
             List<ISimulationResult> resultCollections;
 
-            SimulationResultCollection summary = null;
-
             if (KeepPreviousResults && ResultDirector != null)
             {
                 resultCollections = new List<ISimulationResult>(ResultDirector.Results);
-                summary = resultCollections[^1] as SimulationResultCollection;
                 resultCollections.RemoveAt(resultCollections.Count - 1);
-                simulationCountSum++;
             }
             else
             {
                 resultCollections = new List<ISimulationResult>();
-                simulationCountSum = 1;
+                resultInterpreter.Clear();
             }
 
-            var valuesList = new List<double[]>();
-
-            int i = simulationCountSum,
-                j = 1;
-            foreach (var simResult in allSimResults)
-            {
-                List<List<double[]>> result = new List<List<double[]>>();
-                for (int x = 0; x < simResult.Length; x++)
-                {
-                    result.Add(new List<double[]>());
-                    for (int y = 0; y < simResult[x].Length; y++)
-                    {
-                        result[x].Add(simResult[x][y]);
-                    }
-                }
-
-                resultCollections.Add(new SimulationResultCollection(new List<PlotResult>()
-                    {
-                        new PlotResult(result[0], "Tiredness"),
-                        new PlotResult(result[1], "Work conditions"),
-                        new PlotResult(result[2], "Team effectiveness"),
-                        new PlotResult(result[3], "Comfort"),
-                        new PlotResult(result[4], "Team Study Comfort"),
-                        new PlotResult(result[5], "Help"),
-                        new PlotResult(result[6], "Self improvement"),
-                        new PlotResult(result[7], "Communication"),
-                    }, $"Simulation {i}.{j++}"));
-
-                for(int k = 0; k < 8; k++)
-                {
-                    if (valuesList.Count - 1 < k)
-                        valuesList.Add(result[k][1]);
-                    else
-                        valuesList[k] = valuesList[k].Concat(result[k][1]).ToArray();
-                }
-            }
-
-            var statisticsData = new List<StatisticsResultData>()
-            {
-                GetStatisticsResultData(valuesList[0], "Tiredness"),
-                GetStatisticsResultData(valuesList[1], "Work conditions"),
-                GetStatisticsResultData(valuesList[2], "Team effectiveness"),
-                GetStatisticsResultData(valuesList[3], "Comfort"),
-                GetStatisticsResultData(valuesList[4], "Team Study Comfort"),
-                GetStatisticsResultData(valuesList[5], "Help"),
-                GetStatisticsResultData(valuesList[6], "Self improvement"),
-                GetStatisticsResultData(valuesList[7], "Communication"),
-            };
-
-            if (summary != null)
-                summary.Add(new StatisticsResult(statisticsData, $"Simulation {i}"));
-            else
-                summary = new SimulationResultCollection(new List<StatisticsResult>() { new StatisticsResult(statisticsData, $"Simulation {i}") }, "Simulations summary");
-
-            resultCollections.Add(summary);
+            resultCollections.AddRange(resultInterpreter.InterpretResults(allSimResults));
 
             ResultDirector = new SimulationResultDirector(resultCollections);
         }
