@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TeamworkSimulation.Model
+namespace TeamworkSimulation.Model.Simulation
 {
     public class SimulationResultCollection : ISimulationResult
     {
@@ -30,6 +30,15 @@ namespace TeamworkSimulation.Model
         public IReadOnlyList<ISimulationResult> Result => results;
         //IReadOnlyList<ISimulationResult> ISimulationResultCollection.Result => (IReadOnlyList<ISimulationResult>)results;
         object ISimulationResult.Result => results;
+
+        #endregion
+
+        #region Methods
+
+        public void Add(ISimulationResult result)
+        {
+            results.Add(result);
+        }
 
         #endregion
 

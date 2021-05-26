@@ -28,6 +28,9 @@
     <Compile Update="View\Controls\Results\SimulationResultCollectionControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Controls\Results\StatisticsResultControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Windows\SimulationResultsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Controls\Results\SimulationResultCollectionControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Controls\Results\StatisticsResultControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Resources\AppColors.xaml">

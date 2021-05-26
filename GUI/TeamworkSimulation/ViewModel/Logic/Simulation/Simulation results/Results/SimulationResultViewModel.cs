@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TeamworkSimulation.Model;
+using TeamworkSimulation.Model.Simulation;
 
 namespace TeamworkSimulation.ViewModel
 {

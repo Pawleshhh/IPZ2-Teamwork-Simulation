@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TeamworkSimulation.Utility;
 
 namespace TeamworkSimulation.Model.Simulation
 {
@@ -150,9 +151,13 @@ namespace TeamworkSimulation.Model.Simulation
 
             List<ISimulationResult> resultCollections;
 
+            SimulationResultCollection summary = null;
+
             if (KeepPreviousResults && ResultDirector != null)
             {
                 resultCollections = new List<ISimulationResult>(ResultDirector.Results);
+                summary = resultCollections[^1] as SimulationResultCollection;
+                resultCollections.RemoveAt(resultCollections.Count - 1);
                 simulationCountSum++;
             }
             else
@@ -160,6 +165,8 @@ namespace TeamworkSimulation.Model.Simulation
                 resultCollections = new List<ISimulationResult>();
                 simulationCountSum = 1;
             }
+
+            var valuesList = new List<double[]>();
 
             int i = simulationCountSum,
                 j = 1;
@@ -186,9 +193,45 @@ namespace TeamworkSimulation.Model.Simulation
                         new PlotResult(result[6], "Self improvement"),
                         new PlotResult(result[7], "Communication"),
                     }, $"Simulation {i}.{j++}"));
+
+                for(int k = 0; k < 8; k++)
+                {
+                    if (valuesList.Count - 1 < k)
+                        valuesList.Add(result[k][1]);
+                    else
+                        valuesList[k] = valuesList[k].Concat(result[k][1]).ToArray();
+                }
             }
 
+            var statisticsData = new List<StatisticsResultData>()
+            {
+                GetStatisticsResultData(valuesList[0], "Tiredness"),
+                GetStatisticsResultData(valuesList[1], "Work conditions"),
+                GetStatisticsResultData(valuesList[2], "Team effectiveness"),
+                GetStatisticsResultData(valuesList[3], "Comfort"),
+                GetStatisticsResultData(valuesList[4], "Team Study Comfort"),
+                GetStatisticsResultData(valuesList[5], "Help"),
+                GetStatisticsResultData(valuesList[6], "Self improvement"),
+                GetStatisticsResultData(valuesList[7], "Communication"),
+            };
+
+            if (summary != null)
+                summary.Add(new StatisticsResult(statisticsData, $"Simulation {i}"));
+            else
+                summary = new SimulationResultCollection(new List<StatisticsResult>() { new StatisticsResult(statisticsData, $"Simulation {i}") }, "Simulations summary");
+
+            resultCollections.Add(summary);
+
             ResultDirector = new SimulationResultDirector(resultCollections);
+        }
+
+        private StatisticsResultData GetStatisticsResultData(double[] values, string name)
+        {
+            return new StatisticsResultData(
+                Statistics.Mean(values),
+                Statistics.Median(values),
+                Statistics.StandardDeviation(values),
+                name);
         }
 
         #endregion

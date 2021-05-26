@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Linq;
-using TeamworkSimulation.Model;
 using System.Windows.Input;
+using TeamworkSimulation.Model.Simulation;
 
 namespace TeamworkSimulation.ViewModel
 {

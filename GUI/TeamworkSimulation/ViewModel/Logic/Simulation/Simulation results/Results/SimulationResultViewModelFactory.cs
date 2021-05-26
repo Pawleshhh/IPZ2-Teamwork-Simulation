@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TeamworkSimulation.Model;
+using TeamworkSimulation.Model.Simulation;
 
 namespace TeamworkSimulation.ViewModel
 {
@@ -20,6 +20,8 @@ namespace TeamworkSimulation.ViewModel
                 {
                     case PlotResult plt:
                         return new PlotResultViewModel(plt, parent);
+                    case StatisticsResult st:
+                        return new StatisticsResultViewModel(st, parent);
                     default:
                         return null;
                 }

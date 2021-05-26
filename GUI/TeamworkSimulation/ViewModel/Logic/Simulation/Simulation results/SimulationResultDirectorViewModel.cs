@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using TeamworkSimulation.Model;
+using TeamworkSimulation.Model.Simulation;
 
 namespace TeamworkSimulation.ViewModel
 {

@@ -22,6 +22,8 @@ namespace TeamworkSimulation.View
                         return element.FindResource("simulationResultCollectionTemplate") as DataTemplate;
                     case PlotResultViewModel _:
                         return element.FindResource("simulationPlotResultTemplate") as DataTemplate;
+                    case StatisticsResultViewModel _:
+                        return element.FindResource("simulationStatisticsResultTemplate") as DataTemplate;
                 }
             }
 

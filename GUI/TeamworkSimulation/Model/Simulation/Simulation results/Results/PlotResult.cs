@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TeamworkSimulation.Model
+namespace TeamworkSimulation.Model.Simulation
 {
     public class PlotResult : SimulationResult<List<double[]>>
     {

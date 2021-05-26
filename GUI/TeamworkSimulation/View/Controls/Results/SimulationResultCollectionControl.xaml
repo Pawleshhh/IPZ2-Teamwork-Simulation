@@ -19,6 +19,9 @@
         <DataTemplate x:Key="simulationResultCollectionTemplate">
             <local:SimulationResultCollectionControl />
         </DataTemplate>
+        <DataTemplate x:Key="simulationStatisticsResultTemplate">
+            <local:StatisticsResultControl />
+        </DataTemplate>
     </UserControl.Resources>
     <Grid x:Name="plotResultsGrid">
         <Grid.ColumnDefinitions>
