@@ -43,11 +43,28 @@
             Background="Gray"
             Opacity="0.4"
             Visibility="{Binding IsWorking, Mode=OneWay, Converter={StaticResource boolToVisibConv}, FallbackValue=Collapsed}">
-            <fa:ImageAwesome
-                Margin="80"
-                Icon="Cog"
-                Spin="True"
-                Visibility="{Binding IsWorking, Mode=OneWay, Converter={StaticResource boolToVisibConv}, FallbackValue=Collapsed}" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*" />
+                    <RowDefinition Height="4*" />
+                </Grid.RowDefinitions>
+                <fa:ImageAwesome
+                    Width="100"
+                    Height="100"
+                    VerticalAlignment="Bottom"
+                    Icon="Cog"
+                    Spin="True" />
+
+                <ProgressBar
+                    Grid.Row="1"
+                    Width="120"
+                    Height="20"
+                    Margin="5"
+                    VerticalAlignment="Top"
+                    Maximum="1.0"
+                    Minimum="0"
+                    Value="{Binding SimulationDirectorVM.Progress, Mode=OneWay}" />
+            </Grid>
         </Border>
 
         <Menu Grid.ColumnSpan="2">

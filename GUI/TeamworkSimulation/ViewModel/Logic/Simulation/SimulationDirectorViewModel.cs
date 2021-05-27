@@ -13,7 +13,10 @@ namespace TeamworkSimulation.ViewModel
         {
             simulationDirector = director;
             ParentViewModel = parent;
+
+            simulationDirector.ProgressChanged += SimulationDirector_ProgressChanged;
         }
+
         #endregion
 
         #region Private fields
@@ -48,6 +51,17 @@ namespace TeamworkSimulation.ViewModel
         {
             get => simulationDirector.KeepPreviousResults;
             set => SetProperty(() => simulationDirector.KeepPreviousResults == value, () => simulationDirector.KeepPreviousResults = value);
+        }
+
+        public double Progress => simulationDirector.Progress;
+
+        #endregion
+
+        #region Methods
+
+        private void SimulationDirector_ProgressChanged(object sender, EventArgs e)
+        {
+            OnPropertyChanged(nameof(Progress));
         }
 
         #endregion

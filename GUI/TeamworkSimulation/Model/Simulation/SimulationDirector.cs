@@ -28,7 +28,7 @@ namespace TeamworkSimulation.Model.Simulation
         private int iterations;
         private int simulationCount;
 
-        private int simulationCountSum;
+        private double progress;
 
         private readonly SimulationResultInterpreter resultInterpreter = new SimulationResultInterpreter();
 
@@ -73,12 +73,23 @@ namespace TeamworkSimulation.Model.Simulation
 
         public bool KeepPreviousResults { get; set; }
 
+        public double Progress
+        {
+            get => progress;
+            private set
+            {
+                progress = value;
+                OnProgressChanged();
+            }
+        }
+
         #endregion
 
         #region Events
 
         public event EventHandler Started;
         public event EventHandler Stopped;
+        public event EventHandler ProgressChanged;
 
         protected virtual void OnStarted()
         {
@@ -90,6 +101,10 @@ namespace TeamworkSimulation.Model.Simulation
             IsWorking = false;
             Stopped?.Invoke(this, EventArgs.Empty);
         }
+        protected virtual void OnProgressChanged()
+        {
+            ProgressChanged?.Invoke(this, EventArgs.Empty);
+        }
         #endregion
 
         #region Methods
@@ -98,6 +113,7 @@ namespace TeamworkSimulation.Model.Simulation
         {
             var attributes = GetAllAttributes(root);
 
+            Progress = 0;
             OnStarted();
 
             List<double[][][]> allResults = new List<double[][][]>();
@@ -106,6 +122,8 @@ namespace TeamworkSimulation.Model.Simulation
             {
                 double[][][] simResult = await BeginSimulation<double[][][]>(attributes);
                 allResults.Add(simResult);
+
+                Progress = (double)(i + 1) / SimulationCount;
             }
             SetResults(allResults);
 
