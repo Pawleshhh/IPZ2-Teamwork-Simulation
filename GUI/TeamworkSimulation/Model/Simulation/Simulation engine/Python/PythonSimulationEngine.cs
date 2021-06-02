@@ -14,36 +14,33 @@ namespace TeamworkSimulation.Model.Simulation
         #region Constructors
         public PythonSimulationEngine()
         {
-            string pythonPath = @"C:\Program Files\Python37";
 
-            Environment.SetEnvironmentVariable("PATH", $@"{pythonPath};" + Environment.GetEnvironmentVariable("PATH"));
-            Environment.SetEnvironmentVariable("PYTHONHOME", pythonPath);
-
-            Environment.SetEnvironmentVariable("PYTHONPATH ", $@"{pythonPath}\..\Lib;{pythonPath}\..\Lib\site-packages;");
-
-            PythonEngine.PythonHome = Environment.GetEnvironmentVariable("PYTHONHOME", EnvironmentVariableTarget.Process);
-            PythonEngine.PythonPath = Environment.GetEnvironmentVariable("PYTHONPATH", EnvironmentVariableTarget.Process);
-
-            //var pathToVirtualEnv = @"C:\ProgramData\Miniconda3";
-            ////var pathToVirtualEnv = @"C:\Users\1\AppData\Local\Programs\Python\Python37";
-            ////var pathToVirtualEnv = @"C:\Program Files\Python39";
-
-            //Environment.SetEnvironmentVariable("PATH", pathToVirtualEnv, EnvironmentVariableTarget.Process);
-            //Environment.SetEnvironmentVariable("PYTHONHOME", pathToVirtualEnv, EnvironmentVariableTarget.Process);
-            //Environment.SetEnvironmentVariable("PYTHONPATH", $"{pathToVirtualEnv}\\Lib\\site-packages;{pathToVirtualEnv}\\Lib", EnvironmentVariableTarget.Process);
-
-            //PythonEngine.PythonHome = pathToVirtualEnv;
-            //PythonEngine.PythonPath = Environment.GetEnvironmentVariable("PYTHONPATH", EnvironmentVariableTarget.Process);
         }
         #endregion
 
         #region Private fields
-        private IntPtr st;
+        private string prevPythonPath;
+        private string pythonPath;
+
+        private bool pythonPathChanged;
         #endregion
 
         #region Properties
 
-        public string PythonPath { get; set; }
+        public string PythonPath
+        {
+            get => pythonPath;
+            set
+            {
+                prevPythonPath = pythonPath;
+                pythonPath = value;
+
+                if (pythonPath != null && prevPythonPath != null && !pythonPath.Equals(prevPythonPath))
+                    pythonPathChanged = true;
+            }
+        }
+
+        public string ModuleName { get; set; } = string.Empty;
 
         #endregion
 
@@ -52,7 +49,7 @@ namespace TeamworkSimulation.Model.Simulation
         {
             using (Py.GIL())
             {
-                dynamic module = PythonEngine.ImportModule("csTest");
+                dynamic module = PythonEngine.ImportModule(ModuleName);
                 dynamic result = module.StartSimulation(1);
 
                 var list = (double[][][])result;
@@ -68,7 +65,7 @@ namespace TeamworkSimulation.Model.Simulation
         {
             using(Py.GIL())
             {
-                dynamic module = PythonEngine.ImportModule("csTest");
+                dynamic module = PythonEngine.ImportModule(ModuleName);
                 return func(module);
             }
         }
@@ -79,6 +76,24 @@ namespace TeamworkSimulation.Model.Simulation
         }
         public override Task<T> WorkOnSimulationAsync<T>(Func<dynamic, T> func)
             => Task.Run(() => WorkOnSimulation(func));
+
+        public void Initialize()
+        {
+            if (!pythonPathChanged)
+                return;
+
+            pythonPathChanged = false;
+
+            string pythonPath = PythonPath;
+
+            Environment.SetEnvironmentVariable("PATH", $@"{pythonPath};" + Environment.GetEnvironmentVariable("PATH"));
+            Environment.SetEnvironmentVariable("PYTHONHOME", pythonPath);
+
+            Environment.SetEnvironmentVariable("PYTHONPATH ", $@"{pythonPath}\..\Lib;{pythonPath}\..\Lib\site-packages;");
+
+            PythonEngine.PythonHome = Environment.GetEnvironmentVariable("PYTHONHOME", EnvironmentVariableTarget.Process);
+            PythonEngine.PythonPath = Environment.GetEnvironmentVariable("PYTHONPATH", EnvironmentVariableTarget.Process);
+        }
 
         public override void Dispose()
         {

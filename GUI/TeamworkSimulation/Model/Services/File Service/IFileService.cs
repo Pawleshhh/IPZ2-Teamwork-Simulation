@@ -21,6 +21,7 @@ namespace TeamworkSimulation.Model
         string[] SaveFiles();
 
         string OpenDirectory();
+        string[] OpenDirectories(string path);
 
     }
 }

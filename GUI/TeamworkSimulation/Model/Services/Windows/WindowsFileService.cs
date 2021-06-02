@@ -46,6 +46,14 @@ namespace TeamworkSimulation.Model
             }
         }
 
+        public string[] OpenDirectories(string path)
+        {
+            if (!Directory.Exists(path))
+                return null;
+
+            return Directory.GetDirectories(path);
+        }
+
         public string OpenFile()
         {
             using(var openFileDialog = GetOpenFileDialog())

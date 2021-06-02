@@ -29,7 +29,7 @@
             <RowDefinition Height="20" />
             <RowDefinition Height="40" />
             <RowDefinition />
-            <RowDefinition Height="90" />
+            <RowDefinition Height="120" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="160" />
@@ -74,6 +74,7 @@
                 <MenuItem Command="{Binding SaveProject}" Header="Save project" />
             </MenuItem>
             <MenuItem Header="Simulation" Style="{StaticResource DefaultMenuItemStyle}">
+                <MenuItem Command="{Binding ShowConfiguration}" Header="Configure" />
                 <MenuItem Command="{Binding StartSimulation}" Header="Start" />
                 <MenuItem Command="{Binding ShowResults}" Header="Results" />
             </MenuItem>
@@ -125,12 +126,16 @@
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
-            <TextBlock
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                FontSize="14"
-                Text="Iterations:" />
+            <Grid.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="HorizontalAlignment" Value="Left" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="FontSize" Value="13" />
+                </Style>
+            </Grid.Resources>
+            <TextBlock Text="Iterations:" />
             <wpft:IntegerUpDown
                 Grid.Column="1"
                 HorizontalAlignment="Right"
@@ -138,12 +143,7 @@
                 Maximum="{Binding MaximumIterations, Mode=OneWay}"
                 Minimum="{Binding MinimumIterations, Mode=OneWay}"
                 Value="{Binding Iterations, Mode=TwoWay}" />
-            <TextBlock
-                Grid.Row="1"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                FontSize="14"
-                Text="Simulation count:" />
+            <TextBlock Grid.Row="1" Text="Simulation count:" />
             <wpft:IntegerUpDown
                 Grid.Row="1"
                 Grid.Column="1"
@@ -152,14 +152,18 @@
                 Maximum="{Binding MaximumSimulationCount, Mode=OneWay}"
                 Minimum="{Binding MinimumSimulationCount, Mode=OneWay}"
                 Value="{Binding SimulationCount, Mode=TwoWay}" />
-            <TextBlock
+            <TextBlock Grid.Row="2" Text="Leading argument:" />
+            <wpft:IntegerUpDown
                 Grid.Row="2"
-                HorizontalAlignment="Left"
+                Grid.Column="1"
+                HorizontalAlignment="Right"
                 VerticalAlignment="Center"
-                FontSize="14"
-                Text="Keep results:" />
+                Maximum="{Binding MaximumLeadingArgument, Mode=OneWay}"
+                Minimum="{Binding MinimumLeadingArgument, Mode=OneWay}"
+                Value="{Binding LeadingArgument, Mode=TwoWay}" />
+            <TextBlock Grid.Row="3" Text="Keep results:" />
             <CheckBox
-                Grid.Row="2"
+                Grid.Row="3"
                 Grid.Column="1"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"

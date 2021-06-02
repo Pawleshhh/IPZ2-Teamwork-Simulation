@@ -9,10 +9,10 @@ namespace TeamworkSimulation.ViewModel
 
         #region Constructors
 
-        public MainViewModel(TeamworkSimulationManager manager, IOpenView simulationResultsView)
+        public MainViewModel(TeamworkSimulationManager manager, ServicesFactory servicesFactory, IOpenView simulationResultsView, IOpenView configurationView)
         {
             this.manager = manager;
-            SimulationDirectorVM = new SimulationDirectorViewModel(manager.SimulationDirector, this);
+            SimulationDirectorVM = new SimulationDirectorViewModel(manager.SimulationDirector, servicesFactory.CreateFileService(), this);
 
             manager.CreateNewProject();
             ProjectVM = new ProjectViewModel(manager.Project);
@@ -21,6 +21,7 @@ namespace TeamworkSimulation.ViewModel
             manager.SimulationDirector.Stopped += SimulationDirector_IsWorkingChanged;
 
             this.simulationResultsView = simulationResultsView;
+            this.configurationView = configurationView;
         }
 
         #endregion
@@ -30,6 +31,7 @@ namespace TeamworkSimulation.ViewModel
         private readonly TeamworkSimulationManager manager;
 
         private readonly IOpenView simulationResultsView;
+        private readonly IOpenView configurationView;
 
         private SimulationResultDirectorViewModel simulationResultDirectiorVM;
 
@@ -127,6 +129,13 @@ namespace TeamworkSimulation.ViewModel
         {
             ShowSimulationResults();
         }, o => CanShowResults);
+
+        private ICommand showConfiguration;
+
+        public ICommand ShowConfiguration => RelayCommand.Create(ref showConfiguration, o =>
+        {
+            configurationView.OpenView(SimulationDirectorVM.EngineVM);
+        });
 
         #endregion
 

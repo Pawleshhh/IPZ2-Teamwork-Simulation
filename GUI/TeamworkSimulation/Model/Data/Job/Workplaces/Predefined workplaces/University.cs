@@ -14,7 +14,7 @@ namespace TeamworkSimulation.Model
 
         protected override ISimulationModel GetSimulationModel()
         {
-            return new UnivercitySimulationModel(this);
+            return new UniversitySimulationModel(this);
         }
 
     }

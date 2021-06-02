@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TeamworkSimulation.Model;
 using TeamworkSimulation.Model.Simulation;
 
 namespace TeamworkSimulation.ViewModel
@@ -9,10 +10,12 @@ namespace TeamworkSimulation.ViewModel
     {
 
         #region Constructors
-        public SimulationDirectorViewModel(SimulationDirector director, IViewModel parent)
+        public SimulationDirectorViewModel(SimulationDirector director, IFileService fileService, IViewModel parent)
         {
             simulationDirector = director;
             ParentViewModel = parent;
+
+            EngineVM = GetSimulationEngineViewModel(director.Engine, fileService);
 
             simulationDirector.ProgressChanged += SimulationDirector_ProgressChanged;
         }
@@ -28,6 +31,7 @@ namespace TeamworkSimulation.ViewModel
         #region Properties
         public IViewModel ParentViewModel { get; set; }
 
+        public IViewModel EngineVM { get; }
 
         public int Iterations
         {
@@ -53,6 +57,15 @@ namespace TeamworkSimulation.ViewModel
             set => SetProperty(() => simulationDirector.KeepPreviousResults == value, () => simulationDirector.KeepPreviousResults = value);
         }
 
+        public int MaximumLeadingArgument => simulationDirector.MaximumLeadingArgument;
+        public int MinimumLeadingArgument => simulationDirector.MinimumLeadingArgument;
+        public int LeadingArgument
+        {
+            get => simulationDirector.LeadingArgument;
+            set => SetProperty(() => simulationDirector.LeadingArgument == value, () => simulationDirector.LeadingArgument = value);
+        }
+
+
         public double Progress => simulationDirector.Progress;
 
         #endregion
@@ -62,6 +75,17 @@ namespace TeamworkSimulation.ViewModel
         private void SimulationDirector_ProgressChanged(object sender, EventArgs e)
         {
             OnPropertyChanged(nameof(Progress));
+        }
+
+        private IViewModel GetSimulationEngineViewModel(SimulationEngine engine, IFileService fileService)
+        {
+            switch(engine)
+            {
+                case PythonSimulationEngine pyEngine:
+                    return new PythonSimulationEngineViewModel(pyEngine, fileService);
+            }
+
+            return null;
         }
 
         #endregion

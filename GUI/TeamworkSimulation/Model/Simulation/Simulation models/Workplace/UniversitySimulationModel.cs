@@ -4,10 +4,10 @@ using System.Text;
 
 namespace TeamworkSimulation.Model.Simulation
 {
-    public class UnivercitySimulationModel : WorkplaceSimulationModel<University>
+    public class UniversitySimulationModel : WorkplaceSimulationModel<University>
     {
 
-        public UnivercitySimulationModel(University university)
+        public UniversitySimulationModel(University university)
             :base(university)
         {
 

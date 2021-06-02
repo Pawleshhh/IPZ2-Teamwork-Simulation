@@ -19,15 +19,12 @@ namespace TeamworkSimulation.Model.Simulation
         {
             if (!PythonEngine.IsInitialized)
             {
+                ((PythonSimulationEngine)Engine).Initialize();
+
                 PythonEngine.Initialize();
                 threadState = PythonEngine.BeginAllowThreads();
             }
             base.OnStarted();
-        }
-
-        protected override void OnStopped()
-        {
-            base.OnStopped();
         }
 
         protected override Task BeginSimulation(List<int[]> attributes)

@@ -222,3 +222,5 @@ N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Deb
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Results\StatisticsResultControl.g.cs
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Controls\Results\StatisticsResultControl.baml
 N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\TeamworkSimulation.csprojAssemblyReference.cache
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Windows\SimulationConfigurationWindow.g.cs
+N:\Programowanie\Ogólne\IPZ2-Teamwork-Simulation\GUI\TeamworkSimulation\obj\Debug\netcoreapp3.1\View\Windows\SimulationConfigurationWindow.baml

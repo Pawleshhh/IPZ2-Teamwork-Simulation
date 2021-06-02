@@ -31,6 +31,9 @@
     <Compile Update="View\Controls\Results\StatisticsResultControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Windows\SimulationConfigurationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Windows\SimulationResultsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -88,6 +91,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Windows\SimulationConfigurationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Windows\SimulationResultsWindow.xaml">

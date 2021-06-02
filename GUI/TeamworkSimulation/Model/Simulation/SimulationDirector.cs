@@ -43,7 +43,7 @@ namespace TeamworkSimulation.Model.Simulation
         public bool IsWorking { get; private set; }
 
         public int MaximumIterations { get; } = 100;
-        public int MinimumIterations { get; } = 10;
+        public int MinimumIterations { get; } = 1;
 
         public int Iterations
         {
@@ -82,6 +82,10 @@ namespace TeamworkSimulation.Model.Simulation
                 OnProgressChanged();
             }
         }
+
+        public int MaximumLeadingArgument { get; } = 6;
+        public int MinimumLeadingArgument { get; } = 0;
+        public int LeadingArgument { get; set; }
 
         #endregion
 
@@ -140,7 +144,7 @@ namespace TeamworkSimulation.Model.Simulation
         {
             List<int[]> attributes = new List<int[]>();
 
-            attributes.Add(new int[] { Iterations });
+            attributes.Add(new int[] { Iterations, LeadingArgument });
 
             Stack<ModelItem> stack = new Stack<ModelItem>();
             stack.Push(root);
@@ -185,15 +189,6 @@ namespace TeamworkSimulation.Model.Simulation
             resultCollections.AddRange(resultInterpreter.InterpretResults(allSimResults));
 
             ResultDirector = new SimulationResultDirector(resultCollections);
-        }
-
-        private StatisticsResultData GetStatisticsResultData(double[] values, string name)
-        {
-            return new StatisticsResultData(
-                Statistics.Mean(values),
-                Statistics.Median(values),
-                Statistics.StandardDeviation(values),
-                name);
         }
 
         #endregion
